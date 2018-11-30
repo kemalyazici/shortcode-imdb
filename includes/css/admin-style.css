@@ -1,0 +1,12 @@
+div.imdb_left{
+    float: left;
+    width:80%;
+}
+div.imdb_right{
+    float: left;
+    padding: 20px;
+    margin-left: 30px;
+    margin-top: 50px;
+    background: #fff;
+    width:15%;
+}

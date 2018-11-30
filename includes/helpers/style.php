@@ -1,0 +1,23 @@
+<?php
+// Admin CSS style path
+function imdb_admin_styles(){
+
+    wp_enqueue_style(
+        'imdb-admin-css',
+        IMDB_URL.'includes/css/admin-style.css',
+        array(),
+        time()
+    );
+}
+
+
+// Frontend CSS style path
+function imdb_frontend_styles(){
+
+    wp_enqueue_style(
+        'mp-frontend-css',
+        IMDB_URL.'includes/css/style.css',
+        time()
+    );
+}
+

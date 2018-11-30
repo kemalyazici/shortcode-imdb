@@ -1,0 +1,225 @@
+a
+{
+    text-decoration: none!important;
+
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+}
+
+.imdb_dark{
+
+    color: #ffffff;
+    background: #1b1e21;
+    text-decoration: none;
+    border: solid 2px #000;
+    line-height: normal;
+
+
+
+}
+
+.imdb_white{
+
+    background: #ffffff;
+    color: #1b1e21;
+    text-decoration: none;
+    border: solid 2px #ccc;
+    line-height: normal;
+
+}
+
+.imdb_gray{
+
+    background: #f6f6f5;
+    color: #1b1e21;
+    text-decoration: none;
+    border: solid 2px #cccccc;
+    line-height: normal;
+
+}
+
+
+
+.imdb_dark,
+.imdb_transparent,
+.imdb_gray,
+.imdb_white{
+    font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Nanum Gothic", Dotum, sans-serif;
+    font-size: 10px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    padding-right: 16px;
+    padding-left: 16px;
+    border-radius: 10px;
+    height: 100%;
+    position: relative ;
+    text-decoration: none;
+    overflow:hidden;
+
+
+}
+
+.imdb_dark,
+.imdb_white,
+.imdb_gray{
+    background-image: url("../assets/imdb-bg.png");
+    background-position: right bottom;
+    background-repeat: no-repeat;
+}
+
+
+div.imdb_left{
+    float: left;
+    margin-right: 15px;
+    position: relative;
+    text-decoration: none;
+
+}
+
+div.imdb_left > a > div.poster_parent{
+    height:268px;
+    width:182px;
+    position: relative;
+}
+.imdb_dark > div.imdb_left > a > div.poster_parent{
+    border: solid 2px #f5c518;
+}
+
+.imdb_white > div.imdb_left > a > div.poster_parent{
+    border: solid 2px #cccccc;
+}
+.imdb_gray > div.imdb_left > a > div.poster_parent{
+    border: solid 2px #cccccc;
+}
+
+
+.imdb_dark  b{
+    color:#9d9fa2;
+}
+
+.imdb_gray div.imdb_right > div.imdb_general a{
+    color:#136cb2;
+}
+.imdb_gray div.imdb_right > div.imdb_general a:hover{
+    text-decoration: underline;
+}
+
+.imdb_dark div.imdb_right > div.imdb_general a{
+    color:#f5c518;
+}
+.imdb_dark div.imdb_right > div.imdb_general a:hover{
+    text-decoration: underline;
+}
+
+div.right{
+    text-decoration: none;
+    overflow: hidden;
+
+}
+
+div.right a{
+    text-decoration: none;
+    overflow: hidden;
+
+}
+
+
+.imdb_gray > div.imdb_left > a > div.poster_parent span#imdb_rating,
+.imdb_white > div.imdb_left > a > div.poster_parent span#imdb_rating,
+.imdb_transparent > div.imdb_left  > a > div.poster_parent span#imdb_rating,
+.imdb_dark > div.imdb_left >  a > div.poster_parent span#imdb_rating{
+    font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
+    line-height: normal;
+    font-size:17px;
+    font-weight: bold;
+    color:#1b1e21;
+    top: 229px;
+    left: 19px;
+    position: absolute;
+    overflow:hidden;
+}
+
+div.imdb_right > span#movie_title > a{
+    font-size: 20px;
+    font-weight: bold;
+    display:block;
+    text-decoration: none !important;
+    all: revert;
+
+}
+
+div.imdb_right > span#genres{
+    font-size: 10px;
+    display:block;
+    margin-bottom: 10px;
+}
+
+div.imdb_right > div.imdb_general{
+    font-size:12px;
+    margin-bottom: 10px;
+    position: relative;
+    overflow:hidden;
+}
+
+div.imdb_right > div.imdb_general > span.known_for{
+    float:left;
+    position: relative;
+    display:block;
+    overflow:hidden;
+
+}
+
+div.imdb_right > div.imdb_general > span.known_for > a >img{
+    float:left;
+    margin-right:5px;
+    width:50px;
+    position: relative;
+    overflow:hidden;
+
+}
+
+.imdb_dark > div.imdb_right > div.imdb_general > span.known_for > a >img{
+    border: solid 1px #f5c518;
+
+}
+.imdb_white > div.imdb_right > div.imdb_general > span.known_for > a >img{
+    border: solid 1px #1b1e21;
+
+}
+
+
+div.imdb_right > div.imdb_general > span#imdb_general{
+    text-decoration: none;
+    font-size: 13px;
+    display:block;
+}
+
+
+
+div.imdb_right > span#summary{
+    font-size: 12px;
+    display:block;
+    margin-bottom: 10px;
+
+}
+
+.imdb_dark > div.imdb_right > span#movie_title a{
+    color: #f5c518;
+}
+
+.imdb_gray > div.imdb_right > span#movie_title a{
+    color: #136cb2;
+}
+
+@media (max-width: 30em) {
+
+    .imdb_transparent > div.imdb_right > span#movie_title,
+    .imdb_white > div.imdb_right > span#movie_title,
+    .imdb_dark > div.imdb_right > span#movie_title{
+        font-size: 15px;
+        display:block;
+
+    }
+
+
+}
