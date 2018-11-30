@@ -2,7 +2,7 @@
 if ( ! class_exists( 'WP_List_Table' ) ) {
     require_once(ABSPATH . 'wp-admin/includes/class-wp-list-table.php');
 }
-class Cache_List_Table extends WP_List_Table {
+class SI_IMDB_Cache_List_Table extends WP_List_Table {
 
     public function get_cache($per_page = 5, $page_number = 1 , $search_term=""){
         global $wpdb;

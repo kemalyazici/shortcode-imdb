@@ -1,6 +1,6 @@
 <?php
 // Admin CSS style path
-function imdb_admin_styles(){
+function si_imdb_admin_styles(){
 
     wp_enqueue_style(
         'imdb-admin-css',
@@ -12,7 +12,7 @@ function imdb_admin_styles(){
 
 
 // Frontend CSS style path
-function imdb_frontend_styles(){
+function si_imdb_frontend_styles(){
 
     wp_enqueue_style(
         'mp-frontend-css',

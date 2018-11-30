@@ -1,5 +1,6 @@
 <?php
-class skin{
+//FRONTEND SKINS
+class si_get_skin{
 
     function standard_title($args,$output,$content){
 

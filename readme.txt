@@ -1,4 +1,4 @@
-=== IMDB Shortcode ===
+=== Shortcode IMDB ===
 Contributors: kyazici
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PSMRT29N7K3CE
 Tags: IMDB, movie, movie database, film, shortcode, actor, actress, imdb

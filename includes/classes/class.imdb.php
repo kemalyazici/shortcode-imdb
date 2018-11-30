@@ -1,5 +1,5 @@
 <?php
-class imdb{
+class si_imdb_grab{
 
 
     //FETCHING WITH DOM

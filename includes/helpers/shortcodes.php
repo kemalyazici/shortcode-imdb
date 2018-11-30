@@ -1,19 +1,19 @@
 <?php
 //TITLE SHORTCODE
-function imdb_title_shortcode($args, $content=""){
-    global $IMDB;
-    global $SKIN;
-    $output = $IMDB->grab_imdb($content,'title');
+function si_imdb_title_shortcode($args, $content=""){
+    global $_SI_IMDB;
+    global $_SI_SKIN;
+    $output = $_SI_IMDB->grab_imdb($content,'title');
 
-    $html = $SKIN->standard_title($args,$output,$content);
+    $html = $_SI_SKIN->standard_title($args,$output,$content);
     return $html;
 }
 //NAME SHORTCODE
-function imdb_name_shortcode($args, $content=""){
-    global $IMDB;
-    global $SKIN;
-    $output = $IMDB->grab_imdb($content,'name');
-    $html = $SKIN->standard_name($args,$output,$content);
+function si_imdb_name_shortcode($args, $content=""){
+    global $_SI_IMDB;
+    global $_SI_SKIN;
+    $output = $_SI_IMDB->grab_imdb($content,'name');
+    $html = $_SI_SKIN->standard_name($args,$output,$content);
 
     return $html;
 }
@@ -21,10 +21,10 @@ function imdb_name_shortcode($args, $content=""){
 
 
 /********** REGISTER ALL SHORTCODES *******/
-function imdb_register_shortcodes() {
+function si_imdb_register_shortcodes() {
 
-    add_shortcode('imdb_title', 'imdb_title_shortcode');
-    add_shortcode('imdb_name', 'imdb_name_shortcode');
+    add_shortcode('imdb_title', 'si_imdb_title_shortcode');
+    add_shortcode('imdb_name', 'si_imdb_name_shortcode');
 
 
 }

@@ -1,7 +1,7 @@
 <?php
 //CACHE LIST LAYOUT
-function cache_layout(){
-    $Cache = new Cache_List_Table();
+function si_imdb_cache_layout(){
+    $Cache = new SI_IMDB_Cache_List_Table();
     if(isset($_POST['bulk-delete'])){
         foreach ($_POST['bulk-delete'] as $id){
             $Cache->delete_customer($id);
@@ -16,7 +16,7 @@ function cache_layout(){
 }
 
 // MAIN PAGE
-function is_general_info()
+function si_imdb_general_info()
 {
     // Double check user capabilities
     if ( !current_user_can('manage_options') ) {
@@ -55,7 +55,7 @@ function is_general_info()
             </div>
         </div>
         <div class="imdb_right">
-            <?php side_menu()?>
+            <?php si_imdb_side_menu()?>
         </div>
     </div>
     <?php
@@ -66,7 +66,7 @@ function is_general_info()
 
 
 // CACH LIST PAGE
-function is_cache_info(){
+function si_imdb_cache_info(){
     // Double check user capabilities    ;
     if ( !current_user_can('manage_options') ) {
         return;
@@ -77,14 +77,14 @@ function is_cache_info(){
 
             <h1><?php esc_html_e( get_admin_page_title() ); ?></h1>
             <p><?php
-                cache_layout();
+                si_imdb_cache_layout()
 
                 ?></p>
 
         </div>
         <div class="imdb_right">
 
-            <?php side_menu()?>
+            <?php si_imdb_side_menu()?>
 
 
 
@@ -97,7 +97,7 @@ function is_cache_info(){
 
 
 // ADMIN MENU SIDE BAR
-function side_menu(){
+function si_imdb_side_menu(){
     ?>
     <h2>IMDB ShortCode Plugin</h2>
     <p>Publish imdb.com data in your articles.</p>
