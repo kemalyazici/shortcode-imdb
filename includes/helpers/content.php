@@ -48,7 +48,7 @@ function shimdb_imdb_general_info()
             <code><b>[imdb_title style="imdb_gray"]tt0120737[/imdb_title]</b></code><br/><br/>
             <code><b>[imdb_title style="imdb_transparent"]tt0120737[/imdb_title]</b></code><br/>
 
-                <br/><b>To demonstration, you can visit our demo website from <a href="http://demo.pluginpress.net/imdb-shortcode/2018/11/29/imdb-shortcode/" target="_blank">here</a>.</b>
+                <br/><b>To demonstration, you can visit our demo website from <a href="http://demo.pluginpress.net/shortcode-imdb/2018/11/29/shortcode-imdb/" target="_blank">here</a>.</b>
 
 
 
@@ -105,7 +105,7 @@ function shimdb_imdb_side_menu(){
     </div>
     <p>Publish imdb.com data in your articles.</p>
 
-    <p><a href="http://demo.pluginpress.net/imdb-shortcode/2018/11/29/shortcode-imdb/" target="_blank">IMDB Shortcode V. 1.0.0</a>. </p>
+    <p><a href="http://demo.pluginpress.net/shortcode-imdb/2018/11/29/shortcode-imdb/" target="_blank">IMDB Shortcode V. 1.0.0</a>. </p>
     <h3>Resources</h3>
     <ul>
         <li><a href="http://pluginpress.net" target="_blank"><i aria-hidden="true" class="dashicons dashicons-external"></i> Website</a></li>
