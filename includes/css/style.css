@@ -3,6 +3,18 @@ a{
 
     -webkit-box-shadow: none!important;
     box-shadow: none!important;
+    line-height: normal !important;
+    -webkit-line-break: normal !important;
+
+}
+
+span{
+    text-decoration: none!important;
+
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+    line-height: normal !important;
+    -webkit-line-break: normal !important;
 }
 
 .imdb_dark{
@@ -48,14 +60,15 @@ a{
     box-shadow: none !important;
     font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Nanum Gothic", Dotum, sans-serif;
     font-size: 10px;
+    line-height: normal !important;
+    -webkit-line-break: normal !important;
     padding-top: 13px !important;
     padding-bottom: 13px !important;
     padding-right: 16px !important;
     padding-left: 16px !important;
     border-radius: 10px;
     position: relative !important;
-    overflow:hidden;
-    line-height: normal !important;
+    overflow:hidden !important;
 
 
 }
@@ -82,9 +95,6 @@ div.imdb_left{
 }
 
 div.poster_parent{
-    text-decoration: none !important;
-    -webkit-box-shadow: none !important;
-    box-shadow: none !important;
     height:268px !important;
     width:182px !important;
     line-height: normal !important;
@@ -134,17 +144,25 @@ div.right a{
 }
 
 
-span#imdb_rating{
-    font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
+div.left > a{
+    text-decoration: none;
+    overflow: hidden !important;
     line-height: normal !important;
-    font-size:17px !important;
-    font-weight: bold !important;
+    -webkit-line-break: normal !important;
+}
+
+div.poster_parent > span#imdb_rating{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    line-height: normal !important;
+    -webkit-line-break: normal !important;
+    font-size:14px !important;
+    font-weight: bold;
     text-decoration: none!important;
     -webkit-box-shadow: none!important;
     box-shadow: none!important;
     color:#1b1e21;
     top: 229px !important;
-    left: 18.5px !important;
+    left: 18px !important;
     position: absolute !important;
     overflow:hidden !important;
 }

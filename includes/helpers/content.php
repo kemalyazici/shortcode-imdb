@@ -27,7 +27,7 @@ function shimdb_imdb_general_info()
         <div class="imdb_left" style="font-size: 14px;">
             <h1><?php esc_html_e( get_admin_page_title() ); ?></h1>
             <div style="background-color: #ffffff; padding: 16px;">
-                IMDB Shortcode is a simple but powerful plugin that can grab data from IMDB and show proper way in your articles.
+                Shortcode IMDB is a simple but powerful plugin that can grab data from IMDB and show proper way in your articles.
                 <br/>
                 <h2>USAGE</h2>
                 Implementing the plugin in your articles is very simple.<br/>
@@ -99,16 +99,20 @@ function shimdb_imdb_cache_info(){
 // ADMIN MENU SIDE BAR
 function shimdb_imdb_side_menu(){
     ?>
-    <h2>IMDB ShortCode Plugin</h2>
+
+    <div style="background: #000;width:%100;">
+        <img src='<?php echo _SI_IMDB_URL_."includes/assets/imdblogo.png"?>' style=" left:5px; top:2px; position: relative"/>
+    </div>
     <p>Publish imdb.com data in your articles.</p>
 
-    <p><a href="http://demo.pluginpress.net/imdb-shortcode/2018/11/29/shortcode-imdb/" target="_blank">IMDB Shortcode V. 1.0.0</a>.</p>
+    <p><a href="http://demo.pluginpress.net/imdb-shortcode/2018/11/29/shortcode-imdb/" target="_blank">IMDB Shortcode V. 1.0.0</a>. </p>
     <h3>Resources</h3>
     <ul>
         <li><a href="http://pluginpress.net" target="_blank"><i aria-hidden="true" class="dashicons dashicons-external"></i> Website</a></li>
         <li><a href="mailto:pluginpress.net@gmail.com" target="_blank"><i aria-hidden="true" class="dashicons dashicons-external"></i> Contact</a> (for suggestions)</li>
 
     </ul>
+
 
     <b>Your donations will allow us to continue further updates and add new settings.</b>
 
