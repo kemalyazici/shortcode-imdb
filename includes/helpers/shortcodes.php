@@ -21,7 +21,7 @@ function si_imdb_name_shortcode($args, $content=""){
 
 
 /********** REGISTER ALL SHORTCODES *******/
-function si_imdb_register_shortcodes() {
+function shimdb_imdb_register_shortcodes() {
 
     add_shortcode('imdb_title', 'si_imdb_title_shortcode');
     add_shortcode('imdb_name', 'si_imdb_name_shortcode');

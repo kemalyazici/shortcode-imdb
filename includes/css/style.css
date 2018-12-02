@@ -1,5 +1,4 @@
-a
-{
+a{
     text-decoration: none!important;
 
     -webkit-box-shadow: none!important;
@@ -44,17 +43,19 @@ a
 .imdb_transparent,
 .imdb_gray,
 .imdb_white{
+    text-decoration: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
     font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Nanum Gothic", Dotum, sans-serif;
     font-size: 10px;
-    padding-top: 13px;
-    padding-bottom: 13px;
-    padding-right: 16px;
-    padding-left: 16px;
+    padding-top: 13px !important;
+    padding-bottom: 13px !important;
+    padding-right: 16px !important;
+    padding-left: 16px !important;
     border-radius: 10px;
-    height: 100%;
-    position: relative ;
-    text-decoration: none;
+    position: relative !important;
     overflow:hidden;
+    line-height: normal !important;
 
 
 }
@@ -69,17 +70,26 @@ a
 
 
 div.imdb_left{
+    text-decoration: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
     float: left;
     margin-right: 15px;
-    position: relative;
-    text-decoration: none;
+    position: relative !important;
+    line-height: normal !important;
+    overflow: hidden !important;
 
 }
 
-div.imdb_left > a > div.poster_parent{
-    height:268px;
-    width:182px;
-    position: relative;
+div.poster_parent{
+    text-decoration: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    height:268px !important;
+    width:182px !important;
+    line-height: normal !important;
+    position: relative !important;
+    overflow: hidden !important;
 }
 .imdb_dark > div.imdb_left > a > div.poster_parent{
     border: solid 2px #f5c518;
@@ -124,19 +134,19 @@ div.right a{
 }
 
 
-.imdb_gray > div.imdb_left > a > div.poster_parent span#imdb_rating,
-.imdb_white > div.imdb_left > a > div.poster_parent span#imdb_rating,
-.imdb_transparent > div.imdb_left  > a > div.poster_parent span#imdb_rating,
-.imdb_dark > div.imdb_left >  a > div.poster_parent span#imdb_rating{
+span#imdb_rating{
     font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
-    line-height: normal;
-    font-size:17px;
-    font-weight: bold;
+    line-height: normal !important;
+    font-size:17px !important;
+    font-weight: bold !important;
+    text-decoration: none!important;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
     color:#1b1e21;
-    top: 229px;
-    left: 19px;
-    position: absolute;
-    overflow:hidden;
+    top: 229px !important;
+    left: 18.5px !important;
+    position: absolute !important;
+    overflow:hidden !important;
 }
 
 div.imdb_right > span#movie_title > a{
@@ -144,7 +154,7 @@ div.imdb_right > span#movie_title > a{
     font-weight: bold;
     display:block;
     text-decoration: none !important;
-    all: revert;
+
 
 }
 

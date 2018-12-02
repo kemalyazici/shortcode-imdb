@@ -1,7 +1,7 @@
 <?php
 //CACHE LIST LAYOUT
-function si_imdb_cache_layout(){
-    $Cache = new SI_IMDB_Cache_List_Table();
+function shimdb_imdb_cache_layout(){
+    $Cache = new SHIMDB_IMDB_Cache_List_Table();
     if(isset($_POST['bulk-delete'])){
         foreach ($_POST['bulk-delete'] as $id){
             $Cache->delete_customer($id);
@@ -16,7 +16,7 @@ function si_imdb_cache_layout(){
 }
 
 // MAIN PAGE
-function si_imdb_general_info()
+function shimdb_imdb_general_info()
 {
     // Double check user capabilities
     if ( !current_user_can('manage_options') ) {
@@ -55,7 +55,7 @@ function si_imdb_general_info()
             </div>
         </div>
         <div class="imdb_right">
-            <?php si_imdb_side_menu()?>
+            <?php shimdb_imdb_side_menu()?>
         </div>
     </div>
     <?php
@@ -66,7 +66,7 @@ function si_imdb_general_info()
 
 
 // CACH LIST PAGE
-function si_imdb_cache_info(){
+function shimdb_imdb_cache_info(){
     // Double check user capabilities    ;
     if ( !current_user_can('manage_options') ) {
         return;
@@ -77,14 +77,14 @@ function si_imdb_cache_info(){
 
             <h1><?php esc_html_e( get_admin_page_title() ); ?></h1>
             <p><?php
-                si_imdb_cache_layout()
+                shimdb_imdb_cache_layout()
 
                 ?></p>
 
         </div>
         <div class="imdb_right">
 
-            <?php si_imdb_side_menu()?>
+            <?php shimdb_imdb_side_menu()?>
 
 
 
@@ -97,12 +97,12 @@ function si_imdb_cache_info(){
 
 
 // ADMIN MENU SIDE BAR
-function si_imdb_side_menu(){
+function shimdb_imdb_side_menu(){
     ?>
     <h2>IMDB ShortCode Plugin</h2>
     <p>Publish imdb.com data in your articles.</p>
 
-    <p><a href="http://pluginpress.net">IMDB Shortcode V. 1.0</a>.</p>
+    <p><a href="http://demo.pluginpress.net/imdb-shortcode/2018/11/29/shortcode-imdb/" target="_blank">IMDB Shortcode V. 1.0.0</a>.</p>
     <h3>Resources</h3>
     <ul>
         <li><a href="http://pluginpress.net" target="_blank"><i aria-hidden="true" class="dashicons dashicons-external"></i> Website</a></li>

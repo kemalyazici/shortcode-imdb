@@ -2,13 +2,13 @@
 if ( ! class_exists( 'WP_List_Table' ) ) {
     require_once(ABSPATH . 'wp-admin/includes/class-wp-list-table.php');
 }
-class SI_IMDB_Cache_List_Table extends WP_List_Table {
+class SHIMDB_IMDB_Cache_List_Table extends WP_List_Table {
 
     public function get_cache($per_page = 5, $page_number = 1 , $search_term=""){
         global $wpdb;
 
         if($search_term == "") {
-            $sql = "SELECT * FROM {$wpdb->prefix}imdb_cache";
+            $sql = "SELECT * FROM {$wpdb->prefix}shortcode_imdb_cache";
 
             if (!empty($_REQUEST['orderby'])) {
                 $sql .= ' ORDER BY ' . esc_sql($_REQUEST['orderby']);
@@ -30,7 +30,7 @@ class SI_IMDB_Cache_List_Table extends WP_List_Table {
                 $data[$k]['type'] = $r->type;
             }
         }else{
-            $sql = "SELECT * FROM ".$wpdb->prefix."imdb_cache WHERE imdb_id='".$search_term."' OR title LIKE '%".$search_term."%'";
+            $sql = "SELECT * FROM ".$wpdb->prefix."shortcode_imdb_cache WHERE imdb_id='".$search_term."' OR title LIKE '%".$search_term."%'";
             $result = $wpdb->get_results($sql);
             $data = array();
             foreach ($result as $k => $r) {
@@ -58,13 +58,13 @@ class SI_IMDB_Cache_List_Table extends WP_List_Table {
     public function prepare_items() {
         global $wpdb;
 
-        $search_terms = isset($_POST['s']) ? trim($_POST['s']) : "";
+        $search_terms = isset($_POST['s']) ? sanitize_text_field(trim($_POST['s'])) : "";
         $columns = $this->get_columns();
         $hidden = array();
         $sortable = $this->get_sortable_columns();
         $this->_column_headers = array($columns, $hidden, $sortable);
         $current_page = $this->get_pagenum();
-        $sql = "SELECT COUNT(id) FROM {$wpdb->prefix}imdb_cache";
+        $sql = "SELECT COUNT(id) FROM {$wpdb->prefix}shortcode_imdb_cache";
         $total_items = $wpdb->get_var($sql);
         $this->set_pagination_args(array(
             'total_items' => $total_items,
@@ -164,7 +164,7 @@ class SI_IMDB_Cache_List_Table extends WP_List_Table {
         global $wpdb;
 
         $wpdb->delete(
-            "{$wpdb->prefix}imdb_cache",
+            "{$wpdb->prefix}shortcode_imdb_cache",
             array( 'id' => $id ),
             array( '%d' )
         );

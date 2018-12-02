@@ -1,4 +1,4 @@
 <?php
-$_SI_IMDB = new si_imdb_grab();
-$_SI_SKIN = new si_get_skin();
+$_SI_IMDB = new shimdb_imdb_grab();
+$_SI_SKIN = new shimdb_imdb_get_skin();
 

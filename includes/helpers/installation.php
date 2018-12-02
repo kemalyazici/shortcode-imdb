@@ -7,7 +7,7 @@ function prefix_create_table() {
 
     $charset_collate = $wpdb->get_charset_collate();
 
-    $sql = "CREATE TABLE ".$wpdb->base_prefix."imdb_cache (
+    $sql = "CREATE TABLE ".$wpdb->base_prefix."shortcode_imdb_cache (
             `id` BIGINT(20) NOT NULL AUTO_INCREMENT , 
             `imdb_id` VARCHAR(255) NOT NULL ,
             `title` VARCHAR(255) NOT NULL , 

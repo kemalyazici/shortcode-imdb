@@ -1,6 +1,6 @@
 <?php
 //FRONTEND SKINS
-class si_get_skin{
+class shimdb_imdb_get_skin{
 
     function standard_title($args,$output,$content){
 
@@ -21,23 +21,23 @@ class si_get_skin{
         $year = $output->year!="" ? ' ('.$output->year.')' : "";
         if (strpos($year, 'TV') !== false) $year = " | <small>".$output->year."</small>";
         $rating = strlen($output->rating) == 1 ? $output->rating.".0" : $output->rating;
-        $html = '<div style="all: unset" class="all-above"><div class="'.$div_style.'">                               
+        $html = '<div style="all: unset"><div class="'.$div_style.'">                               
                         <div class="imdb_left">    
                         <a href="http://www.imdb.com/title/'.$content.'" target="_blank">
                         <div class="poster_parent" style="
-                        background: url('.IMDB_URL.'includes/assets/star.png),
+                        background: url('._SI_IMDB_URL_.'includes/assets/star.png),
                         url('.$output->poster.')no-repeat center center; 
                         background-size: cover; 
                         -webkit-background-size: cover;
                         -moz-background-size: cover;
                         -o-background-size: cover;
                         background-size: cover;">                            
-                            <span id="imdb_rating">'.$rating.'</span>
+                            <span id="imdb_rating">'.esc_html($rating).'</span>
                         </div>
                         </a>
                         </div>    
                         <div class="imdb_right">
-                        <span id="movie_title"><a href="http://www.imdb.com/title/'.$content.'" target="_blank">'.$output->title.'<small>'.$year.'</small></a></span>
+                        <span id="movie_title"><a href="http://www.imdb.com/title/'.esc_html($content).'" target="_blank">'.esc_html($output->title).'<small>'.esc_html($year).'</small></a></span>
                         <span id="genres">'.$output->genres.'</span>                               
                         <div class="imdb_general">'.$dr.$wr.$sr.'</div>                            
                         <span id="summary"><b>Summary: </b>'.$output->sum.'</span>     

@@ -1,10 +1,10 @@
 <?php
 // Admin CSS style path
-function si_imdb_admin_styles(){
+function shimdb_imdb_admin_styles(){
 
     wp_enqueue_style(
         'imdb-admin-css',
-        IMDB_URL.'includes/css/admin-style.css',
+        _SI_IMDB_URL_.'includes/css/admin-style.css',
         array(),
         time()
     );
@@ -12,11 +12,11 @@ function si_imdb_admin_styles(){
 
 
 // Frontend CSS style path
-function si_imdb_frontend_styles(){
+function shimdb_imdb_frontend_styles(){
 
     wp_enqueue_style(
         'mp-frontend-css',
-        IMDB_URL.'includes/css/style.css',
+        _SI_IMDB_URL_.'includes/css/style.css',
         time()
     );
 }

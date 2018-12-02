@@ -1,5 +1,5 @@
 <?php
-class si_imdb_grab{
+class shimdb_imdb_grab{
 
 
     //FETCHING WITH DOM
@@ -89,7 +89,7 @@ class si_imdb_grab{
 
         /* Poster */
         @$poster = $xpath->query('//div[@class="poster"]/a/img/@src');
-        $data['poster'] = isset($poster->item(0)->nodeValue) ? $poster->item(0)->nodeValue : IMDB_URL."includes/assets/noposter.png";
+        $data['poster'] = isset($poster->item(0)->nodeValue) ? $poster->item(0)->nodeValue : _SI_IMDB_URL_."includes/assets/noposter.png";
 
         /* Summary */
         @$sum = $xpath->query('//div[@class="summary_text"]');
@@ -211,7 +211,7 @@ class si_imdb_grab{
 
         // NAME PHOTO
         @$photo = $xpath->query('//img[@id="name-poster"]/@src');
-        $data["photo"] = isset($photo->item(0)->nodeValue) ? $photo->item(0)->nodeValue : IMDB_URL."includes/assets/nopohoto.png";
+        $data["photo"] = isset($photo->item(0)->nodeValue) ? $photo->item(0)->nodeValue : _SI_IMDB_URL_."includes/assets/nopohoto.png";
 
         // KNOWN FOR
         @$posters = $xpath->query('//img[@data-baseref="nm_knf_i"]');
@@ -237,7 +237,7 @@ class si_imdb_grab{
 
     function grab_imdb($id,$type){
         global $wpdb;
-        $result = $wpdb->get_results('SELECT * FROM ' . $wpdb->prefix . 'imdb_cache WHERE imdb_id="'.$id.'"');
+        $result = $wpdb->get_results('SELECT * FROM ' . $wpdb->prefix . 'shortcode_imdb_cache WHERE imdb_id="'.$id.'"');
         if(count($result)>0){
             foreach ($result as $r){
                 $output = json_decode($r->cache);
@@ -251,7 +251,7 @@ class si_imdb_grab{
                 $title = $values->title;
             }
             $wpdb->insert(
-                $wpdb->prefix.'imdb_cache',
+                $wpdb->prefix.'shortcode_imdb_cache',
                 array(
                     'imdb_id'    => $id,
                     'type'   => $type,
