@@ -1,6 +1,6 @@
 <?php
 
-function si_imdb_settings_page(){
+function shimdb_imdb_settings_page(){
     $path_for_icon = __FILE__;
 
     //Main Menu

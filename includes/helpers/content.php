@@ -4,7 +4,7 @@ function shimdb_imdb_cache_layout(){
     $Cache = new SHIMDB_IMDB_Cache_List_Table();
     if(isset($_POST['bulk-delete'])){
         foreach ($_POST['bulk-delete'] as $id){
-            $Cache->delete_customer($id);
+            $Cache->delete_customer(esc_sql($id));
         }
     }
     $Cache->prepare_items();
@@ -101,11 +101,11 @@ function shimdb_imdb_side_menu(){
     ?>
 
     <div style="background: #000;width:%100;">
-        <img src='<?php echo _SI_IMDB_URL_."includes/assets/imdblogo.png"?>' style=" left:5px; top:2px; position: relative"/>
+        <img src='<?php echo esc_url(SHIMDB_URL."includes/assets/imdblogo.png")?>' style=" left:5px; top:2px; position: relative"/>
     </div>
     <p>Publish imdb.com data in your articles.</p>
 
-    <p><a href="http://demo.pluginpress.net/shortcode-imdb/2018/11/29/shortcode-imdb/" target="_blank">IMDB Shortcode V. 1.0.0</a>. </p>
+    <p><a href="http://demo.pluginpress.net/shortcode-imdb/2018/11/29/shortcode-imdb/" target="_blank">Shortcode IMDB V. 1.0.0</a>. </p>
     <h3>Resources</h3>
     <ul>
         <li><a href="http://pluginpress.net" target="_blank"><i aria-hidden="true" class="dashicons dashicons-external"></i> Website</a></li>

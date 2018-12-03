@@ -25,7 +25,7 @@ class shimdb_imdb_get_skin{
                         <div class="imdb_left">    
                         <a href="http://www.imdb.com/title/'.$content.'" target="_blank">
                         <div class="poster_parent" style="
-                        background: url('._SI_IMDB_URL_.'includes/assets/star.png),
+                        background: url('.SHIMDB_URL.'includes/assets/star.png),
                         url('.$output->poster.')no-repeat center center; 
                         background-size: cover; 
                         -webkit-background-size: cover;
@@ -62,7 +62,7 @@ class shimdb_imdb_get_skin{
             }
             $known = '<b>Known For</b><br/><span class="known_for">'.implode("", $knownfor).'</span>';
         }
-        $death = $output->death != "" ? '<div class="imdb_general"><b>Died: </b>'.$output->death.'</div>' : "";
+        $death = $output->death != "---" ? '<div class="imdb_general"><b>Died: </b>'.$output->death.'</div>' : "";
 
         $html = '
                  <div style="all: unset; overflow:hidden;"><div class="'.$div_style.'">

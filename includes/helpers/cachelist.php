@@ -30,7 +30,7 @@ class SHIMDB_IMDB_Cache_List_Table extends WP_List_Table {
                 $data[$k]['type'] = $r->type;
             }
         }else{
-            $sql = "SELECT * FROM ".$wpdb->prefix."shortcode_imdb_cache WHERE imdb_id='".$search_term."' OR title LIKE '%".$search_term."%'";
+            $sql = "SELECT * FROM ".$wpdb->prefix."shortcode_imdb_cache WHERE imdb_id='".esc_sql($search_term)."' OR title LIKE '%".esc_sql($search_term)."%'";
             $result = $wpdb->get_results($sql);
             $data = array();
             foreach ($result as $k => $r) {

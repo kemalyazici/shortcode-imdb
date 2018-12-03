@@ -2,7 +2,7 @@
 
 
 //CREATING TABLE
-function prefix_create_table() {
+function shimdb_imdb_create_table() {
     global $wpdb;
 
     $charset_collate = $wpdb->get_charset_collate();

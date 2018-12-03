@@ -17,11 +17,10 @@ if ( ! defined( 'WPINC' ) ) {
 
 
 // PLUGIN DEFINES
-define('_SI_IMDB_URL_',plugin_dir_url(__FILE__));
-define('_SI_IMDB_FILE_', __FILE__);
+define('SHIMDB_URL',plugin_dir_url(__FILE__));
+define('SHIMDB_FILE', __FILE__);
 
-// Add Option of db version
-add_option( 'prefix_my_plugin_db_version', '1.0' );
+
 
 /************** INCLUDES ******************/
 //HOOKS
