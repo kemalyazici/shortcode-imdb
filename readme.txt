@@ -12,7 +12,7 @@ Shortcode IMDB is a simple but powerful plugin for Wordpress that can grab data 
 
 == Description ==
 
-Creating an article without giving more information movies or actors/actresses might show the content simplistic. Therefore shortcode-imdb plugin is created to solve this problem and make richer the articles. Implementing the plugin is very simple. Copy the title or name code from the imdb url and paste between the shortcode tags. No need more effort to carry out. The plugin grabs the data from imdb.com and shows proper way in the article. Further information, visit our [demo website.](http://demo.pluginpress.net/shortcode-imdb/2018/11/29/shortcode-imdb/)
+Creating an article without giving more information about movies or actors/actresses might show the content simplistic. Therefore shortcode-imdb plugin is created to solve this problem and make richer the articles. Implementing the plugin is very simple. Copy the title or name code from the imdb url and paste between the shortcode tags. No need more effort to carry out. The plugin grabs the data from imdb.com and shows proper way in the article. Further information, visit our [demo website.](http://demo.pluginpress.net/shortcode-imdb/2018/11/29/shortcode-imdb/)
 
 == Screenshots ==
 
