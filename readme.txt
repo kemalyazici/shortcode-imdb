@@ -16,11 +16,11 @@ Creating an article without giving more information about movies or actors/actre
 
 == Screenshots ==
 
-1. Default title style
+1. Default name style
 2. Name white style
 3. Name gray style
 4. Name transparent style
-5. Default name style
+5. Default title style
 6. Title white style
 7. Title gray style
 8. Title transparent style
