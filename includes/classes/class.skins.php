@@ -5,7 +5,7 @@ class shimdb_imdb_get_skin{
     function standard_title($args,$output,$content){
 
         /* Style Settings */
-        $main_styles = array('imdb_dark', 'imdb_white', 'imdb_transparent', 'imdb_gray');
+        $main_styles = array('imdb_dark', 'imdb_white', 'imdb_transparent', 'imdb_gray', 'imdb_coffee', 'imdb_black', 'imdb_navy', 'imdb_wood');
         $div_style = 'imdb_dark';
         if(isset($args['style'])){
             $div_style = in_array($args['style'],$main_styles) ? $args['style'] : $div_style;
@@ -49,7 +49,7 @@ class shimdb_imdb_get_skin{
     }
 
     function standard_name($args,$output,$content){
-        $main_styles = array('imdb_dark', 'imdb_white', 'imdb_transparent', 'imdb_gray');
+        $main_styles = array('imdb_dark', 'imdb_white', 'imdb_transparent', 'imdb_gray', 'imdb_coffee', 'imdb_black', 'imdb_navy', 'imdb_wood');
         $div_style = 'imdb_dark';
         if(isset($args['style'])){
             $div_style = in_array($args['style'],$main_styles) ? $args['style'] : $div_style;

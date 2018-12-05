@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: movie, movie database, film, shortcode, actor, actress, imdb
 Requires at least: 4.7
 Tested up to: 4.9.8
-Stable tag: 1.0.0
+Stable tag: 1.1
 License: GPL-2.0+
 Requires PHP: 5.2
 
@@ -16,11 +16,19 @@ Creating an article without giving more information about movies or actors/actre
 
 == Screenshots ==
 
-1. Add a name (default)
-2. white style
-3. gray style
-4. transparent style
-5. Add a title (default)
-6. white style
-7. gray style
-8. transparent style
+1. Default title style
+2. Name white style
+3. Name gray style
+4. Name transparent style
+5. Default name style
+6. Title white style
+7. Title gray style
+8. Title transparent style
+
+== Changelog ==
+
+= 1.1 - 2018-12-05 =
+* Added: imdb_coffee style.
+* Added: imdb_black style.
+* Added: imdb_navy style.
+* Added: imdb_wood style.

@@ -49,11 +49,55 @@ span{
 
 }
 
+.imdb_coffee{
+
+    background: #4f2401;
+    color: #fbd486;
+    text-decoration: none;
+    border: solid 2px #fbd486;
+    line-height: normal;
+
+}
+
+.imdb_black{
+
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    border: solid 2px #b2b2b2;
+    line-height: normal;
+
+}
+
+.imdb_navy{
+
+    background: #252c38;
+    color: #fff;
+    text-decoration: none;
+    border: solid 2px #000;
+    line-height: normal;
+
+}
+
+.imdb_wood{
+
+    background: #344b2d;
+    color: #f3e4c7;
+    text-decoration: none;
+    border: solid 2px #2d1d02;
+    line-height: normal;
+
+}
+
 
 
 .imdb_dark,
+.imdb_black,
 .imdb_transparent,
 .imdb_gray,
+.imdb_wood,
+.imdb_navy,
+.imdb_coffee,
 .imdb_white{
     text-decoration: none !important;
     -webkit-box-shadow: none !important;
@@ -74,7 +118,11 @@ span{
 }
 
 .imdb_dark,
+.imdb_black,
+.imdb_navy,
+.imdb_coffee,
 .imdb_white,
+.imdb_wood,
 .imdb_gray{
     background-image: url("../assets/imdb-bg.png");
     background-position: right bottom;
@@ -105,6 +153,14 @@ div.poster_parent{
     border: solid 2px #f5c518;
 }
 
+.imdb_navy > div.imdb_left > a > div.poster_parent{
+    border: solid 2px #000;
+}
+
+.imdb_wood > div.imdb_left > a > div.poster_parent{
+    border: solid 2px #2d1d02;
+}
+
 .imdb_white > div.imdb_left > a > div.poster_parent{
     border: solid 2px #cccccc;
 }
@@ -112,6 +168,13 @@ div.poster_parent{
     border: solid 2px #cccccc;
 }
 
+.imdb_coffee > div.imdb_left > a > div.poster_parent{
+    border: solid 2px #fbd486;
+}
+
+.imdb_black > div.imdb_left > a > div.poster_parent{
+    border: solid 2px #b2b2b2;
+}
 
 .imdb_dark  b{
     color:#9d9fa2;
@@ -120,16 +183,29 @@ div.poster_parent{
 .imdb_gray div.imdb_right > div.imdb_general a{
     color:#136cb2;
 }
-.imdb_gray div.imdb_right > div.imdb_general a:hover{
-    text-decoration: underline;
-}
+
 
 .imdb_dark div.imdb_right > div.imdb_general a{
     color:#f5c518;
 }
-.imdb_dark div.imdb_right > div.imdb_general a:hover{
-    text-decoration: underline;
+
+.imdb_navy div.imdb_right > div.imdb_general a{
+    color:#f5c518;
 }
+
+.imdb_wood div.imdb_right > div.imdb_general a{
+    color:#faa004;
+}
+
+.imdb_coffee div.imdb_right > div.imdb_general a{
+    color:#cca14a;
+}
+
+
+.imdb_black div.imdb_right > div.imdb_general a{
+    color:#b2b2b2;
+}
+
 
 div.right{
     text-decoration: none;
@@ -233,6 +309,22 @@ div.imdb_right > span#summary{
 
 .imdb_dark > div.imdb_right > span#movie_title a{
     color: #f5c518;
+}
+
+.imdb_coffee > div.imdb_right > span#movie_title a{
+    color: #cca14a;
+}
+
+.imdb_black > div.imdb_right > span#movie_title a{
+    color: #b2b2b2;
+}
+
+.imdb_navy > div.imdb_right > span#movie_title a{
+    color: #f5c518;
+}
+
+.imdb_wood > div.imdb_right > span#movie_title a{
+    color: #faa004;
 }
 
 .imdb_gray > div.imdb_right > span#movie_title a{
