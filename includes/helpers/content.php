@@ -39,6 +39,10 @@ function shimdb_imdb_general_info()
                     <code><b>[imdb_name style="imdb_white"]nm0000489[/imdb_name]</b></code><br/><br/>
                     <code><b>[imdb_name style="imdb_gray"]nm0000489[/imdb_name]</b></code><br/><br/>
                     <code><b>[imdb_name style="imdb_transparent"]nm0000489[/imdb_name]</b></code><br/><br/>
+                    <code><b>[imdb_name style="imdb_navy"]nm0000489[/imdb_name]</b></code><br/><br/>
+                    <code><b>[imdb_name style="imdb_black"]nm0000489[/imdb_name]</b></code><br/><br/>
+                    <code><b>[imdb_name style="imdb_wood"]nm0000489[/imdb_name]</b></code><br/><br/>
+                    <code><b>[imdb_name style="imdb_coffee"]nm0000489[/imdb_name]</b></code><br/><br/>
                 <h3>Title example:</h3>
                 Title can be used in a very similar way......<br/><br/>
                     https://www.imdb.com/title/{tt0120737}/<br/><br/>
@@ -47,6 +51,10 @@ function shimdb_imdb_general_info()
             <code><b>[imdb_title style="imdb_white"]tt0120737[/imdb_title]</b></code><br/><br/>
             <code><b>[imdb_title style="imdb_gray"]tt0120737[/imdb_title]</b></code><br/><br/>
             <code><b>[imdb_title style="imdb_transparent"]tt0120737[/imdb_title]</b></code><br/>
+               <code><b>[imdb_title style="imdb_navy"]tt0120737[/imdb_title]</b></code><br/>
+                <code><b>[imdb_title style="imdb_black"]tt0120737[/imdb_title]</b></code><br/>
+                <code><b>[imdb_title style="imdb_wood"]tt0120737[/imdb_title]</b></code><br/>
+                <code><b>[imdb_title style="imdb_coffee"]tt0120737[/imdb_title]</b></code><br/>
 
                 <br/><b>To demonstration, you can visit our demo website from <a href="http://demo.pluginpress.net/shortcode-imdb/2018/11/29/shortcode-imdb/" target="_blank">here</a>.</b>
 
