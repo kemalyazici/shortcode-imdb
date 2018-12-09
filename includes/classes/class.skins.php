@@ -310,7 +310,7 @@ class shimdb_imdb_get_skin{
             $img .= '</div><a href="https://www.imdb.com/name/'.$content.'/mediaindex" style="margin-left: 10px" target="_blank">See all photos >></a><hr/>';
         }
 
-        $html = '<div style="all:unset; all:initial;">
+        $html = '
                 <div class="imdb_default_name">
                 <div class="top">
                     <div class="photo"><a href="https://www.imdb.com/name/'.$content.'" target="_blank"><img src="'.$output->photo.'"/></a></div>
@@ -334,11 +334,11 @@ class shimdb_imdb_get_skin{
                 <div class="spacer" style="clear: both;"></div>                 
                 '.$img.'
                 <div class="spacer" style="clear: both;"></div>
-                <div class="footer"><span class="copyright">Source: <a href="https://www.imdb.com" target="_blank" style="color: #f5c518 !important;">imdb.com</a></span>
-                <div class="spacer" style="clear: both;"></div>
+                <div class="footer"><span class="copyright">Source: <a href="https://www.imdb.com" target="_blank" style="color: #f5c518 !important;">imdb.com</a></span></div>
+                
                 </div>
-                </div>
-                </div>
+                
+                
         
         ';
 

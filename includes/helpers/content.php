@@ -172,6 +172,13 @@ function shimdb_imdb_side_changelog(){
 
     <h3>Changelog</h3>
 
+    <b>2.0.1 - 2018-12-09</b>
+    <ul>
+        <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Fixed: Some small css problems fixed.</li>
+
+
+    </ul>
+
     <b>2.0 - 2018-12-09</b>
     <ul>
         <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Updated: Default style has changed. You can still reach old default style with 'style="imdb_dark"'.</li>

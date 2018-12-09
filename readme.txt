@@ -33,6 +33,9 @@ Creating an article without giving more information about movies or actors/actre
 
 == Changelog ==
 
+= 2.0.1 - 2018-12-09 =
+* Fixed: Some small css problems fixed.
+
 = 2.0 - 2018-12-09 =
 * Updated: Default style has changed. You can still reach old default style with 'style="imdb_dark"'.
 * Added: New default style can be shown in detailed version. You should add the tag 'data="detailed"'.
