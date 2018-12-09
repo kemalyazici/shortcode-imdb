@@ -3,11 +3,15 @@ div.imdb_left{
     width:80%;
 }
 div.imdb_right{
-    float: left;
+    float: right;
+    width:20%;
+}
+
+div.right_item{
     padding: 20px;
     margin-left: 30px;
     margin-top: 50px;
+    margin-bottom: 10px;
     background: #fff;
-    width:15%;
 }
 

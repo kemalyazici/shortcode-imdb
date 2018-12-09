@@ -87,10 +87,12 @@ function shimdb_imdb_general_info()
             </div>
         </div>
         <div class="imdb_right">
-            <?php shimdb_imdb_side_menu()?>
-        </div>
-        <div class="imdb_right">
-            <?php shimdb_imdb_side_changelog()?>
+            <div class="right_item">
+                <?php shimdb_imdb_side_menu()?>
+            </div>
+            <div class="right_item">
+                <?php shimdb_imdb_side_changelog()?>
+            </div>
         </div>
     </div>
     <?php
@@ -118,10 +120,12 @@ function shimdb_imdb_cache_info(){
 
         </div>
         <div class="imdb_right">
+        <div class="right_item">
             <?php shimdb_imdb_side_menu()?>
         </div>
-        <div class="imdb_right">
+        <div class="right_item">
             <?php shimdb_imdb_side_changelog()?>
+        </div>
         </div>
     </div>
 
