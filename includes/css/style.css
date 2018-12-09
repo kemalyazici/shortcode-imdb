@@ -5,6 +5,8 @@ a{
     box-shadow: none!important;
     line-height: normal !important;
     -webkit-line-break: normal !important;
+    border-bottom: 0 !important;
+    z-index: 100;
 
 }
 
@@ -16,6 +18,7 @@ span{
     line-height: normal !important;
     -webkit-line-break: normal !important;
 }
+
 
 .imdb_dark{
 
@@ -116,6 +119,18 @@ span{
 
 
 }
+
+.imdb_dark,
+.imdb_black,
+.imdb_transparent,
+.imdb_gray,
+.imdb_wood,
+.imdb_navy,
+.imdb_coffee,
+.imdb_white .copyright{
+    font-size:10px;
+}
+
 
 .imdb_dark,
 .imdb_black,
@@ -331,6 +346,468 @@ div.imdb_right > span#summary{
     color: #136cb2;
 }
 
+.imdb_dark > div.imdb_right > span#movie_title a{
+    color: #f5c518;
+}
+
+.imdb_coffee  .copyright a{
+    color: #cca14a;
+}
+
+.imdb_black  .copyright a{
+    color: #b2b2b2;
+}
+
+.imdb_navy  .copyright a{
+    color: #f5c518;
+}
+
+.imdb_wood  .copyright a{
+    color: #faa004;
+}
+
+.imdb_gray  .copyright a{
+    color: #136cb2;
+}
+
+.imdb_dark  .copyright a{
+    color: #f5c518;
+}
+
+/*********************** DEFAULT TITLE ******************************/
+.imdb_default_title{
+    text-decoration: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    font-family: Verdana, Arial, Helvetica, sans-serif !important;
+    font-size: 13px;
+    color: #595858;
+    line-height: normal !important;
+    -webkit-line-break: normal !important;
+    position: relative !important;
+    border-radius: 10px;
+    border: 1px solid #b1adad;
+    overflow:hidden !important;
+    background-color: #f8f8f8;
+    max-width: 670px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.imdb_default_title h3{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    line-height: normal !important;
+    -webkit-line-break: normal !important;
+    text-decoration: none !important;
+    -webkit-box-shadow: none !important;
+    color: #595858 !important;
+    font-size: 18px !important;
+    margin-bottom: 10px !important;
+    margin-top: 10px !important;
+    display: block;
+    padding-left: 15px;
+    font-weight: bold;
+}
+
+.imdb_default_title b{
+    font-weight: bold;
+}
+
+.imdb_default_title hr{
+    margin-top:15px !important;
+    margin-bottom:5px !important;
+    border-top: 1px solid #b1adad !important;
+
+}
+
+.imdb_default_title > .footer{
+    width: 100%;
+    padding: 20px;
+    position: relative;
+    background-color: #191919;
+    background-image: url("../assets/imdb-bg2.png");
+    background-position: right bottom;
+    background-repeat: no-repeat;
+
+}
+.imdb_default_title a{
+    font-family: Verdana, Arial, Helvetica, sans-serif !important;
+    color:#136cb2 !important;
+    text-decoration: none!important;
+
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+    line-height: normal !important;
+    -webkit-line-break: normal !important;
+    overflow: hidden;
+}
+
+
+.imdb_default_title > .title{
+    display: flex;
+    width: 100%;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+    padding-right: 16px !important;
+    padding-left: 16px !important;
+    background: #333333;
+
+    color: #fff;
+}
+
+.imdb_default_title .middle{
+    font-family: Verdana, Arial, Helvetica, sans-serif !important;
+}
+
+.imdb_default_title > .title > .left{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #fff;
+    float: left;
+    width: 85%;
+    overflow: hidden;
+}
+.imdb_default_title > .title > .left > a{
+    color: #fff !important;
+    text-decoration: none!important;
+
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+    line-height: normal !important;
+    -webkit-line-break: normal !important;
+
+}
+
+.imdb_default_title > .title > .left > small{
+    font-size:15px;
+}
+
+.imdb_default_title .gallery{
+    display: flex;
+    top:10px;
+    position: relative;
+}
+.imdb_default_title .gallery > a > img {
+    max-height: 90px;
+    margin-right: 5px;
+}
+
+.imdb_default_title > .title > .left > small#genres{
+    font-size:10px;
+    padding-top: 5px; ;
+    display:block;
+}
+.imdb_default_title > .title > .right{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 27px;
+    float: right;
+    margin-left: 10px;
+    position: relative; !important;
+    width: 15%;
+    color: #fff;
+}
+.imdb_default_title > .title > .right > #rating{
+    top:4px;
+    position: relative;
+}
+
+
+.imdb_default_title> .middle > .poster > a {
+    float: left;
+    margin-right: 10px;
+    position: relative;
+    z-index: 10;
+}
+
+.imdb_default_title> .middle > .content > .crew{
+    display: block;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+.imdb_default_title .extra{
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    position: relative;
+}
+
+
+.imdb_default_title> .middle > .content{
+    padding-top: 10px !important;
+    padding-bottom: 13px !important;
+    padding-right: 16px !important;
+    padding-left: 16px !important;
+    position: relative !important;
+
+}
+
+.imdb_default_title> .images{
+
+
+    display: flex;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+
+}
+
+.imdb_default_title> .cast{
+
+
+    display: flex;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    position: relative;
+
+}
+
+.imdb_default_title .copyright{
+    -webkit-line-break: normal !important;
+    font-weight: bold;
+    text-decoration: none!important;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+    position: relative;
+    line-height: normal !important;
+    overflow: hidden;
+    margin-top: auto;
+    margin-bottom: auto;
+    color:#fff;
+}
+
+.imdb_default_title> .cast > .profile{
+
+    margin-right: 20px;
+    width: 5%;
+}
+
+.imdb_default_title> .cast > .name{
+    top:10px;
+    position: relative;
+    margin-right: 20px;
+    width: 45%;
+}
+.imdb_default_title> .cast > .seperate{
+    top:10px;
+    position: relative;
+    margin-right: 20px;
+    width: 5%;
+}
+.imdb_default_title> .cast > .char{
+    top:10px;
+    position: relative;
+    width: 45%;
+}
+
+.imdb_default_title> .images > div{
+    width: auto;
+
+}
+
+.imdb_default_title> .images > div > a img{
+    margin-right: 5px;
+    max-width:100%;
+    max-height:100%;
+    flex-shrink: 0;
+}
+
+
+.imdb_default_title .video{
+    max-height:268px;
+    max-width:100%;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-color: #000000;
+    display:flex;
+}
+
+/*********************** DEFAULT NAME ******************************/
+.imdb_default_name{
+    text-decoration: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    font-family: Verdana, Arial, Helvetica, sans-serif !important;
+    font-size: 13px;
+    color: #595858;
+    max-width: 670px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: normal !important;
+    -webkit-line-break: normal !important;
+    position: relative !important;
+    border-radius: 10px;
+    border: 1px solid #b1adad;
+    overflow:hidden !important;
+    background-color: #f8f8f8;
+}
+
+.imdb_default_name b{
+    font-weight: bold;
+}
+.imdb_default_name h3{
+    font-family: Verdana, Arial, Helvetica, sans-serif !important;
+    color: #595858 !important;
+    line-height: normal !important;
+    -webkit-line-break: normal !important;
+    text-decoration: none !important;
+    -webkit-box-shadow: none !important;
+    font-size: 18px !important;
+    text-align: left;
+    margin-left: 16px;
+    margin-bottom: 10px !important;
+    margin-top: 10px !important;
+    display: block;
+}
+
+.imdb_default_name .filmography{
+
+    padding:5px;
+    border-bottom: 1px solid #b1adad !important;
+}
+
+.imdb_default_name .filmography .job_title{
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+
+.imdb_default_name .filmography .list a{
+    font-size: 14px;
+    margin-left: 15px;
+}
+
+.imdb_default_name .filmography .list{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.imdb_default_name > .top{
+    background-color: #eeeeee;
+    border-bottom: 1px solid #b1adad !important;
+    display: block !important;
+}
+
+.imdb_default_name > .top > .photo{
+    float: left !important;
+    width: 30%;
+
+
+}
+
+.imdb_default_name > .top > .right{
+    float: right !important;
+    text-align: left;
+    width: 70%;
+}
+.imdb_default_name > .top > .right > .content{
+    padding: 5px;
+    margin-top:5px;
+    margin-right: 5px;
+    margin-left: 10px;
+
+
+}
+.imdb_default_name > .top > .right  .title{
+    font-size: 24px;
+    padding-top: 10px;
+    margin-left: 10px;
+}
+
+.imdb_default_name .header{
+    background: #333333;
+    color: #fff;
+    padding-bottom: 10px;
+}
+
+.imdb_default_name .header a{
+    color: #fff !important;
+}
+
+.imdb_default_name > .top > .right  .jobs{
+    font-size: 12px;
+    margin-top: 5px;
+    margin-left: 10px;
+    position: relative;
+    display: block;
+}
+.imdb_default_name > .known{
+    display: flex;
+    text-align: center;
+    padding: 5px;
+    position: relative;
+}
+
+
+.imdb_default_name > .known > a{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.imdb_default_name > .top > .right > .content > .info{
+    font-size: 13.4px;
+    margin-top: 10px;
+    position: relative;
+    display: block;
+}
+
+.imdb_default_name > .footer{
+    width: 100%;
+    padding: 20px;
+    bottom:0;
+    position: relative;
+    background-color: #191919;
+    background-image: url("../assets/imdb-bg2.png");
+    background-position: right bottom;
+    background-repeat: no-repeat;
+
+}
+
+.imdb_default_name .copyright{
+    -webkit-line-break: normal !important;
+    font-weight: bold;
+    text-decoration: none!important;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+    position: relative;
+    line-height: normal !important;
+    overflow: hidden;
+    margin-top: auto;
+    margin-bottom: auto;
+    color:#fff;
+}
+
+.imdb_default_name a{
+    font-family: Verdana, Arial, Helvetica, sans-serif !important;
+    color:#136cb2 !important;
+    text-decoration: none!important;
+
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+    line-height: normal !important;
+    -webkit-line-break: normal !important;
+    overflow: hidden;
+}
+
+.imdb_default_name hr{
+    margin-top:15px !important;
+    margin-bottom:5px !important;
+    border-top: 1px solid #b1adad !important;
+
+}
+
+
+
+/*********************** MOBILE SETTINGS ******************************/
+
+
 @media (max-width: 30em) {
 
     .imdb_transparent > div.imdb_right > span#movie_title,
@@ -340,6 +817,45 @@ div.imdb_right > span#summary{
         display:block;
 
     }
+
+    .imdb_default_title> .middle > .poster > a {
+        float: none !important;
+        position: relative;
+        z-index: 10;
+    }
+    .imdb_default_name .top .photo {
+        float: none !important;
+        display: block;
+        width: 100%;
+        text-align: center;
+        position: relative;
+        z-index: 10;
+    }
+
+
+
+    .imdb_default_name .header{
+        background-color: transparent;
+        color: #595858;
+
+    }
+    .imdb_default_name .header a{
+        color:#136cb2 !important;
+
+    }
+    .imdb_default_name .top .right{
+        float: none;
+        width: 100%;
+        text-align: center;
+
+    }
+    .imdb_default_name > .top > .photo{
+
+        clear: both;
+
+    }
+
+
 
 
 }
