@@ -37,7 +37,7 @@ class shimdb_imdb_get_skin{
                         </a>
                         </div>    
                         <div class="imdb_right">
-                        <span id="movie_title"><a href="http://www.imdb.com/title/'.esc_html($content).'" target="_blank">'.esc_html($output->title).'<small>'.esc_html($year).'</small></a></span>
+                        <span id="movie_title"><a href="http://www.imdb.com/title/'.esc_html($content).'" target="_blank">'.esc_html($output->title).'<small>'.$year.'</small></a></span>
                         <span id="genres">'.$output->genres.'</span>                               
                         <div class="imdb_general">'.$dr.$wr.$sr.'</div>                            
                         <span id="summary"><b>Summary: </b>'.$output->sum.'</span>     
@@ -112,7 +112,7 @@ class shimdb_imdb_get_skin{
                 </div>                 
                  '.$video_html.'       
                 <div class="content">
-                '.$dr.$wr.$sr.'<br/><b>Summary:</b> '.$output->fullsum.'        
+                '.$dr.$wr.$sr.'<b>Summary:</b> '.$output->fullsum.'        
                 
                 </div>
                 <div class="spacer" style="clear: both;"></div>  
@@ -313,10 +313,10 @@ class shimdb_imdb_get_skin{
         $html = '
                 <div class="imdb_default_name">
                 <div class="top">
-                    <div class="photo"><a href="https://www.imdb.com/name/'.$content.'" target="_blank"><img src="'.$output->photo.'"/></a></div>
+                    <div class="photo"><a href="http://www.imdb.com/name/'.$content.'/" target="_blank"><img src="'.$output->photo.'"/></a></div>
                     <div class="right">
                     <div class="header">
-                    <div class="title"><a href="https://www.imdb.com/name/'.$content.'" target="_blank">'.$output->name.'</a></div>
+                    <div class="title"><a href="http://www.imdb.com/name/'.$content.'/" target="_blank">'.$output->name.'</a></div>
                     <div class="jobs">'.$output->jobs.'</div>
                     </div>
                     <div class="content">
@@ -493,23 +493,23 @@ class shimdb_imdb_get_skin{
         $html = '
                 <div class="imdb_default_name">
                 <div class="top">
-                    <div class="photo"><a href="https://www.imdb.com/name/'.$content.'" target="_blank"><img src="'.$output->photo.'"/></a></div>
+                    <div class="photo">
+                          <a href="http://www.imdb.com/name/'.$content.'/" target="_blank"><img src="'.$output->photo.'"/></a>
+                    </div>
                     <div class="right">
-                    <div class="header">
-                    <div class="title"><a href="https://www.imdb.com/name/'.$content.'" target="_blank">'.$output->name.'</a></div>
-                    <div class="jobs">'.$output->jobs.'</div>
-                    </div>
-                    <div class="content">
+                        <div class="header">
+                            <div class="title"><a href="http://www.imdb.com/name/'.$content.'/" target="_blank">'.$output->name.'</a></div>
+                            <div class="jobs">'.$output->jobs.'</div>
+                        </div>
+                        <div class="content">
                                       
-                        <div class="info"><b>Biography: </b>'.$output->bio.' <a href="https://www.imdb.com/name/'.$content.'/bio" target="_blank">See full bio >></a></div>
-                        <div class="info"><b>Born: </b>'.$output->born.'</div>'.$death.'
+                                <div class="info"><b>Biography: </b>'.$output->bio.' <a href="https://www.imdb.com/name/'.$content.'/bio" target="_blank">See full bio >></a></div>
+                                <div class="info"><b>Born: </b>'.$output->born.'</div>'.$death.'
                         
-                        
+                         </div>
+                    </div>
                     
-                    </div>
-                    </div>
-                    <div class="spacer" style="clear: both;"></div>
-                     
+                     <div class="spacer" style="clear: both;"></div>
                 </div>  
                 <div class="spacer" style="clear: both;"></div>                 
                 '.$img.$known.$vids.'

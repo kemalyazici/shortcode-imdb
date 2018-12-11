@@ -10,6 +10,12 @@ a{
 
 }
 
+hr{
+    margin-top:15px !important;
+    margin-bottom:5px !important;
+    border-top: 1px solid #b1adad !important;
+}
+
 span{
     text-decoration: none!important;
 
@@ -389,9 +395,9 @@ div.imdb_right > span#summary{
     border: 1px solid #b1adad;
     overflow:hidden !important;
     background-color: #f8f8f8;
-    max-width: 670px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 670px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
 .imdb_default_title h3{
@@ -637,9 +643,9 @@ div.imdb_right > span#summary{
     font-family: Verdana, Arial, Helvetica, sans-serif !important;
     font-size: 13px;
     color: #595858;
-    max-width: 670px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 670px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
     line-height: normal !important;
     -webkit-line-break: normal !important;
     position: relative !important;
@@ -661,7 +667,7 @@ div.imdb_right > span#summary{
     -webkit-box-shadow: none !important;
     font-size: 18px !important;
     text-align: left;
-    margin-left: 16px;
+    margin-left: 16px !important;
     margin-bottom: 10px !important;
     margin-top: 10px !important;
     display: block;
@@ -693,12 +699,13 @@ div.imdb_right > span#summary{
 .imdb_default_name > .top{
     background-color: #eeeeee;
     border-bottom: 1px solid #b1adad !important;
-    display: block !important;
+    display: flex !important;
+
 }
 
 .imdb_default_name > .top > .photo{
     float: left !important;
-    width: 30%;
+    width: 214px !important;
 
 
 }
@@ -706,13 +713,16 @@ div.imdb_right > span#summary{
 .imdb_default_name > .top > .right{
     float: right !important;
     text-align: left;
-    width: 70%;
+    width: 70% !important;
+
 }
 .imdb_default_name > .top > .right > .content{
-    padding: 5px;
     margin-top:5px;
     margin-right: 5px;
-    margin-left: 10px;
+    margin-left: 5px;
+    padding: 5px !important;
+    position: relative !important;
+    overflow: hidden !important;
 
 
 }
@@ -720,6 +730,7 @@ div.imdb_right > span#summary{
     font-size: 24px;
     padding-top: 10px;
     margin-left: 10px;
+    overflow: hidden !important
 }
 
 .imdb_default_name .header{
@@ -822,6 +833,11 @@ div.imdb_right > span#summary{
         float: none !important;
         position: relative;
         z-index: 10;
+    }
+    .imdb_default_name .top {
+        float: none !important;
+        display: block !important;
+
     }
     .imdb_default_name .top .photo {
         float: none !important;
