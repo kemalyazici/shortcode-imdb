@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: movie, movie database, film, shortcode, actor, actress, imdb
 Requires at least: 4.7
 Tested up to: 5.0
-Stable tag: 2.2
+Stable tag: 2.3
 License: GPL-2.0+
 Requires PHP: 5.2
 
@@ -32,6 +32,10 @@ Creating an article without giving more information about movies or actors/actre
 12. imdb_transparent
 
 == Changelog ==
+
+= 2.3 - 2018-12-12 =
+* Updated: [imdb] shortcode can be used instead of imdb_title or imdb_name.
+* Updated: white,navy etc. styles can be used instead of imdb_white, imdb_navy etc.
 
 = 2.2 - 2018-12-10 =
 * Fixed: Some small css problems fixed.

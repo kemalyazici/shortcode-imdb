@@ -18,6 +18,15 @@ function shimdb_imdb_name_shortcode($args, $content=""){
     return $html;
 }
 
+function shimdb_imdb_general_shordcode($args, $content=""){
+    if(substr($content,0,2) == "nm"){
+        return shimdb_imdb_name_shortcode($args,$content);
+    }else{
+        return shimdb_imdb_title_shortcode($args,$content);
+    }
+
+}
+
 
 
 /********** REGISTER ALL SHORTCODES *******/
@@ -25,6 +34,7 @@ function shimdb_imdb_register_shortcodes() {
 
     add_shortcode('imdb_title', 'shimdb_imdb_title_shortcode');
     add_shortcode('imdb_name', 'shimdb_imdb_name_shortcode');
+    add_shortcode('imdb', 'shimdb_imdb_general_shordcode');
 
 
 }

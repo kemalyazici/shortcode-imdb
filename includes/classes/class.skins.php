@@ -2,13 +2,22 @@
 //FRONTEND SKINS
 class shimdb_imdb_get_skin{
 
+
+    function skin_converter($key){
+        if(substr($key,0,5) != "imdb_"){
+            $key = 'imdb_'.$key;
+        }
+        return $key;
+    }
+
     function standard_title($args,$output,$content){
 
         /* Style Settings */
         $main_styles = array('imdb_dark', 'imdb_white', 'imdb_transparent', 'imdb_gray', 'imdb_coffee', 'imdb_black', 'imdb_navy', 'imdb_wood');
         $div_style = 'imdb_default_title';
         if(isset($args['style'])){
-            $div_style = in_array($args['style'],$main_styles) ? $args['style'] : $div_style;
+            $check_style= $this->skin_converter($args['style']);
+            $div_style = in_array($check_style,$main_styles) ? $check_style : $div_style;
         }
         /* output html */
         $dr = $output->directors != "" ? '<span id="imdb_general"><b>Director:</b> '.$output->directors."</span>" : "";
@@ -245,7 +254,8 @@ class shimdb_imdb_get_skin{
         $main_styles = array('imdb_dark', 'imdb_white', 'imdb_transparent', 'imdb_gray', 'imdb_coffee', 'imdb_black', 'imdb_navy', 'imdb_wood');
         $div_style = 'imdb_default_name';
         if(isset($args['style'])){
-            $div_style = in_array($args['style'],$main_styles) ? $args['style'] : $div_style;
+            $check_style= $this->skin_converter($args['style']);
+            $div_style = in_array($check_style,$main_styles) ? $check_style : $div_style;
         }
         $known = "";
         if($output->known != ""){
