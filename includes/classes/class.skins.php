@@ -81,6 +81,10 @@ class shimdb_imdb_get_skin{
             $year = "";
         }
 
+        if(count(explode('pisode', $year))>1){
+            $year = "";
+        }
+
         $rating ="";
         if($output->rating != "?.?"){
             $rating = '<img src="'.SHIMDB_URL."includes/assets/onlystar.png".'"/> <span id="rating">'.$output->rating.'</span>';
@@ -154,7 +158,9 @@ class shimdb_imdb_get_skin{
         if(@count($check_year)>1){
             $year = "";
         }
-
+        if(count(explode('pisode', $year))>1){
+            $year = "";
+        }
         /* Video Add */
         $video_html = "";
         if($output->trailer != ""){
