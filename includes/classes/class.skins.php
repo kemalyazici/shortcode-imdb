@@ -23,11 +23,17 @@ class shimdb_imdb_get_skin{
         $dr = $output->directors != "" ? '<span id="imdb_general"><b>Director:</b> '.$output->directors."</span>" : "";
         $wr = $output->writers != "" ? '<span id="imdb_general"><b>Writers:</b> '.$output->writers."</span>" : "";
         $sr = $output->stars != "" ? '<span id="imdb_general"><b>Stars:</b> '.$output->stars."</span>" : "";
-        $runtime = $output->runtime != "" ? '<span id="imdb_general"><b>Runtime:</b> '.$output->runtime."</span>" : "";
+        $runtime = $output->runtime != "" ? $output->runtime." | " : "";
         $runtime2 = $output->runtime2 != "" ? '<span id="imdb_general"><b>Runtime:</b> '.$output->runtime2."</span>" : "";
         $country = $output->country != "" ? '<span id="imdb_general"><b>Countries:</b> '.$output->country."</span>" : "";
         $lang = $output->lang != "" ? '<span id="imdb_general"><b>Languages:</b> '.$output->lang."</span>" : "";
         $year = $output->year!="" ? ' ('.$output->year.')' : "";
+        $year2 = "";
+        if(count(explode('pisode', $year))>1){
+            $year = "";
+            $year2 = str_replace("Episode aired","",$output->year);
+            $year2 = " | ".trim($year2);
+        }
         if (strpos($year, 'TV') !== false) $year = " | <small>".$output->year."</small>";
         $rating = strlen($output->rating) == 1 ? $output->rating.".0" : $output->rating;
         $html = '<div style="all: unset"><div class="'.$div_style.'">                               
@@ -47,11 +53,11 @@ class shimdb_imdb_get_skin{
                         </div>    
                         <div class="imdb_right">
                         <span id="movie_title"><a href="http://www.imdb.com/title/'.esc_html($content).'" target="_blank">'.esc_html($output->title).'<small>'.$year.'</small></a></span>
-                        <span id="genres">'.$output->genres.'</span>                               
+                        <span id="genres">'.$runtime.$output->genres. $year2.'</span>                               
                         <div class="imdb_general">'.$dr.$wr.$sr.'</div>                            
                         <span id="summary"><b>Summary: </b>'.$output->sum.'</span>     
-                        <div class="imdb_general">'.$runtime2.$country.$lang.'</div>                          
-                        <div class="footer"><span class="copyright">Source: <a href="https://www.imdb.com" target="_blank">imdb.com</a></span></div>
+                        <div class="imdb_general">'.$country.$lang.'</div>                          
+                        <div class="footer"><span class="copyright">Source: <a href="https://www.imdb.com" target="_blank">imdb.com</a></span><span style="display: none">Disclaimer: This plugin has been coded to automatically quote data from imdb.com. Not available for any other purpose. All showing data have a link to imdb.com. The user is responsible for any other use or change codes.</span></div>
                         </div>
                  </div></div>';
 

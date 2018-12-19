@@ -143,7 +143,7 @@ function shimdb_imdb_side_menu(){
     </div>
     <p>Publish imdb.com data in your articles.</p>
 
-    <p><a href="http://demo.pluginpress.net/shortcode-imdb/2018/11/29/shortcode-imdb/" target="_blank">Shortcode IMDB V. 2.3</a>. </p>
+    <p><a href="http://demo.pluginpress.net/shortcode-imdb/2018/11/29/shortcode-imdb/" target="_blank">Shortcode IMDB V. 2.4</a>. </p>
     <h3>Resources</h3>
     <ul>
         <li><a href="http://pluginpress.net" target="_blank"><i aria-hidden="true" class="dashicons dashicons-external"></i> Website</a></li>
@@ -171,6 +171,9 @@ function shimdb_imdb_side_changelog(){
 
 
     <h3>Changelog</h3>
+
+    <b>2.4 - 2018-12-19</b>
+    <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Fixed: Title bug on TV episodes fixed.</li>
 
     <b>2.3 - 2018-12-12</b>
     <ul>

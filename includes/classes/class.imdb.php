@@ -40,13 +40,17 @@ class shimdb_imdb_grab{
     function title($id){
         $xpath = $this->title_dom($id);
 
+        /* Title Parent*/
+        $tparent = $xpath->query('//div[@class="titleParent"]/a');
+        $tpar = isset($tparent->item(0)->nodeValue) ? $tparent->item(0)->nodeValue.": "  : "";
+
         /* Title */
         @$title = $xpath->query('//h1');
         $data['title'] = "";
         if(isset($title->item(0)->nodeValue)){
 
             $tt = explode("(", $title->item(0)->nodeValue);
-            $data["title"] =esc_attr(trim($tt[0],chr(0xC2).chr(0xA0)));
+            $data["title"] =esc_attr(trim($tpar.$tt[0],chr(0xC2).chr(0xA0)));
         }
 
         /* Year */
@@ -428,6 +432,7 @@ class shimdb_imdb_grab{
 
     function grab_imdb($id,$type){
         global $wpdb;
+        $id = esc_sql($id);
         $result = $wpdb->get_results('SELECT * FROM ' . $wpdb->prefix . 'shortcode_imdb_cache WHERE imdb_id="'.$id.'"');
         if(count($result)>0){
             foreach ($result as $r){
@@ -444,7 +449,7 @@ class shimdb_imdb_grab{
             $wpdb->insert(
                 $wpdb->prefix.'shortcode_imdb_cache',
                 array(
-                    'imdb_id'    => esc_sql($id),
+                    'imdb_id'    => $id,
                     'type'   => $type,
                     'title' => $title,
                     'cache' => json_encode($values)
