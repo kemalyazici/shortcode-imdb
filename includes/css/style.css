@@ -504,17 +504,30 @@ div.imdb_right > span#summary{
     display:block;
 }
 .imdb_default_title > .title > .right{
-    font-family: Verdana, Arial, Helvetica, sans-serif;
-    font-size: 27px;
-    float: right;
-    margin-left: 10px;
-    position: relative; !important;
-    width: 15%;
-    color: #fff;
+    font-family: Verdana, Arial, Helvetica, sans-serif !important;
+    font-size: 25px !important;
+    float: right !important;
+    margin-left: 10px !important;
+    position: relative !important;
+    width: 15% !important;
+    color: #fff !important;
+    overflow: hidden !important;
+    margin-top: auto !important;
+    margin-bottom: auto !important;
 }
-.imdb_default_title > .title > .right > #rating{
-    top:4px;
-    position: relative;
+.imdb_default_title > .title > .right > img{
+    position: relative !important;
+    float: left !important;
+    margin-right: 5px !important;
+    
+}
+.imdb_default_title > .title > .right > #rating {
+    position: static !important;
+    text-align: left;
+    top: 50% !important;
+    -ms-transform: translateY(-50%) !important;
+    transform: translateY(-50%) !important;
+    overflow: hidden !important;
 }
 
 
