@@ -143,7 +143,7 @@ function shimdb_imdb_side_menu(){
     </div>
     <p>Publish imdb.com data in your articles.</p>
 
-    <p><a href="http://demo.pluginpress.net/shortcode-imdb/2018/11/29/shortcode-imdb/" target="_blank">Shortcode IMDB V. 2.4</a>. </p>
+    <p><a href="http://demo.pluginpress.net/shortcode-imdb/2018/11/29/shortcode-imdb/" target="_blank">Shortcode IMDB V. 2.5</a>. </p>
     <h3>Resources</h3>
     <ul>
         <li><a href="http://pluginpress.net" target="_blank"><i aria-hidden="true" class="dashicons dashicons-external"></i> Website</a></li>
@@ -172,6 +172,10 @@ function shimdb_imdb_side_changelog(){
 
     <h3>Changelog</h3>
 
+    <b>2.5 - 2018-12-22</b>
+    <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Fixed: Title bug on TV episodes fixed.</li>
+    <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Changed: Small changes made on old style.</li>
+
     <b>2.4 - 2018-12-19</b>
     <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Fixed: Title bug on TV episodes fixed.</li>
 
@@ -183,28 +187,6 @@ function shimdb_imdb_side_changelog(){
 
     </ul>
 
-    <b>2.2 - 2018-12-10</b>
-    <ul>
-        <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Fixed: Some small css problems fixed.</li>
-
-
-    </ul>
-
-    <b>2.0 - 2018-12-09</b>
-    <ul>
-        <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Updated: Default style has changed. You can still reach old default style with 'style="imdb_dark"'.</li>
-        <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Added: New default style can be shown in detailed version. You should add the tag 'data="detailed"'.</li>
-
-
-    </ul>
-    <b>1.1 - 2018-12-05</b>
-    <ul>
-        <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Added: imdb_coffee style.</li>
-        <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Added: imdb_black style.</li>
-        <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Added: imdb_navy style.</li>
-        <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Added: imdb_wood style.</li>
-
-    </ul>
 
 
     <?php

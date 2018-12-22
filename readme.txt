@@ -3,8 +3,8 @@ Contributors: kyazici
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PSMRT29N7K3CE
 Tags: movie, movie database, film, shortcode, actor, actress, imdb
 Requires at least: 4.7
-Tested up to: 5.0.1
-Stable tag: 2.4
+Tested up to: 5.0.2
+Stable tag: 2.5
 License: GPL-2.0+
 Requires PHP: 5.2
 
@@ -33,8 +33,12 @@ Creating an article without giving more information about movies or actors/actre
 
 == Changelog ==
 
+= 2.5 - 2018-12-22 =
+* Fixed: Some css issues fixed.
+* Changed: Small changes made on old style.
+
 = 2.4 - 2018-12-19 =
-*Fixed: Title bug on TV episodes fixed.
+* Fixed: Title bug on TV episodes fixed.
 
 = 2.3 - 2018-12-12 =
 * Updated: [imdb] shortcode can be used instead of imdb_title or imdb_name.
@@ -47,8 +51,4 @@ Creating an article without giving more information about movies or actors/actre
 * Updated: Default style has changed. You can still reach old default style with 'style="imdb_dark"'.
 * Added: New default style can be shown in detailed version. You should add the tag 'data="detailed"'.
 
-= 1.1 - 2018-12-05 =
-* Added: imdb_coffee style.
-* Added: imdb_black style.
-* Added: imdb_navy style.
-* Added: imdb_wood style.
+

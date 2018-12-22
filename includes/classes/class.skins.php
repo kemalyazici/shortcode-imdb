@@ -34,6 +34,7 @@ class shimdb_imdb_get_skin{
             $year2 = str_replace("Episode aired","",$output->year);
             $year2 = " | ".trim($year2);
         }
+        $release = $output->release!="" ? " | ".$output->release : "";
         if (strpos($year, 'TV') !== false) $year = " | <small>".$output->year."</small>";
         $rating = strlen($output->rating) == 1 ? $output->rating.".0" : $output->rating;
         $html = '<div style="all: unset"><div class="'.$div_style.'">                               
@@ -53,7 +54,7 @@ class shimdb_imdb_get_skin{
                         </div>    
                         <div class="imdb_right">
                         <span id="movie_title"><a href="http://www.imdb.com/title/'.esc_html($content).'" target="_blank">'.esc_html($output->title).'<small>'.$year.'</small></a></span>
-                        <span id="genres">'.$runtime.$output->genres. $year2.'</span>                               
+                        <span id="genres">'.$runtime.$output->genres. $year2.$release.'</span>                               
                         <div class="imdb_general">'.$dr.$wr.$sr.'</div>                            
                         <span id="summary"><b>Summary: </b>'.$output->sum.'</span>     
                         <div class="imdb_general">'.$country.$lang.'</div>                          
