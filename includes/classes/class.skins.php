@@ -34,7 +34,7 @@ class shimdb_imdb_get_skin{
             $year2 = str_replace("Episode aired","",$output->year);
             $year2 = " | ".trim($year2);
         }
-        $release = $output->release!="" AND count(explode("aired",$output->release) )>1? " | ".$output->release : "";
+        $release = $output->release!="" && count(explode("aired",$output->release))<2 ? " | ".$output->release : "";
         if (strpos($year, 'TV') !== false) $year = " | <small>".$output->year."</small>";
         $rating = strlen($output->rating) == 1 ? $output->rating.".0" : $output->rating;
         $html = '<div style="all: unset"><div class="'.$div_style.'">                               

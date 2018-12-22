@@ -172,15 +172,19 @@ function shimdb_imdb_side_changelog(){
 
     <h3>Changelog</h3>
 
-    <b>2.5 - 2018-12-22</b>
-    <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Fixed: Title bug on TV episodes fixed.</li>
-    <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Changed: Small changes made on old style.</li>
 
-    <b>2.4 - 2018-12-19</b>
-    <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Fixed: Title bug on TV episodes fixed.</li>
-
-    <b>2.3 - 2018-12-12</b>
     <ul>
+        <b>2.6 - 2018-12-22</b>
+        <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Fixed: Release date bug fixed.</li>
+
+        <b>2.5 - 2018-12-22</b>
+        <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Fixed: Title bug on TV episodes fixed.</li>
+        <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Changed: Small changes made on old style.</li>
+
+        <b>2.4 - 2018-12-19</b>
+        <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Fixed: Title bug on TV episodes fixed.</li>
+
+        <b>2.3 - 2018-12-12</b>
         <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Updated: [imdb] shortcode can be used instead of imdb_title or imdb_name.</li>
         <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Updated: white,navy etc. styles can be used instead of imdb_white, imdb_navy etc.</li>
 
