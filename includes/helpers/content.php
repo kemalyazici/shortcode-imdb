@@ -155,7 +155,7 @@ function shimdb_imdb_side_menu(){
     </div>
     <p>Publish imdb.com data in your articles.</p>
 
-    <p><a href="http://demo.pluginpress.net/shortcode-imdb/2018/11/29/shortcode-imdb/" target="_blank">Shortcode IMDB V. 3.2</a>. </p>
+    <p><a href="http://demo.pluginpress.net/shortcode-imdb/2018/11/29/shortcode-imdb/" target="_blank">Shortcode IMDB V. 3.3</a>. </p>
     <h3>Resources</h3>
     <ul>
         <li><a href="http://pluginpress.net" target="_blank"><i aria-hidden="true" class="dashicons dashicons-external"></i> Website</a></li>
@@ -186,7 +186,7 @@ function shimdb_imdb_side_changelog(){
 
 
     <ul>
-        <b>3.2 - 2018-12-27</b>
+        <b>3.3 - 2018-12-27</b>
         <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Fixed: Some css and db insert bugs has been cleaned.</li>
 
         <b>3.1 - 2018-12-27</b>

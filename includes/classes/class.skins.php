@@ -580,7 +580,7 @@ class shimdb_imdb_get_skin{
                                         <input type="text" name="imdb_title" value="<?php echo $title?>" style="width: 40%"/>
                                         <input type="hidden" name="imdb_id" value="<?php echo $id?>"/>
                                         <input type="hidden" name="imdb_type" value="<?php echo $type?>"/>
-                                        <textarea name="imdb_cache" style="display: none;"><?php echo $r->cache?>"/></textarea>
+                                        <input type="hidden" name="imdb_cache" value="<?php echo base64_encode(json_encode($cache))?>"/>
                                     </p>
                                 </div>
 
@@ -637,7 +637,7 @@ class shimdb_imdb_get_skin{
             $new_sum2 =sanitize_textarea_field($post['imdb_info2']);
             $type = sanitize_text_field($post['imdb_type']);
             $imdb_id = absint($post['imdb_id']);
-            $cache = json_decode($post['imdb_cache']);
+            $cache = json_decode(base64_decode($post['imdb_cache']));
 
             if($type=="title"){
                 $cache->sum = $new_sum;
