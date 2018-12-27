@@ -150,7 +150,7 @@ function shimdb_imdb_side_menu(){
     </div>
     <p>Publish imdb.com data in your articles.</p>
 
-    <p><a href="http://demo.pluginpress.net/shortcode-imdb/2018/11/29/shortcode-imdb/" target="_blank">Shortcode IMDB V. 3.0</a>. </p>
+    <p><a href="http://demo.pluginpress.net/shortcode-imdb/2018/11/29/shortcode-imdb/" target="_blank">Shortcode IMDB V. 3.1</a>. </p>
     <h3>Resources</h3>
     <ul>
         <li><a href="http://pluginpress.net" target="_blank"><i aria-hidden="true" class="dashicons dashicons-external"></i> Website</a></li>
@@ -181,6 +181,10 @@ function shimdb_imdb_side_changelog(){
 
 
     <ul>
+
+        <b>3.1 - 2018-12-27</b>
+        <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Fixed: Some HTML attributes problems while cache saving solved.</li>
+
         <b>3.0 - 2018-12-27</b>
         <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Added: Hereafter, some cache data can be edited from "Manage Cache" screen.</li>
 

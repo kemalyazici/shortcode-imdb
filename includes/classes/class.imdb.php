@@ -436,7 +436,7 @@ class shimdb_imdb_grab{
         $result = $wpdb->get_results('SELECT * FROM ' . $wpdb->prefix . 'shortcode_imdb_cache WHERE imdb_id="'.$id.'"');
         if(count($result)>0){
             foreach ($result as $r){
-                $output = json_decode($r->cache);
+                $output = json_decode(str_replace("//","/",$r->cache));
             }
         }else{
             if($type=="name"){

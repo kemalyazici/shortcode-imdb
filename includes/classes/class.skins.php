@@ -56,7 +56,7 @@ class shimdb_imdb_get_skin{
                         <span id="movie_title"><a href="http://www.imdb.com/title/'.esc_html($content).'" target="_blank">'.esc_html($output->title).'<small>'.$year.'</small></a></span>
                         <span id="genres">'.$runtime.$output->genres. $year2.$release.'</span>                               
                         <div class="imdb_general">'.$dr.$wr.$sr.'</div>                            
-                        <span id="summary"><b>Summary: </b>'.$output->sum.'</span>     
+                        <span id="summary"><b>Summary: </b>'.str_replace("\\&#039;","'",$output->sum).'</span>     
                         <div class="imdb_general">'.$country.$lang.'</div>                          
                         <div class="footer"><span class="copyright">Source: <a href="https://www.imdb.com" target="_blank">imdb.com</a></span><span style="display: none">Disclaimer: This plugin has been coded to automatically quote data from imdb.com. Not available for any other purpose. All showing data have a link to imdb.com. The user is responsible for any other use or change codes.</span></div>
                         </div>
@@ -132,7 +132,7 @@ class shimdb_imdb_get_skin{
                 </div>                 
                  '.$video_html.'       
                 <div class="content">
-                '.$dr.$wr.$sr.'<b>Summary:</b> '.$output->fullsum.'        
+                '.$dr.$wr.$sr.'<b>Summary:</b> '.str_replace("\\&#039;","'",$output->fullsum).'        
                 
                 </div>
                 <div class="spacer" style="clear: both;"></div>  
@@ -240,7 +240,7 @@ class shimdb_imdb_get_skin{
                 </div>                 
                  '.$video_html.'       
                 <div class="content">
-                '.$dr.$wr.$sr.'<b>Summary:</b> '.$output->fullsum.'        
+                '.$dr.$wr.$sr.'<b>Summary:</b> '.str_replace("\\&#039;","'",$output->fullsum).'        
                 
                 </div>
                 <div class="spacer" style="clear: both;"></div>  
@@ -302,7 +302,7 @@ class shimdb_imdb_get_skin{
                         <div class="imdb_right">
                         <span id="movie_title"><a href="http://www.imdb.com/name/'.$content.'" target="_blank">  '.$output->name.'</a></span>
                         <span id="genres">'.$output->jobs.'</span>                             
-                        <span id="summary"><b>Biography: </b>'.$output->bio.'</span>     
+                        <span id="summary"><b>Biography: </b>'.str_replace("\\&#039;","'",$output->bio).'</span>     
                         <div class="imdb_general"><b>Born: </b>'.$output->born.'</div>'.$death.'
                         <div class="imdb_general">'.$known.'</div>                          
                         <div class="footer"><span class="copyright">Source: <a href="https://www.imdb.com" target="_blank">imdb.com</a></span></div>
@@ -344,7 +344,7 @@ class shimdb_imdb_get_skin{
                     </div>
                     <div class="content">
                                       
-                        <div class="info"><b>Biography: </b>'.$output->bio.' <a href="https://www.imdb.com/name/'.$content.'/bio" target="_blank">See full bio >></a></div>
+                        <div class="info"><b>Biography: </b>'.str_replace("\\&#039;","'",$output->bio).' <a href="https://www.imdb.com/name/'.$content.'/bio" target="_blank">See full bio >></a></div>
                         <div class="info"><b>Born: </b>'.$output->born.'</div>'.$death.'
                         
                         
@@ -526,7 +526,7 @@ class shimdb_imdb_get_skin{
                         </div>
                         <div class="content">
                                       
-                                <div class="info"><b>Biography: </b>'.$output->bio.' <a href="https://www.imdb.com/name/'.$content.'/bio" target="_blank">See full bio >></a></div>
+                                <div class="info"><b>Biography: </b>'.str_replace("\\&#039;","'",$output->bio).' <a href="https://www.imdb.com/name/'.$content.'/bio" target="_blank">See full bio >></a></div>
                                 <div class="info"><b>Born: </b>'.$output->born.'</div>'.$death.'
                         
                          </div>
@@ -550,6 +550,8 @@ class shimdb_imdb_get_skin{
 
         return $html;
     }
+
+    // EDIT CACHE FIELD
 
     function cache_edit($id){
         global $wpdb;
@@ -591,7 +593,7 @@ class shimdb_imdb_get_skin{
                                     <p>
                                         <label>Biography/Summary</label>
                                         <br />
-                                        <textarea name="imdb_info" style="width: 40%; height: 200px"><?php echo $info?></textarea>
+                                        <textarea name="imdb_info" style="width: 40%; height: 200px"><?php echo str_replace("\\&#039;","'",$info)?></textarea>
                                     </p>
                                 </div>
 
@@ -599,7 +601,7 @@ class shimdb_imdb_get_skin{
                                     <p>
                                         <label>Big Summary (Only for Titles)</label>
                                         <br />
-                                        <textarea name="imdb_info2" style="width: 40%; height: 200px"><?php echo $cache->fullsum?></textarea>
+                                        <textarea name="imdb_info2" style="width: 40%; height: 200px"><?php echo str_replace("\\&#039;","'",$cache->fullsum)?></textarea>
                                     </p>
                                 </div>
 
@@ -620,30 +622,32 @@ class shimdb_imdb_get_skin{
                 $new_title = sanitize_text_field($_POST['imdb_title']);
                 $new_cover = sanitize_text_field($_POST['imdb_cover']);
                 $new_sum = sanitize_textarea_field($_POST['imdb_info']);
-                $new_sum2 = sanitize_textarea_field($_POST['imdb_info2']);
+                $new_sum2 =sanitize_textarea_field($_POST['imdb_info2']);
 
                 if($type=="title"){
-                    $cache->sum = esc_sql(trim($new_sum));
-                    $cache->fullsum = esc_sql(trim($new_sum2));
-                    $cache->poster =esc_url(trim($new_cover));
+                    $cache->sum = $new_sum;
+                    $cache->fullsum = esc_html__($new_sum2);
+                    $cache->poster = trim($new_cover);
+                    $cache->title = trim($new_title);
                     $wpdb->update(
                         $wpdb->prefix.'shortcode_imdb_cache',
                         array(
-                            'title' => esc_sql(trim($new_title)),
-                            'cache' => json_encode($cache)
+                            'title' => trim($new_title),
+                            'cache' => json_encode($cache,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES)
                         ),
                         array(
                             'id'=> $id
                         )
                     );
                 }else if($type == "name"){
-                    $cache->bio = esc_sql(trim($new_sum));
-                    $cache->photo = esc_url(trim($new_cover));
+                    $cache->bio = trim($new_sum);
+                    $cache->photo = trim($new_cover);
+                    $cache->name = trim($new_title);
                     $wpdb->update(
                         $wpdb->prefix.'shortcode_imdb_cache',
                         array(
-                            'title' => esc_sql(trim($new_title)),
-                            'cache' => json_encode($cache)
+                            'title' => trim($new_title),
+                            'cache' => json_encode($cache,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES)
                         ),
                         array(
                             'id'=> $id
