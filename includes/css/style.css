@@ -536,6 +536,10 @@ div.imdb_right > span#summary{
     position: relative;
     z-index: 10;
 }
+.imdb_default_title> .middle > .poster > a > img{
+    width:182px;
+    height: 268px;
+}
 
 .imdb_default_title> .middle > .content > .crew{
     display: block;

@@ -566,10 +566,9 @@ class shimdb_imdb_get_skin{
                 $cache = json_decode($r->cache);
             }
             $cover = $type=="title" ? $cache->poster : $cache->photo;
-            $info = $type=="title" ? $cache->sum : $cache->bio;
-            ?>
-                <div style="background-color: #ffffff; padding: 16px;">
-                    <form method="post" action="">
+            $info = $type=="title" ? $cache->sum : $cache->bio;?>
+            <div style="background-color: #ffffff; padding: 16px;">
+                    <form method="post" action="<?php echo admin_url('admin.php?page=shortcode_imdb_cache')?>">
 
                             <div id="universal-message-container">
                                 <h2>Edit Content</h2>
@@ -579,6 +578,9 @@ class shimdb_imdb_get_skin{
                                         <label>Title/Name</label>
                                         <br />
                                         <input type="text" name="imdb_title" value="<?php echo $title?>" style="width: 40%"/>
+                                        <input type="hidden" name="imdb_id" value="<?php echo $id?>"/>
+                                        <input type="hidden" name="imdb_type" value="<?php echo $type?>"/>
+                                        <textarea name="imdb_cache" style="display: none;"><?php echo $r->cache?>"/></textarea>
                                     </p>
                                 </div>
 
@@ -607,56 +609,14 @@ class shimdb_imdb_get_skin{
 
 
                                 <div class="options">
-                                    <?php
-                                    submit_button();
-                                    ?>
-
+                                    <?php submit_button();?>
                                 </div>
 
                     </form>
 
                 </div>
-
             <?php
-            if(isset($_POST['imdb_title'])){
-                $new_title = sanitize_text_field($_POST['imdb_title']);
-                $new_cover = sanitize_text_field($_POST['imdb_cover']);
-                $new_sum = sanitize_textarea_field($_POST['imdb_info']);
-                $new_sum2 =sanitize_textarea_field($_POST['imdb_info2']);
 
-                if($type=="title"){
-                    $cache->sum = $new_sum;
-                    $cache->fullsum = esc_html__($new_sum2);
-                    $cache->poster = trim($new_cover);
-                    $cache->title = trim($new_title);
-                    $wpdb->update(
-                        $wpdb->prefix.'shortcode_imdb_cache',
-                        array(
-                            'title' => trim($new_title),
-                            'cache' => json_encode($cache)
-                        ),
-                        array(
-                            'id'=> $id
-                        )
-                    );
-                }else if($type == "name"){
-                    $cache->bio = trim($new_sum);
-                    $cache->photo = trim($new_cover);
-                    $cache->name = trim($new_title);
-                    $wpdb->update(
-                        $wpdb->prefix.'shortcode_imdb_cache',
-                        array(
-                            'title' => trim($new_title),
-                            'cache' => json_encode($cache)
-                        ),
-                        array(
-                            'id'=> $id
-                        )
-                    );
-                }
-                wp_redirect('admin.php?page=shortcode_imdb_cache');
-                exit();
-            }
 
          //END
         }else{
@@ -665,6 +625,52 @@ class shimdb_imdb_get_skin{
         }
 
 
+
+    }
+
+    function cache_post($post){
+        global $wpdb;
+        if(isset($post['imdb_title'])){
+            $new_title = sanitize_text_field($post['imdb_title']);
+            $new_cover = sanitize_text_field($post['imdb_cover']);
+            $new_sum = sanitize_textarea_field($post['imdb_info']);
+            $new_sum2 =sanitize_textarea_field($post['imdb_info2']);
+            $type = sanitize_text_field($post['imdb_type']);
+            $imdb_id = absint($post['imdb_id']);
+            $cache = json_decode($post['imdb_cache']);
+
+            if($type=="title"){
+                $cache->sum = $new_sum;
+                $cache->fullsum = $new_sum2;
+                $cache->poster = trim($new_cover);
+                $cache->title = trim($new_title);
+                $wpdb->update(
+                    $wpdb->prefix.'shortcode_imdb_cache',
+                    array(
+                        'title' => trim($new_title),
+                        'cache' => json_encode($cache)
+                    ),
+                    array(
+                        'id'=> $imdb_id
+                    )
+                );
+            }else if($type == "name"){
+                $cache->bio = trim($new_sum);
+                $cache->photo = trim($new_cover);
+                $cache->name = trim($new_title);
+                $wpdb->update(
+                    $wpdb->prefix.'shortcode_imdb_cache',
+                    array(
+                        'title' => trim($new_title),
+                        'cache' => json_encode($cache)
+                    ),
+                    array(
+                        'id'=> $imdb_id
+                    )
+                );
+            }
+
+        }
 
     }
 
