@@ -633,7 +633,7 @@ class shimdb_imdb_get_skin{
                         $wpdb->prefix.'shortcode_imdb_cache',
                         array(
                             'title' => trim($new_title),
-                            'cache' => json_encode($cache,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES)
+                            'cache' => json_encode($cache)
                         ),
                         array(
                             'id'=> $id
@@ -647,14 +647,15 @@ class shimdb_imdb_get_skin{
                         $wpdb->prefix.'shortcode_imdb_cache',
                         array(
                             'title' => trim($new_title),
-                            'cache' => json_encode($cache,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES)
+                            'cache' => json_encode($cache)
                         ),
                         array(
                             'id'=> $id
                         )
                     );
                 }
-                wp_redirect(esc_html( admin_url( 'admin.php?page=shortcode_imdb_cache' )));
+                wp_redirect('admin.php?page=shortcode_imdb_cache');
+                exit();
             }
 
          //END
