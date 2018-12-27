@@ -1,17 +1,24 @@
 <?php
 //CACHE LIST LAYOUT
 function shimdb_imdb_cache_layout(){
-    $Cache = new SHIMDB_IMDB_Cache_List_Table();
-    if(isset($_POST['bulk-delete'])){
-        foreach ($_POST['bulk-delete'] as $id){
-            $Cache->delete_customer(esc_sql($id));
+    $cache_id = isset($_GET['id']) ? $_GET['id'] : "";
+    if($cache_id=="") {
+        $Cache = new SHIMDB_IMDB_Cache_List_Table();
+        if (isset($_POST['bulk-delete'])) {
+            foreach ($_POST['bulk-delete'] as $id) {
+                $Cache->delete_customer(esc_sql($id));
+            }
         }
+        $Cache->prepare_items();
+        echo "<form method='post'>";
+        $Cache->search_box("Search IMDB ID/Title", "search_imdb_id");
+        $Cache->display();
+        echo "</form>";
+    }else{
+        $skin = new shimdb_imdb_get_skin();
+        $skin->cache_edit($cache_id);
+
     }
-    $Cache->prepare_items();
-    echo "<form method='post'>";
-    $Cache->search_box("Search IMDB ID/Title","search_imdb_id");
-    $Cache->display();
-    echo "</form>";
     ?>
     <p><small><b>Disclaimer:</b> This plugin has been coded to automatically quote data from imdb.com. Not available for any other purpose. All showing data have a link to imdb.com. The user is responsible for any other use or change codes.</small></p>
     <?php
@@ -143,7 +150,7 @@ function shimdb_imdb_side_menu(){
     </div>
     <p>Publish imdb.com data in your articles.</p>
 
-    <p><a href="http://demo.pluginpress.net/shortcode-imdb/2018/11/29/shortcode-imdb/" target="_blank">Shortcode IMDB V. 2.6</a>. </p>
+    <p><a href="http://demo.pluginpress.net/shortcode-imdb/2018/11/29/shortcode-imdb/" target="_blank">Shortcode IMDB V. 3.0</a>. </p>
     <h3>Resources</h3>
     <ul>
         <li><a href="http://pluginpress.net" target="_blank"><i aria-hidden="true" class="dashicons dashicons-external"></i> Website</a></li>
@@ -174,6 +181,9 @@ function shimdb_imdb_side_changelog(){
 
 
     <ul>
+        <b>3.0 - 2018-12-27</b>
+        <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Added: Hereafter, some cache data can be edited from "Manage Cache" screen.</li>
+
         <b>2.6 - 2018-12-22</b>
         <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Fixed: Release date bug fixed.</li>
 

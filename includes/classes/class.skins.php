@@ -551,4 +551,117 @@ class shimdb_imdb_get_skin{
         return $html;
     }
 
+    function cache_edit($id){
+        global $wpdb;
+        $id = esc_sql(absint($id));
+        $result = $wpdb->get_results('SELECT * FROM '.$wpdb->prefix.'shortcode_imdb_cache WHERE id='.$id);
+        if(count($result)>0){
+         //BEGIN
+            foreach ($result as $r){
+                $title = $r->title;
+                $imdb = $r->imdb;
+                $type = $r->type;
+                $cache = json_decode($r->cache);
+            }
+            $cover = $type=="title" ? $cache->poster : $cache->photo;
+            $info = $type=="title" ? $cache->sum : $cache->bio;
+            ?>
+                <div style="background-color: #ffffff; padding: 16px;">
+                    <form method="post" action="">
+
+                            <div id="universal-message-container">
+                                <h2>Edit Content</h2>
+
+                                <div class="options">
+                                    <p>
+                                        <label>Title/Name</label>
+                                        <br />
+                                        <input type="text" name="imdb_title" value="<?php echo $title?>" style="width: 40%"/>
+                                    </p>
+                                </div>
+
+                                <div class="options">
+                                    <p>
+                                        <label>Cover</label>
+                                        <br />
+                                        <input type="text" name="imdb_cover" value="<?php echo $cover?>" style="width: 40%"/>
+                                    </p>
+                                </div>
+                                <div class="options">
+                                    <p>
+                                        <label>Biography/Summary</label>
+                                        <br />
+                                        <textarea name="imdb_info" style="width: 40%; height: 200px"><?php echo $info?></textarea>
+                                    </p>
+                                </div>
+
+                                <div class="options">
+                                    <p>
+                                        <label>Big Summary (Only for Titles)</label>
+                                        <br />
+                                        <textarea name="imdb_info2" style="width: 40%; height: 200px"><?php echo $cache->fullsum?></textarea>
+                                    </p>
+                                </div>
+
+
+                                <div class="options">
+                                    <?php
+                                    submit_button();
+                                    ?>
+
+                                </div>
+
+                    </form>
+
+                </div>
+
+            <?php
+            if(isset($_POST['imdb_title'])){
+                $new_title = sanitize_text_field($_POST['imdb_title']);
+                $new_cover = sanitize_text_field($_POST['imdb_cover']);
+                $new_sum = sanitize_textarea_field($_POST['imdb_info']);
+                $new_sum2 = sanitize_textarea_field($_POST['imdb_info2']);
+
+                if($type=="title"){
+                    $cache->sum = esc_sql(trim($new_sum));
+                    $cache->fullsum = esc_sql(trim($new_sum2));
+                    $cache->poster =esc_url(trim($new_cover));
+                    $wpdb->update(
+                        $wpdb->prefix.'shortcode_imdb_cache',
+                        array(
+                            'title' => esc_sql(trim($new_title)),
+                            'cache' => json_encode($cache)
+                        ),
+                        array(
+                            'id'=> $id
+                        )
+                    );
+                }else if($type == "name"){
+                    $cache->bio = esc_sql(trim($new_sum));
+                    $cache->photo = esc_url(trim($new_cover));
+                    $wpdb->update(
+                        $wpdb->prefix.'shortcode_imdb_cache',
+                        array(
+                            'title' => esc_sql(trim($new_title)),
+                            'cache' => json_encode($cache)
+                        ),
+                        array(
+                            'id'=> $id
+                        )
+                    );
+                }
+                wp_redirect(esc_html( admin_url( 'admin.php?page=shortcode_imdb_cache' )));
+            }
+
+         //END
+        }else{
+
+            echo "Someting Wrong!. Cannot be reached this cache.";
+        }
+
+
+
+    }
+
+
 }
