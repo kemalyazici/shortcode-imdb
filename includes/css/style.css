@@ -122,7 +122,7 @@ span{
     border-radius: 10px;
     position: relative !important;
     overflow:hidden !important;
-
+    margin-bottom: 10px;
 
 }
 
@@ -398,6 +398,7 @@ div.imdb_right > span#summary{
     max-width: 670px !important;
     margin-left: auto !important;
     margin-right: auto !important;
+    margin-bottom: 10px;
 }
 
 .imdb_default_title h3{
@@ -629,7 +630,7 @@ div.imdb_right > span#summary{
 
 .imdb_default_title> .images > div{
     width: auto;
-
+    flex-shrink: 0;
 }
 
 .imdb_default_title> .images > div > a img{
@@ -669,6 +670,7 @@ div.imdb_right > span#summary{
     border: 1px solid #b1adad;
     overflow:hidden !important;
     background-color: #f8f8f8;
+    margin-bottom: 10px;
 }
 
 .imdb_default_name b{
@@ -844,24 +846,24 @@ div.imdb_right > span#summary{
         display:block;
 
     }
-
-    .imdb_default_title> .middle > .poster > a {
-        float: none !important;
+    .imdb_default_title> .middle,
+    .imdb_default_title> .middle > .poster{
         position: relative;
-        z-index: 10;
+        margin-bottom: 5px;
     }
-    .imdb_default_name .top {
-        float: none !important;
-        display: block !important;
-
-    }
-    .imdb_default_name .top .photo {
-        float: none !important;
+    .imdb_default_title> .middle > .poster a{
+        float: none;
         display: block;
-        width: 100%;
-        text-align: center;
-        position: relative;
+        left:45px;
+        margin-top: 10px;
+        position: relative !important;
         z-index: 10;
+    }
+
+    .imdb_default_title> .images > div{
+        width: auto;
+        flex-shrink: 1;
+        margin-right: 2px;
     }
 
 
@@ -875,17 +877,123 @@ div.imdb_right > span#summary{
         color:#136cb2 !important;
 
     }
+    .imdb_default_name .top {
+        float: none !important;
+        display: block !important;
+
+    }
+    .imdb_default_name .top .photo {
+        float: none !important;
+        display: inline-block !important;
+        width: 100% !important;
+        margin-left: 20px !important;
+        position: relative !important;
+        z-index: 10 !important;
+    }
+
     .imdb_default_name .top .right{
-        float: none;
-        width: 100%;
+        float: none !important;
+        width: 100% !important;
+        display: inline-block !important;
+        height: 100% !important;
+        font-size: 12px !important;
+
+    }
+
+    .imdb_default_name > .top > .right  .jobs{
+        font-size: 12px;
+        margin-top: 5px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        text-align: center !important;
+        position: relative;
+    }
+
+    .imdb_default_name > .top > .right > .content{
+        margin-top:5px;
+        margin-right: 5px;
+        margin-left: 5px;
+        padding: 5px !important;
+        text-align: center !important;
+        display: block;
+        position: relative !important;
+        overflow: hidden !important;
+
+
+    }
+
+
+    .imdb_default_title > .title > .right{
+        font-family: Verdana, Arial, Helvetica, sans-serif !important;
+        font-size: 16px !important;
+        font-weight: bold;
+        float: right !important;
+        margin-left: 10px !important;
+        position: relative !important;
+        width: 15% !important;
+        color: #fff !important;
+        overflow: hidden !important;
+        margin-top: auto !important;
+        margin-bottom: auto !important;
+    }
+    .imdb_default_title > .title > .right > img{
+        margin-bottom: 10px;
+        position: relative !important;
+        width: 30px;
         text-align: center;
+        display: block;
+        margin-right: 5px !important;
+    }
+    .imdb_default_title > .title > .right > #rating {
+        position: relative !important;
+        text-align: center;
+        top: 50% !important;
+        -ms-transform: translateY(-50%) !important;
+        transform: translateY(-50%) !important;
+        overflow: hidden !important;
+    }
+
+    .imdb_default_title> .cast{
+
+
+
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        position: relative;
+        height: auto;
+        font-size: 10px;
 
     }
-    .imdb_default_name > .top > .photo{
 
-        clear: both;
+    .imdb_default_title> .cast > .profile{
+        display: block;
+        margin: auto;
+        width: 30px;
 
     }
+
+    .imdb_default_title> .cast > .name{
+        display: block;
+        position: relative;
+        text-align: center !important;
+
+    }
+    .imdb_default_title> .cast > .seperate{
+
+        position: relative;
+        margin-right: 20px;
+        display: none;
+        width: 5%;
+    }
+    .imdb_default_title> .cast > .char{
+        text-align: center !important;
+        position: relative;
+
+    }
+
 
 
 

@@ -10,6 +10,8 @@ class shimdb_imdb_get_skin{
         return $key;
     }
 
+
+    /***********************  STANDART TITLE FUNC ***************************/
     function standard_title($args,$output,$content){
 
         /* Style Settings */
@@ -29,6 +31,12 @@ class shimdb_imdb_get_skin{
         $lang = $output->lang != "" ? '<span id="imdb_general"><b>Languages:</b> '.$output->lang."</span>" : "";
         $year = $output->year!="" ? ' ('.$output->year.')' : "";
         $year2 = "";
+        /* Title */
+        $showing_title = $output->title;
+        if(isset($args['title'])){
+            $showing_title = $args['title'] == "aka" ? $output->aka : $output->title;
+        }
+
         if(count(explode('pisode', $year))>1){
             $year = "";
             $year2 = str_replace("Episode aired","",$output->year);
@@ -53,7 +61,7 @@ class shimdb_imdb_get_skin{
                         </a>
                         </div>    
                         <div class="imdb_right">
-                        <span id="movie_title"><a href="http://www.imdb.com/title/'.esc_html($content).'" target="_blank">'.esc_html($output->title).'<small>'.$year.'</small></a></span>
+                        <span id="movie_title"><a href="http://www.imdb.com/title/'.esc_html($content).'" target="_blank">'.esc_html($showing_title).'<small>'.$year.'</small></a></span>
                         <span id="genres">'.$runtime.$output->genres. $year2.$release.'</span>                               
                         <div class="imdb_general">'.$dr.$wr.$sr.'</div>                            
                         <span id="summary"><b>Summary: </b>'.str_replace("\\'","'",$output->sum).'</span>     
@@ -62,13 +70,14 @@ class shimdb_imdb_get_skin{
                         </div>
                  </div></div>';
 
-        $return_html = $div_style == "imdb_default_title" ? (@$args['data'] == "detailed" ? $this->default_detailed_style($output,$content) : $this->default_style_title($output,$content)) : $html;
+        $return_html = $div_style == "imdb_default_title" ? (@$args['data'] == "detailed" ? $this->default_detailed_style($args,$output,$content) : $this->default_style_title($args,$output,$content)) : $html;
         return $return_html;
     }
 
 
-    //DEFAULT STYLE
-    function default_style_title($output,$content){
+    /***********************  DEFAULT STYLE TITLE FUNC ***************************/
+
+    function default_style_title($args,$output,$content){
 
         $dr = $output->directors != "" ? '<span class="crew"><b>Director:</b> '.$output->directors."</span>" : "";
         $wr = $output->writers != "" ? '<span class="crew"><b>Writers:</b> '.$output->writers."</span>" : "";
@@ -114,10 +123,16 @@ class shimdb_imdb_get_skin{
                   <div class="spacer" style="clear: both;"></div>';
         }
 
+        /* Title */
+        $showing_title = $output->title;
+        if(isset($args['title'])){
+            $showing_title = $args['title'] == "aka" ? $output->aka : $output->title;
+        }
+
         $html = '
          <div class="imdb_default_title" style="max-width: 670px; margin-left: auto; margin-right: auto;">
          <div class="title">   
-            <span class="left"><a href="http://imdb.com/title/'.$content.'/" target="_blank">'.$output->title.'</a>'.$year.'</small>
+            <span class="left"><a href="http://imdb.com/title/'.$content.'/" target="_blank">'.$showing_title.'</a>'.$year.'</small>
             <small id="genres">'.$output->genres.($output->runtime != "" ? " | ".$output->runtime : "").($output->release != "" ? " | ".$output->release : "").'</small>
             </span> 
             <span class="right">
@@ -146,7 +161,10 @@ class shimdb_imdb_get_skin{
         return $html;
     }
 
-    function default_detailed_style($output,$content){
+
+    /***********************  DEFAULT DETAILED STYLE TITLE FUNC ***************************/
+
+    function default_detailed_style($args,$output,$content){
 
         $dr = $output->directors != "" ? '<span class="crew"><b>Director:</b> '.$output->directors."</span>" : "";
         $wr = $output->writers != "" ? '<span class="crew"><b>Writers:</b> '.$output->writers."</span>" : "";
@@ -221,11 +239,17 @@ class shimdb_imdb_get_skin{
             $rating = '<img src="'.SHIMDB_URL."includes/assets/onlystar.png".'"/> <span id="rating">'.$output->rating.'</span>';
         }
 
+        /* Title */
+        $showing_title = $output->title;
+        if(isset($args['title'])){
+            $showing_title = $args['title'] == "aka" ? $output->aka : $output->title;
+        }
+
 
         $html = '
          <div class="imdb_default_title">
          <div class="title">   
-            <span class="left"><a href="http://imdb.com/title/'.$content.'/" target="_blank">'.$output->title.'</a>'.$year.'</small>
+            <span class="left"><a href="http://imdb.com/title/'.$content.'/" target="_blank">'.$showing_title.'</a>'.$year.'</small>
             <small id="genres">'.$output->genres.($output->runtime != "" ? " | ".$output->runtime : "").($output->release != "" ? " | ".$output->release : "").'</small>
             </span> 
             <span class="right">
@@ -261,7 +285,7 @@ class shimdb_imdb_get_skin{
     }
 
 
-
+    /***********************  STANDART NAME FUNC ***************************/
 
     function standard_name($args,$output,$content){
         $main_styles = array('imdb_dark', 'imdb_white', 'imdb_transparent', 'imdb_gray', 'imdb_coffee', 'imdb_black', 'imdb_navy', 'imdb_wood');
@@ -308,11 +332,14 @@ class shimdb_imdb_get_skin{
                         <div class="footer"><span class="copyright">Source: <a href="https://www.imdb.com" target="_blank">imdb.com</a></span></div>
                         </div>
                  </div></div>';
-        $return_html = $div_style == "imdb_default_name" ? (@$args['data'] == "detailed" ? $this->default_detailed_name_style($output,$content) : $this->default_style_name($output,$content)) : $html;
+        $return_html = $div_style == "imdb_default_name" ? (@$args['data'] == "detailed" ? $this->default_detailed_name_style($args,$output,$content) : $this->default_style_name($args,$output,$content)) : $html;
         return $return_html;
     }
 
-    function default_style_name($output,$content){
+
+    /***********************  DEFAULT STYLE NAME FUNC ***************************/
+
+    function default_style_name($args,$output,$content){
 
         $death = $output->death != "---" ? '<span class="info"><b>Died: </b>'.$output->death.'</span>' : "";
         $known = "";
@@ -369,7 +396,10 @@ class shimdb_imdb_get_skin{
         return $html;
     }
 
-    function  default_detailed_name_style($output,$content){
+
+    /***********************  DEFAULT DETAILED STYLE TITLE FUNC ***************************/
+
+    function  default_detailed_name_style($args,$output,$content){
         $death = $output->death != "---" ? '<span class="info"><b>Died: </b>'.$output->death.'</span>' : "";
         $known = "";
         if($output->known != ""){

@@ -53,6 +53,17 @@ class shimdb_imdb_grab{
             $data["title"] =esc_attr(trim($tpar.$tt[0],chr(0xC2).chr(0xA0)));
         }
 
+        /* AKA */
+
+        @$aka = $xpath->query('//meta[@property="og:title"]/@content');
+        $data['aka'] = "";
+        if(isset($aka)){
+            $aka = $aka->item(0)->nodeValue;
+            $aka = explode('(',$aka);
+            $aka = trim($aka[0]);
+            $data['aka'] = $aka;
+        }
+
         /* Year */
         $data['year'] = "";
         @$year = $xpath->query('//span[@id="titleYear"]');

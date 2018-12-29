@@ -5,7 +5,7 @@ function shimdb_imdb_settings_page(){
 
     //Main Menu
     add_menu_page(
-        __( 'ShortCode for Internet Movie Database', 'shortcode_imdb' ),
+        __( 'ShortCode IMDB', 'shortcode_imdb' ),
         __( 'ShortCode IMDB', 'shortcode_imdb' ),
         'manage_options',
         'shortcode_imdb',

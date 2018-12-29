@@ -49,13 +49,22 @@ function shimdb_imdb_general_info()
                 Implementing the plugin in your articles is very simple.<br/>
                 Copy the imdb title or name number from the url and paste between the shortcode tags. <b>The following example illustrates how you can carry out the tags in a post.</b><br/><br/>
                 <br/>
+                <h3>Version 3.4 Update</h3>
+                You can show "also known as" title of a movie by adding title="aka" argument. For instance, when you add an anime movie, the content will be shown with original title.
+                <br/>Example: The title will be shown as "Jûbê ninpûchô" when Ninja Scroll anime movie is added . But also there is an option to show English title. Just add the aka argument as like as <b>[imdb title="aka"]tt0107692[/imdb]</b>
+                <br/>
+                <br/><b>Note:</b> Please do not forget that delete the cache if you want to use this option.<br><br>
+
                 <h3>Default Style</h3>
                 With v2.0, default style of plugin has been upgrated and added some extra settings.
+
+
+
                 <br/><br/>
                 Default name shorde code is: <br/>
                 <h3>[imdb]nm0000489[/imdb] <small>- (<code>[imdb_name]nm0000489[/imdb_name]</code> older version, but still can be used.)</small></h3>
 
-                And now you can show more detaled data with data="detailed" argument. It works for only default skin.<br>
+                If you add data="detailed" argument in the tag, the content will be shown more detailed. Please note that, it works for only default skin.<br>
                 <h3>[imdb data="detailed"]nm0000489[/imdb]</h3>
 
                 <p><b>See default names examples from <a href="http://demo.pluginpress.net/shortcode-imdb/2018/12/09/default-name-examples/" target="_blank">demo website</a></b></p>
@@ -155,7 +164,7 @@ function shimdb_imdb_side_menu(){
     </div>
     <p>Publish imdb.com data in your articles.</p>
 
-    <p><a href="http://demo.pluginpress.net/shortcode-imdb/2018/11/29/shortcode-imdb/" target="_blank">Shortcode IMDB V. 3.3</a>. </p>
+    <p><a href="http://demo.pluginpress.net/shortcode-imdb/2018/11/29/shortcode-imdb/" target="_blank">Shortcode IMDB V. 3.4</a>. </p>
     <h3>Resources</h3>
     <ul>
         <li><a href="http://pluginpress.net" target="_blank"><i aria-hidden="true" class="dashicons dashicons-external"></i> Website</a></li>
@@ -186,6 +195,10 @@ function shimdb_imdb_side_changelog(){
 
 
     <ul>
+        <b>3.4 - 2018-12-29</b>
+        <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Added: Now you can change the title with aka via adding argument title="aka".</li>
+        <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Fixed: Some css bugs fixed.</li>
+
         <b>3.3 - 2018-12-27</b>
         <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Fixed: Some css and db insert bugs has been cleaned.</li>
 
