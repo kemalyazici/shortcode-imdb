@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: movie, movie database, film, shortcode, actor, actress, imdb
 Requires at least: 4.7
 Tested up to: 5.0.2
-Stable tag: 3.4
+Stable tag: 3.5
 License: GPL-2.0+
 Requires PHP: 5.2
 
@@ -32,6 +32,10 @@ Creating an article without giving more information about movies or actors/actre
 12. [imdb style="transparent"]
 
 == Changelog ==
+
+= 3.5 - 2019-01-01 =
+* Fixed: Manage Cache search bug fixed.
+* Fixed: Slash problem on titles fixed.
 
 = 3.4 - 2018-12-29 =
 * Added: Now you can change the title with aka via adding argument title="aka".

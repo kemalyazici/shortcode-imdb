@@ -26,7 +26,7 @@ class SHIMDB_IMDB_Cache_List_Table extends WP_List_Table {
             foreach ($result as $k => $r) {
                 $data[$k]['id'] = $r->id;
                 $data[$k]['imdb_id'] = $r->imdb_id;
-                $data[$k]['title'] = '<a href="admin.php?page=shortcode_imdb_cache&id='.$r->id.'">'.$r->title.'</a>';
+                $data[$k]['title'] = '<a href="admin.php?page=shortcode_imdb_cache&id='.$r->id.'">'.str_replace("\'","'",$r->title).'</a>';
                 $data[$k]['type'] = $r->type;
             }
         }else{
@@ -36,7 +36,7 @@ class SHIMDB_IMDB_Cache_List_Table extends WP_List_Table {
             foreach ($result as $k => $r) {
                 $data[$k]['id'] = $r->id;
                 $data[$k]['imdb_id'] = $r->imdb_id;
-                $data[$k]['title'] = $r->title;
+                $data[$k]['title'] = '<a href="admin.php?page=shortcode_imdb_cache&id='.$r->id.'">'.str_replace("\'","'",$r->title).'</a>';
                 $data[$k]['type'] = $r->type;
             }
         }

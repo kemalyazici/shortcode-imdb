@@ -31,6 +31,11 @@ class shimdb_imdb_get_skin{
         $lang = $output->lang != "" ? '<span id="imdb_general"><b>Languages:</b> '.$output->lang."</span>" : "";
         $year = $output->year!="" ? ' ('.$output->year.')' : "";
         $year2 = "";
+        $sum = str_replace("\\'","'", $output->sum);
+        $sum = str_replace("\'","'",$sum);
+        $sum = str_replace('\\"','"',$sum);
+        $sum = str_replace('\"','"',$sum);
+
         /* Title */
         $showing_title = $output->title;
         if(isset($args['title'])){
@@ -64,7 +69,7 @@ class shimdb_imdb_get_skin{
                         <span id="movie_title"><a href="http://www.imdb.com/title/'.esc_html($content).'" target="_blank">'.esc_html($showing_title).'<small>'.$year.'</small></a></span>
                         <span id="genres">'.$runtime.$output->genres. $year2.$release.'</span>                               
                         <div class="imdb_general">'.$dr.$wr.$sr.'</div>                            
-                        <span id="summary"><b>Summary: </b>'.str_replace("\\'","'",$output->sum).'</span>     
+                        <span id="summary"><b>Summary: </b>'.str_replace("\\'","'",$sum).'</span>     
                         <div class="imdb_general">'.$country.$lang.'</div>                          
                         <div class="footer"><span class="copyright">Source: <a href="https://www.imdb.com" target="_blank">imdb.com</a></span><span style="display: none">Disclaimer: This plugin has been coded to automatically quote data from imdb.com. Not available for any other purpose. All showing data have a link to imdb.com. The user is responsible for any other use or change codes.</span></div>
                         </div>
@@ -128,6 +133,18 @@ class shimdb_imdb_get_skin{
         if(isset($args['title'])){
             $showing_title = $args['title'] == "aka" ? $output->aka : $output->title;
         }
+        $showing_title = str_replace("\\'","'", $showing_title);
+        $showing_title = str_replace("\'","'",$showing_title);
+        $showing_title = str_replace('\\"','"',$showing_title);
+        $showing_title = str_replace('\"','"',$showing_title);
+
+        $sum = str_replace("\\'","'", $output->fullsum);
+        $sum = str_replace("\'","'",$sum);
+        $sum = str_replace('\\"','"',$sum);
+        $sum = str_replace('\"','"',$sum);
+
+
+
 
         $html = '
          <div class="imdb_default_title" style="max-width: 670px; margin-left: auto; margin-right: auto;">
@@ -147,7 +164,7 @@ class shimdb_imdb_get_skin{
                 </div>                 
                  '.$video_html.'       
                 <div class="content">
-                '.$dr.$wr.$sr.'<b>Summary:</b> '.str_replace("\\'","'",$output->fullsum).'        
+                '.$dr.$wr.$sr.'<b>Summary:</b> '.str_replace("\\'","'",$sum).'        
                 
                 </div>
                 <div class="spacer" style="clear: both;"></div>  
@@ -245,6 +262,20 @@ class shimdb_imdb_get_skin{
             $showing_title = $args['title'] == "aka" ? $output->aka : $output->title;
         }
 
+        /* Title */
+        $showing_title = $output->title;
+        if(isset($args['title'])){
+            $showing_title = $args['title'] == "aka" ? $output->aka : $output->title;
+        }
+        $showing_title = str_replace("\\'","'", $showing_title);
+        $showing_title = str_replace("\'","'",$showing_title);
+        $showing_title = str_replace('\\"','"',$showing_title);
+        $showing_title = str_replace('\"','"',$showing_title);
+
+        $sum = str_replace("\\'","'", $output->fullsum);
+        $sum = str_replace("\'","'",$sum);
+        $sum = str_replace('\\"','"',$sum);
+        $sum = str_replace('\"','"',$sum);
 
         $html = '
          <div class="imdb_default_title">
@@ -264,7 +295,7 @@ class shimdb_imdb_get_skin{
                 </div>                 
                  '.$video_html.'       
                 <div class="content">
-                '.$dr.$wr.$sr.'<b>Summary:</b> '.str_replace("\\'","'",$output->fullsum).'        
+                '.$dr.$wr.$sr.'<b>Summary:</b> '.str_replace("\\'","'",$sum).'        
                 
                 </div>
                 <div class="spacer" style="clear: both;"></div>  
@@ -308,6 +339,19 @@ class shimdb_imdb_get_skin{
 
         $death = $output->death != "---" ? '<div class="imdb_general"><b>Died: </b>'.$output->death.'</div>' : "";
 
+
+        $name = str_replace("\\'","'", $output->name);
+        $name = str_replace("\'","'",$name);
+        $name = str_replace('\\"','"',$name);
+        $name = str_replace('\"','"',$name);
+
+        $bio = str_replace("\\'","'", $output->bio);
+        $bio = str_replace("\'","'",$bio);
+        $bio = str_replace('\\"','"',$bio);
+        $bio = str_replace('\"','"',$bio);
+
+
+
         $html = '
                  <div style="all: unset; overflow:hidden;"><div class="'.$div_style.'">
                         <div class="imdb_left">
@@ -324,9 +368,9 @@ class shimdb_imdb_get_skin{
                         </a>
                         </div>    
                         <div class="imdb_right">
-                        <span id="movie_title"><a href="http://www.imdb.com/name/'.$content.'" target="_blank">  '.$output->name.'</a></span>
+                        <span id="movie_title"><a href="http://www.imdb.com/name/'.$content.'" target="_blank">  '.$name.'</a></span>
                         <span id="genres">'.$output->jobs.'</span>                             
-                        <span id="summary"><b>Biography: </b>'.str_replace("\\'","'",$output->bio).'</span>     
+                        <span id="summary"><b>Biography: </b>'.str_replace("\\'","'",$bio).'</span>     
                         <div class="imdb_general"><b>Born: </b>'.$output->born.'</div>'.$death.'
                         <div class="imdb_general">'.$known.'</div>                          
                         <div class="footer"><span class="copyright">Source: <a href="https://www.imdb.com" target="_blank">imdb.com</a></span></div>
@@ -360,18 +404,28 @@ class shimdb_imdb_get_skin{
             $img .= '</div><a href="https://www.imdb.com/name/'.$content.'/mediaindex" style="margin-left: 10px" target="_blank">See all photos >></a><hr/>';
         }
 
+        $name = str_replace("\\'","'", $output->name);
+        $name = str_replace("\'","'",$name);
+        $name = str_replace('\\"','"',$name);
+        $name = str_replace('\"','"',$name);
+
+        $bio = str_replace("\\'","'", $output->bio);
+        $bio = str_replace("\'","'",$bio);
+        $bio = str_replace('\\"','"',$bio);
+        $bio = str_replace('\"','"',$bio);
+
         $html = '
                 <div class="imdb_default_name">
                 <div class="top">
                     <div class="photo"><a href="http://www.imdb.com/name/'.$content.'/" target="_blank"><img src="'.$output->photo.'"/></a></div>
                     <div class="right">
                     <div class="header">
-                    <div class="title"><a href="http://www.imdb.com/name/'.$content.'/" target="_blank">'.$output->name.'</a></div>
+                    <div class="title"><a href="http://www.imdb.com/name/'.$content.'/" target="_blank">'.$name.'</a></div>
                     <div class="jobs">'.$output->jobs.'</div>
                     </div>
                     <div class="content">
                                       
-                        <div class="info"><b>Biography: </b>'.str_replace("\\'","'",$output->bio).' <a href="https://www.imdb.com/name/'.$content.'/bio" target="_blank">See full bio >></a></div>
+                        <div class="info"><b>Biography: </b>'.str_replace("\\'","'",$bio).' <a href="https://www.imdb.com/name/'.$content.'/bio" target="_blank">See full bio >></a></div>
                         <div class="info"><b>Born: </b>'.$output->born.'</div>'.$death.'
                         
                         
@@ -540,7 +594,15 @@ class shimdb_imdb_get_skin{
 
         }
 
+        $name = str_replace("\\'","'", $output->name);
+        $name = str_replace("\'","'",$name);
+        $name = str_replace('\\"','"',$name);
+        $name = str_replace('\"','"',$name);
 
+        $bio = str_replace("\\'","'", $output->bio);
+        $bio = str_replace("\'","'",$bio);
+        $bio = str_replace('\\"','"',$bio);
+        $bio = str_replace('\"','"',$bio);
 
 
         $html = '
@@ -551,12 +613,12 @@ class shimdb_imdb_get_skin{
                     </div>
                     <div class="right">
                         <div class="header">
-                            <div class="title"><a href="http://www.imdb.com/name/'.$content.'/" target="_blank">'.$output->name.'</a></div>
+                            <div class="title"><a href="http://www.imdb.com/name/'.$content.'/" target="_blank">'.$name.'</a></div>
                             <div class="jobs">'.$output->jobs.'</div>
                         </div>
                         <div class="content">
                                       
-                                <div class="info"><b>Biography: </b>'.str_replace("\\'","'",$output->bio).' <a href="https://www.imdb.com/name/'.$content.'/bio" target="_blank">See full bio >></a></div>
+                                <div class="info"><b>Biography: </b>'.str_replace("\\'","'",$bio).' <a href="https://www.imdb.com/name/'.$content.'/bio" target="_blank">See full bio >></a></div>
                                 <div class="info"><b>Born: </b>'.$output->born.'</div>'.$death.'
                         
                          </div>
@@ -607,7 +669,13 @@ class shimdb_imdb_get_skin{
                                     <p>
                                         <label>Title/Name</label>
                                         <br />
-                                        <input type="text" name="imdb_title" value="<?php echo $title?>" style="width: 40%"/>
+                                        <?php
+                                        $title = str_replace("\\'","'",$title);
+                                        $title = str_replace("\'","'",$title);
+                                        $title = str_replace('\\"','"',$title);
+                                        $title = str_replace('\"','"',$title);
+                                        ?>
+                                        <input type="text" name="imdb_title" value="<?php echo str_replace("\'","'",$title)?>" style="width: 40%"/>
                                         <input type="hidden" name="imdb_id" value="<?php echo $id?>"/>
                                         <input type="hidden" name="imdb_type" value="<?php echo $type?>"/>
                                         <input type="hidden" name="imdb_cache" value="<?php echo base64_encode(json_encode($cache))?>"/>
@@ -625,7 +693,13 @@ class shimdb_imdb_get_skin{
                                     <p>
                                         <label>Biography/Summary</label>
                                         <br />
-                                        <textarea name="imdb_info" style="width: 40%; height: 200px"><?php echo str_replace("\\'","'",$info)?></textarea>
+                                        <?php
+                                                $info = str_replace("\\'","'",$info);
+                                                $info = str_replace("\'","'",$info);
+                                                $info = str_replace('\\"','"',$info);
+                                                $info = str_replace('\"','"',$info);
+                                                ?>
+                                        <textarea name="imdb_info" style="width: 40%; height: 200px"><?php echo $info?></textarea>
                                     </p>
                                 </div>
 
@@ -633,7 +707,13 @@ class shimdb_imdb_get_skin{
                                     <p>
                                         <label>Big Summary (Only for Titles)</label>
                                         <br />
-                                        <textarea name="imdb_info2" style="width: 40%; height: 200px"><?php echo str_replace("\\'","'",$cache->fullsum)?></textarea>
+                                        <?php
+                                        $fullsum = str_replace("\\'","'",$cache->fullsum);
+                                        $fullsum = str_replace("\'","'",$fullsum);
+                                        $fullsum = str_replace('\\"','"',$fullsum);
+                                        $fullsum = str_replace('\"','"',$fullsum);
+                                        ?>
+                                        <textarea name="imdb_info2" style="width: 40%; height: 200px"><?php echo $fullsum?></textarea>
                                     </p>
                                 </div>
 

@@ -51,7 +51,7 @@ function shimdb_imdb_general_info()
                 <br/>
                 <h3>Version 3.4 Update</h3>
                 You can show "also known as" title of a movie by adding title="aka" argument. For instance, when you add an anime movie, the content will be shown with original title.
-                <br/>Example: The title will be shown as "Jûbê ninpûchô" when Ninja Scroll anime movie is added . But also there is an option to show English title. Just add the aka argument as like as <b>[imdb title="aka"]tt0107692[/imdb]</b>
+                <br/>Example: The title will be shown as "Jûbê ninpûchô" when Ninja Scroll anime movie is added . But also there is an option to show English title. Just add the aka argument as like <b>[imdb title="aka"]tt0107692[/imdb]</b>
                 <br/>
                 <br/><b>Note:</b> Please do not forget that delete the cache if you want to use this option.<br><br>
 
@@ -164,7 +164,7 @@ function shimdb_imdb_side_menu(){
     </div>
     <p>Publish imdb.com data in your articles.</p>
 
-    <p><a href="http://demo.pluginpress.net/shortcode-imdb/2018/11/29/shortcode-imdb/" target="_blank">Shortcode IMDB V. 3.4</a>. </p>
+    <p><a href="http://demo.pluginpress.net/shortcode-imdb/2018/11/29/shortcode-imdb/" target="_blank">Shortcode IMDB V. 3.5</a>. </p>
     <h3>Resources</h3>
     <ul>
         <li><a href="http://pluginpress.net" target="_blank"><i aria-hidden="true" class="dashicons dashicons-external"></i> Website</a></li>
@@ -195,6 +195,10 @@ function shimdb_imdb_side_changelog(){
 
 
     <ul>
+        <b>3.5 - 2019-01-01</b>
+        <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Fixed: Manage Cache search bug fixed.</li>
+        <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Fixed: Slash problem on titles fixed.</li>
+
         <b>3.4 - 2018-12-29</b>
         <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Added: Now you can change the title with aka via adding argument title="aka".</li>
         <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Fixed: Some css bugs fixed.</li>
@@ -208,19 +212,6 @@ function shimdb_imdb_side_changelog(){
         <b>3.0 - 2018-12-27</b>
         <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Added: Hereafter, some cache data can be edited from "Manage Cache" screen.</li>
 
-        <b>2.6 - 2018-12-22</b>
-        <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Fixed: Release date bug fixed.</li>
-
-        <b>2.5 - 2018-12-22</b>
-        <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Fixed: Title bug on TV episodes fixed.</li>
-        <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Changed: Small changes made on old style.</li>
-
-        <b>2.4 - 2018-12-19</b>
-        <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Fixed: Title bug on TV episodes fixed.</li>
-
-        <b>2.3 - 2018-12-12</b>
-        <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Updated: [imdb] shortcode can be used instead of imdb_title or imdb_name.</li>
-        <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Updated: white,navy etc. styles can be used instead of imdb_white, imdb_navy etc.</li>
 
 
     </ul>
