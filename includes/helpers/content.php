@@ -42,6 +42,7 @@ function shimdb_imdb_general_info()
         <div class="imdb_left" style="font-size: 14px;">
             <h1><?php esc_html_e( get_admin_page_title() ); ?></h1>
             <div style="background-color: #ffffff; padding: 16px;">
+                <h2>Just a reminder, you can always contact with me for your suggestions or feedbacks. <a href="mailto:pluginpress.net@gmail.com" target="_blank">pluginpress.net@gmail.com</a> </h2>
                 <h3>If you updated from 1.* version, please clear all cache from <a href="admin.php?page=shortcode_imdb_cache">here</a></h3><br/>
                 Shortcode IMDB is a simple but powerful plugin that can grab data from IMDB and show proper way in your articles.
                 <br/>
@@ -164,7 +165,7 @@ function shimdb_imdb_side_menu(){
     </div>
     <p>Publish imdb.com data in your articles.</p>
 
-    <p><a href="http://demo.pluginpress.net/shortcode-imdb/2018/11/29/shortcode-imdb/" target="_blank">Shortcode IMDB V. 3.5</a>. </p>
+    <p><a href="http://demo.pluginpress.net/shortcode-imdb/2018/11/29/shortcode-imdb/" target="_blank">Shortcode IMDB V. 3.6</a>. </p>
     <h3>Resources</h3>
     <ul>
         <li><a href="http://pluginpress.net" target="_blank"><i aria-hidden="true" class="dashicons dashicons-external"></i> Website</a></li>
@@ -195,6 +196,9 @@ function shimdb_imdb_side_changelog(){
 
 
     <ul>
+        <b>3.6 - 2019-01-13</b>
+        <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Changed: Menu order has changed.</li>
+
         <b>3.5 - 2019-01-01</b>
         <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Fixed: Manage Cache search bug fixed.</li>
         <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Fixed: Slash problem on titles fixed.</li>

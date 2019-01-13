@@ -11,7 +11,7 @@ function shimdb_imdb_settings_page(){
         'shortcode_imdb',
         'shimdb_imdb_general_info',
         plugins_url( '../assets/si.png',$path_for_icon),
-        11
+        999
     );
 
     //Cache List sub menu
