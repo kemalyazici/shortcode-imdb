@@ -676,12 +676,19 @@ class shimdb_imdb_get_skin{
                                         $title = str_replace('\"','"',$title);
                                         ?>
                                         <input type="text" name="imdb_title" value="<?php echo str_replace("\'","'",$title)?>" style="width: 40%"/>
+
                                         <input type="hidden" name="imdb_id" value="<?php echo $id?>"/>
                                         <input type="hidden" name="imdb_type" value="<?php echo $type?>"/>
                                         <input type="hidden" name="imdb_cache" value="<?php echo base64_encode(json_encode($cache))?>"/>
                                     </p>
                                 </div>
-
+                                <?php if($type=="title"):?>
+                                <div class="options"><p>
+                                        <label>Release Date</label>
+                                        <br/>
+                                        <input type="text" name="imdb_rel" value="<?php echo $cache->release?>" style="width: 40%"/>
+                                    </p></div>
+                                <?php endif;?>
                                 <div class="options">
                                     <p>
                                         <label>Cover</label>
@@ -745,6 +752,7 @@ class shimdb_imdb_get_skin{
             $new_cover = sanitize_text_field($post['imdb_cover']);
             $new_sum = sanitize_textarea_field($post['imdb_info']);
             $new_sum2 =sanitize_textarea_field($post['imdb_info2']);
+            @$new_rel =sanitize_text_field($post['imdb_rel']);
             $type = sanitize_text_field($post['imdb_type']);
             $imdb_id = absint($post['imdb_id']);
             $cache = json_decode(base64_decode($post['imdb_cache']));
@@ -753,6 +761,7 @@ class shimdb_imdb_get_skin{
                 $cache->sum = $new_sum;
                 $cache->fullsum = $new_sum2;
                 $cache->poster = trim($new_cover);
+                $cache->release = trim($new_rel);
                 $cache->title = trim($new_title);
                 $wpdb->update(
                     $wpdb->prefix.'shortcode_imdb_cache',

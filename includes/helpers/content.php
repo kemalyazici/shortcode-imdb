@@ -196,6 +196,8 @@ function shimdb_imdb_side_changelog(){
 
 
     <ul>
+        <b>3.7 - 2019-02-13</b>
+        <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Added: Release date of a title can be edited from Manage Caches menu.</li>
         <b>3.6 - 2019-01-13</b>
         <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Changed: Menu order has changed.</li>
 
