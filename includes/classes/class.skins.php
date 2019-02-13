@@ -662,7 +662,7 @@ class shimdb_imdb_get_skin{
             <div style="background-color: #ffffff; padding: 16px;">
                     <form method="post" action="<?php echo admin_url('admin.php?page=shortcode_imdb_cache')?>">
 
-                            <div id="universal-message-container">
+                            <div>
                                 <h2>Edit Content</h2>
 
                                 <div class="options">
@@ -728,7 +728,7 @@ class shimdb_imdb_get_skin{
                                 <div class="options">
                                     <?php submit_button();?>
                                 </div>
-
+                            </div>
                     </form>
 
                 </div>
