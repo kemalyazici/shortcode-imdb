@@ -630,14 +630,14 @@ div.imdb_right > span#summary{
 
 .imdb_default_title> .images > div{
     width: auto;
-    flex-shrink: 0;
+    flex-shrink: 0!important;
 }
 
 .imdb_default_title> .images > div > a img{
     margin-right: 5px;
     max-width:100%;
-    max-height:100%;
-    flex-shrink: 0;
+    height: auto;
+    flex-shrink: 0!important;
 }
 
 

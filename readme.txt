@@ -3,7 +3,7 @@ Contributors: kyazici
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PSMRT29N7K3CE
 Tags: movie, movie database, film, shortcode, actor, actress, imdb
 Requires at least: 4.7
-Tested up to: 5.0.3
+Tested up to: 5.1
 Stable tag: 3.7
 License: GPL-2.0+
 Requires PHP: 5.2
@@ -32,6 +32,9 @@ Creating an article without giving more information about movies or actors/actre
 12. [imdb style="transparent"]
 
 == Changelog ==
+
+= 3.8 - 2019-01-13 =
+* Added: Image shrink issue fixed.
 
 = 3.7 - 2019-01-13 =
 * Added: Release date of a title can be edited from Manage Caches menu.

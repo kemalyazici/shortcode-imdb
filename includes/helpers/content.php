@@ -165,7 +165,7 @@ function shimdb_imdb_side_menu(){
     </div>
     <p>Publish imdb.com data in your articles.</p>
 
-    <p><a href="http://demo.pluginpress.net/shortcode-imdb/2018/11/29/shortcode-imdb/" target="_blank">Shortcode IMDB V. 3.7</a>. </p>
+    <p><a href="http://demo.pluginpress.net/shortcode-imdb/2018/11/29/shortcode-imdb/" target="_blank">Shortcode IMDB V. 3.8</a>. </p>
     <h3>Resources</h3>
     <ul>
         <li><a href="http://pluginpress.net" target="_blank"><i aria-hidden="true" class="dashicons dashicons-external"></i> Website</a></li>
@@ -174,7 +174,7 @@ function shimdb_imdb_side_menu(){
     </ul>
 
 
-    <b>Your donations will allow us to continue further updates and add new settings.</b>
+    <b>Your donations will allow me to continue further updates and new projects.</b>
 
     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
         <input type="hidden" name="cmd" value="_s-xclick" />
@@ -182,6 +182,7 @@ function shimdb_imdb_side_menu(){
         <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
         <img alt="" border="0" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1" />
     </form>
+    <a href="http://demo.pluginpress.net/gamepress/games/" target="_blank"><img src='<?php echo esc_url(SHIMDB_URL."includes/assets/gp.jpg");?>' style="width: 100%"/></a>
 
     <?php
 }
@@ -196,6 +197,8 @@ function shimdb_imdb_side_changelog(){
 
 
     <ul>
+        <b>3.8 - 2019-03-10</b>
+        <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Added: Image shrink issue fixed.</li>
         <b>3.7 - 2019-02-13</b>
         <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Added: Release date of a title can be edited from Manage Caches menu.</li>
         <b>3.6 - 2019-01-13</b>
