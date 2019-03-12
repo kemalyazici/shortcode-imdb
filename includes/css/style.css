@@ -1,4 +1,4 @@
-a{
+.imdb_container a{
     text-decoration: none!important;
 
     -webkit-box-shadow: none!important;
@@ -10,13 +10,13 @@ a{
 
 }
 
-hr{
+.imdb_container hr{
     margin-top:15px !important;
     margin-bottom:5px !important;
     border-top: 1px solid #b1adad !important;
 }
 
-span{
+.imdb_container span{
     text-decoration: none!important;
 
     -webkit-box-shadow: none!important;

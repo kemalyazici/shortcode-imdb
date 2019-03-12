@@ -50,7 +50,7 @@ class shimdb_imdb_get_skin{
         $release = $output->release!="" && count(explode("aired",$output->release))<2 ? " | ".$output->release : "";
         if (strpos($year, 'TV') !== false) $year = " | <small>".$output->year."</small>";
         $rating = strlen($output->rating) == 1 ? $output->rating.".0" : $output->rating;
-        $html = '<div style="all: unset"><div class="'.$div_style.'">                               
+        $html = '<div class="imdb_container"><div style="all: unset"><div class="'.$div_style.'">                               
                         <div class="imdb_left">    
                         <a href="http://www.imdb.com/title/'.$content.'" target="_blank">
                         <div class="poster_parent" style="
@@ -73,7 +73,7 @@ class shimdb_imdb_get_skin{
                         <div class="imdb_general">'.$country.$lang.'</div>                          
                         <div class="footer"><span class="copyright">Source: <a href="https://www.imdb.com" target="_blank">imdb.com</a></span><span style="display: none">Disclaimer: This plugin has been coded to automatically quote data from imdb.com. Not available for any other purpose. All showing data have a link to imdb.com. The user is responsible for any other use or change codes.</span></div>
                         </div>
-                 </div></div>';
+                 </div></div></div>';
 
         $return_html = $div_style == "imdb_default_title" ? (@$args['data'] == "detailed" ? $this->default_detailed_style($args,$output,$content) : $this->default_style_title($args,$output,$content)) : $html;
         return $return_html;
@@ -146,7 +146,7 @@ class shimdb_imdb_get_skin{
 
 
 
-        $html = '
+        $html = '<div class="imdb_container">
          <div class="imdb_default_title" style="max-width: 670px; margin-left: auto; margin-right: auto;">
          <div class="title">   
             <span class="left"><a href="http://imdb.com/title/'.$content.'/" target="_blank">'.$showing_title.'</a>'.$year.'</small>
@@ -172,7 +172,8 @@ class shimdb_imdb_get_skin{
             <div class="spacer" style="clear: both;"></div>
             '.$img.'
             <div class="footer"><span class="copyright">Source: <a href="https://www.imdb.com" target="_blank" style="color: #f5c518 !important;">imdb.com</a></span></div>  
-         </div>         
+         </div> 
+         </div>       
         ';
 
         return $html;
@@ -277,7 +278,7 @@ class shimdb_imdb_get_skin{
         $sum = str_replace('\\"','"',$sum);
         $sum = str_replace('\"','"',$sum);
 
-        $html = '
+        $html = '<div class="imdb_container">
          <div class="imdb_default_title">
          <div class="title">   
             <span class="left"><a href="http://imdb.com/title/'.$content.'/" target="_blank">'.$showing_title.'</a>'.$year.'</small>
@@ -307,7 +308,7 @@ class shimdb_imdb_get_skin{
             
             
             <div class="footer"><span class="copyright">Source: <a href="https://www.imdb.com" target="_blank" style="color: #f5c518 !important;">imdb.com</a></span></div>  
-         </div>
+         </div></div>
          
         ';
 
@@ -352,7 +353,7 @@ class shimdb_imdb_get_skin{
 
 
 
-        $html = '
+        $html = '<div class="imdb_container">
                  <div style="all: unset; overflow:hidden;"><div class="'.$div_style.'">
                         <div class="imdb_left">
                         <a href="http://www.imdb.com/name/'.$content.'" target="_blank">                    
@@ -375,7 +376,7 @@ class shimdb_imdb_get_skin{
                         <div class="imdb_general">'.$known.'</div>                          
                         <div class="footer"><span class="copyright">Source: <a href="https://www.imdb.com" target="_blank">imdb.com</a></span></div>
                         </div>
-                 </div></div>';
+                 </div></div></div>';
         $return_html = $div_style == "imdb_default_name" ? (@$args['data'] == "detailed" ? $this->default_detailed_name_style($args,$output,$content) : $this->default_style_name($args,$output,$content)) : $html;
         return $return_html;
     }
@@ -414,7 +415,7 @@ class shimdb_imdb_get_skin{
         $bio = str_replace('\\"','"',$bio);
         $bio = str_replace('\"','"',$bio);
 
-        $html = '
+        $html = '<div class="imdb_container">
                 <div class="imdb_default_name">
                 <div class="top">
                     <div class="photo"><a href="http://www.imdb.com/name/'.$content.'/" target="_blank"><img src="'.$output->photo.'"/></a></div>
@@ -440,6 +441,7 @@ class shimdb_imdb_get_skin{
                 <div class="spacer" style="clear: both;"></div>
                 <div class="footer"><span class="copyright">Source: <a href="https://www.imdb.com" target="_blank" style="color: #f5c518 !important;">imdb.com</a></span></div>
                 
+                </div>
                 </div>
                 
                 
@@ -605,7 +607,7 @@ class shimdb_imdb_get_skin{
         $bio = str_replace('\"','"',$bio);
 
 
-        $html = '
+        $html = '<div class="imdb_container">
                 <div class="imdb_default_name">
                 <div class="top">
                     <div class="photo">
@@ -634,6 +636,7 @@ class shimdb_imdb_get_skin{
                 <div class="spacer" style="clear: both;"></div>   
                 </div>
                 <div class="footer"><span class="copyright">Source: <a href="https://www.imdb.com" target="_blank" style="color: #f5c518 !important;">imdb.com</a></span></div>
+                </div>
                 </div>
                 
         
