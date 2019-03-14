@@ -42,6 +42,17 @@ function shimdb_imdb_general_info()
         <div class="imdb_left" style="font-size: 14px;">
             <h1><?php esc_html_e( get_admin_page_title() ); ?></h1>
             <div style="background-color: #ffffff; padding: 16px;">
+                <div class="imdb_new">
+                <h2>Version 4.1 Update</h2>
+                <b>Default mode can be shown transparent style now</b><br/><br/>
+                <b>Examples:</b><br/><br/>
+                    Normal name/title:<br/> <b>[imdb show="transparent"]tt0109830[/imdb]</b><br/>
+                    <br/>
+                    Detailed name/title: <b><br/>[imdb show="transparent" data="detailed"]tt0109830[/imdb]</b>
+                    <br/><br/><b>Demo:&nbsp;<a href="http://demo.pluginpress.net/shortcode-imdb/2019/03/14/full-tranparent-examples/" target="_blank">pluginpress.net</a></b>
+                </div><br/>
+                <hr/>
+                <div class="imdb_old">
                 <h2>Just a reminder, you can always contact with me for your suggestions or feedbacks. <a href="mailto:pluginpress.net@gmail.com" target="_blank">pluginpress.net@gmail.com</a> </h2>
                 <h3>If you updated from 1.* version, please clear all cache from <a href="admin.php?page=shortcode_imdb_cache">here</a></h3><br/>
                 Shortcode IMDB is a simple but powerful plugin that can grab data from IMDB and show proper way in your articles.
@@ -97,7 +108,7 @@ function shimdb_imdb_general_info()
                 <p><b>To demonstration, you can visit <a href="http://demo.pluginpress.net/shortcode-imdb/2018/11/29/shortcode-imdb/" target="_blank">here</a></b></p>
 
 
-
+                </div>
 
 
 
@@ -165,7 +176,7 @@ function shimdb_imdb_side_menu(){
     </div>
     <p>Publish imdb.com data in your articles.</p>
 
-    <p><a href="http://demo.pluginpress.net/shortcode-imdb/2018/11/29/shortcode-imdb/" target="_blank">Shortcode IMDB V. 4.0</a>. </p>
+    <p><a href="http://demo.pluginpress.net/shortcode-imdb/2018/11/29/shortcode-imdb/" target="_blank">Shortcode IMDB V. 4.1</a>. </p>
     <h3>Resources</h3>
     <ul>
         <li><a href="http://pluginpress.net" target="_blank"><i aria-hidden="true" class="dashicons dashicons-external"></i> Website</a></li>
@@ -174,7 +185,7 @@ function shimdb_imdb_side_menu(){
     </ul>
 
 
-    <b>Your donations will allow me to continue further updates and new projects.</b>
+    <div class="imdb_donation">Your donations will allow me to continue further updates and new projects.</div>
 
     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
         <input type="hidden" name="cmd" value="_s-xclick" />
@@ -197,10 +208,12 @@ function shimdb_imdb_side_changelog(){
 
 
     <ul>
+        <b>4.1 - 2019-03-14</b>
+        <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Added: Default mode can be shown in transparent way.</li>
         <b>4.0 - 2019-03-12</b>
-        <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Added: link css bug fixed.</li>
+        <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Fixed: link css bug fixed.</li>
         <b>3.8 - 2019-03-10</b>
-        <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Added: Image shrink issue fixed.</li>
+        <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Fixed: Image shrink issue fixed.</li>
         <b>3.7 - 2019-02-13</b>
         <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Added: Release date of a title can be edited from Manage Caches menu.</li>
         <b>3.6 - 2019-01-13</b>

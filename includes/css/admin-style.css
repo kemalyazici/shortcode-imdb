@@ -15,3 +15,38 @@ div.right_item{
     background: #fff;
 }
 
+.imdb_old{
+    color: #6c6d6c;
+}
+.imdb_old  h3{
+    color: #6c6d6c;
+}
+
+.imdb_old  h2{
+    color: #6c6d6c;
+}
+.imdb_old  b{
+    color: #6c6d6c;
+}
+
+.imdb_old  a{
+    color: #6c6d6c;
+}
+
+.imdb_new{
+    color: #0f834d;
+    font-size: 17px;
+}
+
+.imdb_new h3{
+    color: #0f834d;
+}
+
+.imdb_new h2{
+    color: #0f834d;
+}
+
+.imdb_donation{
+    font-weight: bold;
+    color: #0c5460;
+}
