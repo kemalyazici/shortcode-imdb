@@ -56,8 +56,7 @@ require_once  plugin_dir_path(__FILE__).'includes/helpers/cachelist.php';
 // ADD FRONTEND AND ADMIN STYLES
 include plugin_dir_path(__FILE__).'includes/helpers/style.php';
 
-// ADMIN JS
-include plugin_dir_path(__FILE__).'includes/helpers/js.php';
+
 
 //MENU SETTINGS
 include plugin_dir_path(__FILE__).'includes/helpers/menus.php';
