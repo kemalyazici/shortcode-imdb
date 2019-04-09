@@ -2,7 +2,7 @@
 /*
 Plugin Name: ShortCode IMDB
 Description: This is a Wordpress plugin to display movie information in a content to users such as title, cast and plot via grabbing the data from imdb. You will be able to show movie or actor/actress information in your articles.
-Version: 4.1
+Version: 4.2
 Author: Kemal YAZICI - PluginPress
 Author URI: http://pluginpress.net
 License: GPL2
@@ -55,6 +55,9 @@ require_once  plugin_dir_path(__FILE__).'includes/helpers/cachelist.php';
 
 // ADD FRONTEND AND ADMIN STYLES
 include plugin_dir_path(__FILE__).'includes/helpers/style.php';
+
+// ADMIN JS
+include plugin_dir_path(__FILE__).'includes/helpers/js.php';
 
 //MENU SETTINGS
 include plugin_dir_path(__FILE__).'includes/helpers/menus.php';

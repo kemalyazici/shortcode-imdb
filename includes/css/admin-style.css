@@ -50,3 +50,87 @@ div.right_item{
     font-weight: bold;
     color: #0c5460;
 }
+
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+
+
+.imdb-dashboard p:not(:last-child) {
+    margin: 0 0 20px;
+}
+
+.imdb-dashboard main {
+    max-width: 100%;
+    padding: 40px;
+    border: 1px solid rgba(0,0,0,.2);
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,.1);
+}
+
+.imdb-dashboard section {
+    display: none;
+    padding: 20px 0 0;
+    border-top: 1px solid #abc;
+}
+
+.imdb-dashboard input {
+    display: none;
+}
+
+.imdb-dashboard label {
+    display: inline-block;
+    margin: 0 0 -1px;
+    padding: 15px 25px;
+    font-weight: 600;
+    text-align: center;
+    color: #abc;
+    border: 1px solid transparent;
+}
+
+.imdb-dashboard label:before {
+    font-family: fontawesome;
+    font-weight: normal;
+    margin-right: 10px;
+}
+
+.imdb-dashboard label[for*='1']:before { content: '\f1ea'; }
+.imdb-dashboard label[for*='2']:before { content: '\f19a'; }
+.imdb-dashboard label[for*='3']:before { content: '\f16c'; }
+.imdb-dashboard label[for*='4']:before { content: '\f171'; }
+
+.imdb-dashboard label:hover {
+    color: #789;
+    cursor: pointer;
+}
+
+.imdb-dashboard input:checked + label {
+    color: #0af;
+    border: 1px solid #abc;
+    border-top: 2px solid #0af;
+    border-bottom: 1px solid #fff;
+}
+
+.imdb-dashboard #tab1:checked ~ #content1,
+.imdb-dashboard #tab2:checked ~ #content2,
+.imdb-dashboard #tab3:checked ~ #content3,
+.imdb-dashboard #tab4:checked ~ #content4 {
+    display: block;
+}
+
+@media screen and (max-width: 800px) {
+    .imdb-dashboard label {
+        font-size: 0;
+    }
+    .imdb-dashboard label:before {
+        margin: 0;
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .imdb-dashboard label {
+        padding: 15px;
+    }
+}

@@ -428,6 +428,30 @@ class shimdb_imdb_grab{
             $data['composer'] = $comps;
         }
 
+        @$editor = $xpath->query('//div[contains(@id, "editor")]/b/a');
+        $data['editor'] = "";
+        if($editor->length>0){
+            $editors = array();
+            foreach ($editor as $a){
+                $link = @$a->getAttribute('href') ? esc_url('https://www.imdb.com'.$a->getAttribute('href')) : "";
+                $editors[] = '<a href="'.$link.'" target="_blank">'.esc_attr($a->nodeValue).'</a>';
+            }
+            $data['editor'] = $editors;
+        }
+
+        @$soundd = $xpath->query('//div[contains(@id, "sound_department")]/b/a');
+        $data['soundd'] = "";
+        if($soundd->length>0){
+            $soundds = array();
+            foreach ($soundd as $a){
+                $link = @$a->getAttribute('href') ? esc_url('https://www.imdb.com'.$a->getAttribute('href')) : "";
+                $soundds[] = '<a href="'.$link.'" target="_blank">'.esc_attr($a->nodeValue).'</a>';
+            }
+            $data['soundd'] = $soundds;
+        }
+
+
+
 
 
 

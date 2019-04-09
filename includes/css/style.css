@@ -133,7 +133,7 @@
 .imdb_wood,
 .imdb_navy,
 .imdb_coffee,
-.imdb_white .copyright{
+.imdb_white .imdb_copyright{
     font-size:10px;
 }
 
@@ -356,27 +356,27 @@ div.imdb_right > span#summary{
     color: #f5c518;
 }
 
-.imdb_coffee  .copyright a{
+.imdb_coffee  .imdb_copyright a{
     color: #cca14a;
 }
 
-.imdb_black  .copyright a{
+.imdb_black  .imdb_copyright a{
     color: #b2b2b2;
 }
 
-.imdb_navy  .copyright a{
+.imdb_navy  .imdb_copyright a{
     color: #f5c518;
 }
 
-.imdb_wood  .copyright a{
+.imdb_wood  .imdb_copyright a{
     color: #faa004;
 }
 
-.imdb_gray  .copyright a{
+.imdb_gray  .imdb_copyright a{
     color: #136cb2;
 }
 
-.imdb_dark  .copyright a{
+.imdb_dark  .imdb_copyright a{
     color: #f5c518;
 }
 
@@ -592,7 +592,7 @@ div.imdb_right > span#summary{
 
 }
 
-.imdb_default_title .copyright{
+.imdb_default_title .imdb_copyright{
     -webkit-line-break: normal !important;
     font-weight: bold;
     text-decoration: none!important;
@@ -829,7 +829,7 @@ div.imdb_right > span#summary{
 
 }
 
-.imdb_default_tr .copyright{
+.imdb_default_tr .imdb_copyright{
     -webkit-line-break: normal !important;
     font-weight: bold;
     text-decoration: none!important;
@@ -1039,7 +1039,7 @@ div.imdb_right > span#summary{
 
 }
 
-.imdb_default_name .copyright{
+.imdb_default_name .imdb_copyright{
     -webkit-line-break: normal !important;
     font-weight: bold;
     text-decoration: none!important;
@@ -1085,6 +1085,7 @@ div.imdb_right > span#summary{
     position: relative !important;
     overflow:hidden !important;
     margin-bottom: 10px;
+    color:inherit !important;
 }
 
 .imdb_default_nametr b{
@@ -1202,7 +1203,7 @@ div.imdb_right > span#summary{
 
 }
 
-.imdb_default_nametr .copyright{
+.imdb_default_nametr .imdb_copyright{
     -webkit-line-break: normal !important;
     font-weight: bold;
     text-decoration: none!important;

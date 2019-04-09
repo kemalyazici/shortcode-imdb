@@ -7,3 +7,6 @@ add_action('admin_enqueue_scripts','shimdb_imdb_admin_styles');
 add_action('wp_enqueue_scripts','shimdb_imdb_frontend_styles');
 // Add admin menu
 add_action('admin_menu','shimdb_imdb_settings_page');
+// Add admin js
+add_action('admin_enqueue_scripts','scimdb_admin_jquery_script');
+add_action('admin_enqueue_scripts','scimdb_admin_script');

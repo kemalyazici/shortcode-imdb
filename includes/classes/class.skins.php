@@ -71,7 +71,7 @@ class shimdb_imdb_get_skin{
                         <div class="imdb_general">'.$dr.$wr.$sr.'</div>                            
                         <span id="summary"><b>Summary: </b>'.str_replace("\\'","'",$sum).'</span>     
                         <div class="imdb_general">'.$country.$lang.'</div>                          
-                        <div class="footer"><span class="copyright">Source: <a href="https://www.imdb.com" target="_blank">imdb.com</a></span><span style="display: none">Disclaimer: This plugin has been coded to automatically quote data from imdb.com. Not available for any other purpose. All showing data have a link to imdb.com. The user is responsible for any other use or change codes.</span></div>
+                        <div class="footer"><span class="imdb_copyright">Source: <a href="https://www.imdb.com" target="_blank">imdb.com</a></span><span style="display: none">Disclaimer: This plugin has been coded to automatically quote data from imdb.com. Not available for any other purpose. All showing data have a link to imdb.com. The user is responsible for any other use or change codes.</span></div>
                         </div>
                  </div></div></div>';
 
@@ -172,7 +172,7 @@ class shimdb_imdb_get_skin{
             </div>
             <div class="spacer" style="clear: both;"></div>
             '.$img.'
-            <div class="footer"><span class="copyright">Source: <a href="https://www.imdb.com" target="_blank" style="color: #f5c518 !important;">imdb.com</a></span></div>  
+            <div class="footer"><span class="imdb_copyright">Source: <a href="https://www.imdb.com" target="_blank" style="color: #f5c518 !important;">imdb.com</a></span></div>  
          </div> 
          </div>       
         ';
@@ -309,7 +309,7 @@ class shimdb_imdb_get_skin{
             
             
             
-            <div class="footer"><span class="copyright">Source: <a href="https://www.imdb.com" target="_blank" '.($transp=! "_tr" ? 'style="color: #f5c518 !important;"' : "").'>imdb.com</a></span></div>  
+            <div class="footer"><span class="imdb_copyright">Source: <a href="https://www.imdb.com" target="_blank" '.($transp=! "_tr" ? 'style="color: #f5c518 !important;"' : "").'>imdb.com</a></span></div>  
          </div></div>
          
         ';
@@ -376,7 +376,7 @@ class shimdb_imdb_get_skin{
                         <span id="summary"><b>Biography: </b>'.str_replace("\\'","'",$bio).'</span>     
                         <div class="imdb_general"><b>Born: </b>'.$output->born.'</div>'.$death.'
                         <div class="imdb_general">'.$known.'</div>                          
-                        <div class="footer"><span class="copyright">Source: <a href="https://www.imdb.com" target="_blank">imdb.com</a></span></div>
+                        <div class="footer"><span class="imdb_copyright">Source: <a href="https://www.imdb.com" target="_blank">imdb.com</a></span></div>
                         </div>
                  </div></div></div>';
         $return_html = $div_style == "imdb_default_name" ? (@$args['data'] == "detailed" ? $this->default_detailed_name_style($args,$output,$content) : $this->default_style_name($args,$output,$content)) : $html;
@@ -441,7 +441,7 @@ class shimdb_imdb_get_skin{
                 <div class="spacer" style="clear: both;"></div>                 
                 '.$img.'
                 <div class="spacer" style="clear: both;"></div>
-                <div class="footer"><span class="copyright">Source: <a href="https://www.imdb.com" target="_blank" style="color: #f5c518 !important;">imdb.com</a></span></div>
+                <div class="footer"><span class="imdb_copyright">Source: <a href="https://www.imdb.com" target="_blank" style="color: #f5c518 !important;">imdb.com</a></span></div>
                 
                 </div>
                 </div>
@@ -495,9 +495,6 @@ class shimdb_imdb_get_skin{
             foreach ($output->actor as $k => $a){
                 $list_bg = ($k%2==0) ? ($transp != "_nametr" ? ' style="background-color:#eeeeee"' : "") : "";
                 $actor .= '<div class="list"'.$list_bg.'>'.$a.'</div>';
-                if($k==9){
-                    break;
-                }
 
             }
 
@@ -511,9 +508,7 @@ class shimdb_imdb_get_skin{
             foreach ($output->actress as $k => $a){
                 $list_bg = ($k%2==0) ? ($transp != "_nametr" ? ' style="background-color:#eeeeee"' : "") : "";
                 $actress .= '<div class="list"'.$list_bg.'>'.$a.'</div>';
-                if($k==9){
-                    break;
-                }
+
 
             }
 
@@ -527,9 +522,7 @@ class shimdb_imdb_get_skin{
             foreach ($output->director as $k => $a){
                 $list_bg = ($k%2==0) ? ($transp != "_nametr" ? ' style="background-color:#eeeeee"' : "") : "";
                 $director .= '<div class="list"'.$list_bg.'>'.$a.'</div>';
-                if($k==9){
-                    break;
-                }
+
 
             }
 
@@ -543,9 +536,7 @@ class shimdb_imdb_get_skin{
             foreach ($output->writer as $k => $a){
                 $list_bg = ($k%2==0) ? ($transp != "_nametr" ? ' style="background-color:#eeeeee"' : "") : "";
                 $writer .= '<div class="list"'.$list_bg.'>'.$a.'</div>';
-                if($k==9){
-                    break;
-                }
+
 
             }
 
@@ -559,9 +550,7 @@ class shimdb_imdb_get_skin{
             foreach ($output->producer as $k => $a){
                 $list_bg = ($k%2==0) ? ($transp != "_nametr" ? ' style="background-color:#eeeeee"' : "") : "";
                 $pro .= '<div class="list"'.$list_bg.'>'.$a.'</div>';
-                if($k==9){
-                    break;
-                }
+
 
             }
 
@@ -575,13 +564,26 @@ class shimdb_imdb_get_skin{
             foreach ($output->soundtrack as $k => $a){
                 $list_bg = ($k%2==0) ? ($transp != "_nametr" ? ' style="background-color:#eeeeee"' : "") : "";
                 $sound .= '<div class="list"'.$list_bg.'>'.$a.'</div>';
-                if($k==9){
-                    break;
-                }
+
 
             }
 
         }
+
+        /* Sound Department */
+        $soundd = "";
+        if($output->soundd  != ""){
+            shuffle($output->soundd);
+            $soundd .= '<div class="job_title">Sound Department</div>';
+            foreach ($output->soundd as $k => $a){
+                $list_bg = ($k%2==0) ? ($transp != "_nametr" ? ' style="background-color:#eeeeee"' : "") : "";
+                $soundd .= '<div class="list"'.$list_bg.'>'.$a.'</div>';
+
+
+            }
+
+        }
+
 
         /* Composer */
         $comp = "";
@@ -591,9 +593,21 @@ class shimdb_imdb_get_skin{
             foreach ($output->composer as $k => $a){
                 $list_bg = ($k%2==0) ? ($transp != "_nametr" ? ' style="background-color:#eeeeee"' : "") : "";
                 $comp .= '<div class="list"'.$list_bg.'>'.$a.'</div>';
-                if($k==9){
-                    break;
-                }
+
+
+            }
+
+        }
+
+        /* Editor */
+        $editor = "";
+        if($output->editor  != ""){
+            shuffle($output->editor);
+            $editor .= '<div class="job_title">Editor</div>';
+            foreach ($output->editor as $k => $a){
+                $list_bg = ($k%2==0) ? ($transp != "_nametr" ? ' style="background-color:#eeeeee"' : "") : "";
+                $editor .= '<div class="list"'.$list_bg.'>'.$a.'</div>';
+
 
             }
 
@@ -635,10 +649,10 @@ class shimdb_imdb_get_skin{
                 '.$img.$known.$vids.'
                 <div class="filmography">
                 <h3>Filmography</h3>
-                '.$actress.$actor.$director.$writer.$pro. $sound.$comp.'
+                '.$actress.$actor.$director.$writer.$pro. $sound.$comp.$editor.$soundd.'
                 <div class="spacer" style="clear: both;"></div>   
                 </div>
-                <div class="footer"><span class="copyright">Source: <a href="https://www.imdb.com" target="_blank" '.($transp=! "_nametr" ? 'style="color: #f5c518 !important;"' : "").'>imdb.com</a></span></div>
+                <div class="footer"><span class="imdb_copyright">Source: <a href="https://www.imdb.com" target="_blank" '.($transp=! "_nametr" ? 'style="color: #f5c518 !important;"' : "").'>imdb.com</a></span></div>
                 </div>
                 </div>
                 
