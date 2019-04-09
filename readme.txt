@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: movie, movie database, film, imdb, shortcode, actor, actress
 Requires at least: 4.7
 Tested up to: 5.1
-Stable tag: 4.2
+Stable tag: 4.3
 License: GPL-2.0+
 Requires PHP: 5.2
 
