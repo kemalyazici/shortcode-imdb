@@ -427,7 +427,7 @@ div.imdb_right > span#summary{
 
 }
 
-.imdb_default_title > .footer{
+.imdb_default_title > .imdb-footer{
     width: 100%;
     padding: 20px;
     position: relative;
@@ -680,7 +680,7 @@ div.imdb_right > span#summary{
 
 }
 
-.imdb_default_tr > .footer{
+.imdb_default_tr > .imdb-footer{
     width: 100%;
     padding: 10px;
     position: relative;
@@ -1027,7 +1027,7 @@ div.imdb_right > span#summary{
     display: block;
 }
 
-.imdb_default_name > .footer{
+.imdb_default_name > .imdb-footer{
     width: 100%;
     padding: 20px;
     bottom:0;
@@ -1193,7 +1193,7 @@ div.imdb_right > span#summary{
     display: block;
 }
 
-.imdb_default_nametr > .footer{
+.imdb_default_nametr > .imdb-footer{
     width: 100%;
     padding: 20px;
     bottom:0;

@@ -450,6 +450,17 @@ class shimdb_imdb_grab{
             $data['soundd'] = $soundds;
         }
 
+        @$self = $xpath->query('//div[contains(@id, "self")]/b/a');
+        $data['self'] = "";
+        if($self->length>0){
+            $selfs = array();
+            foreach ($self as $a){
+                $link = @$a->getAttribute('href') ? esc_url('https://www.imdb.com'.$a->getAttribute('href')) : "";
+                $selfs[] = '<a href="'.$link.'" target="_blank">'.esc_attr($a->nodeValue).'</a>';
+            }
+            $data['self'] = $selfs;
+        }
+
 
 
 

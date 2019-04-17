@@ -76,12 +76,16 @@ function shimdb_imdb_general_info()
 
                     </section>
 
-                    <section id="content2">
-                        <ul>
+                    <section id="content2">                        <ul>
+
+
                             <h2>Version 4.2 Update</h2>
                             <b>Now, the plugin can grab more filmography data from imdb names. Please clear the cache to see new features.</b>
                             <h2>Version 4.1 Update</h2>
                             <b>Default mode can be shown transparent style now</b><br/><br/>
+                            <b>4.5 - 2019-04-18</b>
+                            <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Updated: Fetching Filmography capacity has been expanded.</li>
+                            <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Fixed: Some css issues has been fixed.</li>
 
                             <b>4.2 - 2019-04-09</b>
                             <li><i aria-hidden="true" class="dashicons dashicons-yes"></i>Updated: Fetching Filmography capacity has been expanded.</li>
@@ -276,7 +280,7 @@ function shimdb_imdb_side_menu(){
     </div>
     <p>Publish imdb.com data in your articles.</p>
 
-    <p><a href="http://demo.pluginpress.net/shortcode-imdb/2018/11/29/shortcode-imdb/" target="_blank">Shortcode IMDB V. 4.3</a>. </p>
+    <p><a href="http://demo.pluginpress.net/shortcode-imdb/2018/11/29/shortcode-imdb/" target="_blank">Shortcode IMDB V. 4.5</a>. </p>
     <h3>Resources</h3>
     <ul>
         <li><a href="http://pluginpress.net" target="_blank"><i aria-hidden="true" class="dashicons dashicons-external"></i> Website</a></li>
@@ -289,7 +293,7 @@ function shimdb_imdb_side_menu(){
 
     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
         <input type="hidden" name="cmd" value="_s-xclick" />
-        <input type="hidden" name="hosted_button_id" value="PSMRT29N7K3CE" />
+        <input type="hidden" name="hosted_button_id" value="ZJ97CXDWMNTS2" />
         <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
         <img alt="" border="0" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1" />
     </form>

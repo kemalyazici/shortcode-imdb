@@ -1,10 +1,10 @@
 === Shortcode IMDB ===
 Contributors: kyazici
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PSMRT29N7K3CE
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZJ97CXDWMNTS2
 Tags: movie, movie database, film, imdb, shortcode, actor, actress
 Requires at least: 4.7
 Tested up to: 5.1
-Stable tag: 4.3
+Stable tag: 4.5
 License: GPL-2.0+
 Requires PHP: 5.2
 
@@ -32,6 +32,9 @@ Creating an article without giving more information about movies or actors/actre
 12. [imdb style="transparent"]
 
 == Changelog ==
+= 4.5 - 2019-04-09 =
+* Updated: Fetching Filmography capacity has been expanded.
+* Fixed: Some css issues has been fixed.
 = 4.2 - 2019-04-09 =
 * Updated: Fetching Filmography capacity has been expanded.
 * Fixed: Some css issues has been fixed.
