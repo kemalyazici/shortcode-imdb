@@ -1,3 +1,15 @@
+body{
+    --menu-item-size: 50px;
+    --green-color: #329680;
+    --blue-color: #099c95;
+    --dark-green-color: #175b52;
+    --white-color: #FFF;
+    --gray-color: #EDEDED;
+    --container-width: 700px;
+    --container-height: 400px;
+    --line-offset: calc((100% - var(--container-height))/ 2 + var(--menu-item-size) + 0.6em);
+}
+
 .imdb_container a{
     text-decoration: none!important;
 
@@ -8,6 +20,10 @@
     border-bottom: 0 !important;
     z-index: 100;
 
+}
+
+div[class^="imdb_job_"]{
+    display: none;
 }
 
 .imdb_container hr{
@@ -942,7 +958,33 @@ div.imdb_right > span#summary{
     font-weight: bold;
     margin-left: 15px;
     margin-bottom: 10px;
+    width: 100%;
+    display: flex;
 }
+.imdb_job_click{
+    padding: 5px;
+    width: 95%;
+    background: #fff;
+}
+.imdb-arrow{
+    position: relative;
+    float: right;
+    bottom:0;
+}
+
+.imdb-arrow  .imdb-arrow-down::after{
+    width: 25px;
+    height: 25px;
+    font-family: FontAwesome;
+    content:'\f0d7';
+}
+.imdb-arrow  .imdb-arrow-up::after{
+    width: 25px;
+    height: 25px;
+    font-family: FontAwesome;
+    content:'\f0d8'
+}
+
 
 .imdb_default_name .filmography .list a{
     font-size: 14px;
@@ -1034,7 +1076,7 @@ div.imdb_right > span#summary{
     position: relative;
     background-color: #191919;
     background-image: url("../assets/imdb-bg2.png");
-    background-position: right bottom;
+    background-position: right 35px center;
     background-repeat: no-repeat;
 
 }
@@ -1077,7 +1119,7 @@ div.imdb_right > span#summary{
     text-decoration: none !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
-    max-width: 670px !important;
+    max-width: 800px !important;
     margin-left: auto !important;
     margin-right: auto !important;
     line-height: normal !important;
@@ -1179,13 +1221,18 @@ div.imdb_right > span#summary{
     display: flex;
     text-align: center;
     padding: 5px;
-    position: relative;
+    width: 100% !important;
 }
 
 
 .imdb_default_nametr > .known > a{
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-right: 15px;
+    width: auto !important;
+    height: auto !important;
+}
+.imdb_default_nametr > .known > a img{
+    width: auto !important;
+    height: auto !important;
 }
 .imdb_default_nametr > .top > .right > .content > .info{
     margin-top: 10px;
@@ -1233,17 +1280,1155 @@ div.imdb_right > span#summary{
 
 }
 
+.imdb_quote{
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+
+
+.imdb-list-image{
+    position: relative;
+    text-align: center;
+    color: white;
+    overflow: hidden!important;
+}
+.imdb-list-image > img{
+    width: 100%;
+}
+.imdb-list-image > a > img{
+    width: 100%;
+}
+.imdb-list-image > .imdb-list-container{
+  width: 100% !important;
+  overflow: hidden!important;
+}
+.imdb-list-image > .top-left {
+    position: absolute !important;
+    font-weight: bold;
+    font-size: 35px !important;
+    text-shadow: #0c0c0c 2px 0 10px; !important;
+    top: 16px !important;
+    left: 16px !important;
+}
+.imdb-list-image > .centered {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+}
+
+.imdb-video-header{
+    font-size: 20px;
+    font-weight: bold;
+}
+.imdb-video-header >a {
+    text-decoration: none !important;
+}
+
+.imdb-list-title-container{
+    display: block;
+    margin-bottom: 20px;
+    padding: 10px;
+    color: #0a0a0a!important;
+}
+.imdb-list-title-container a{
+    color:#2e6da4!important
+}
+.imdb-list-title-container-style{
+    display: block;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+.imdb-list-title-container-style a{
+    color:inherit!important
+}
+.imdb-title-list-content span.imdb-list-title-small{
+    font-size: 15px!important;
+}
+.imdb-list-title-mini{
+    margin-top: 5px;
+    font-size: 10px !important;
+    display: block;
+}
+.imdb-list-title-medium{
+    margin-top: 10px;
+    font-size: 12px !important;
+    display: block !important;
+    width: 100%;
+    position: relative;
+}
+
+
+.imdb-title-list-content .imdb-list-title-desc{
+    display: block;
+    overflow: hidden !important;
+    margin-top: 10px;
+    font-size: 14px !important;
+}
+.imdb-list-title-listdesc{
+    display: block;
+    overflow: hidden !important;
+    margin-top: 10px;
+    width: 100% !important;
+    font-size: 14px !important;
+}
+
+.imdb-list-title-wrap{
+    display: table;
+}
+.imdb-list-title-wrap .imdb-title-list-poster{
+    margin-right: 20px;
+    width:155px;
+    display: table-cell;
+
+}
+
+
+.imdb-list-title-wrap .imdb-title-list-poster a img{
+    box-shadow: 2px 2px 1px #ccc;
+    -moz-box-shadow: 2px 2px 1px #ccc;
+    -webkit-box-shadow: 2px 2px 1px #ccc;
+    -khtml-box-shadow: 2px 2px 1px #ccc;
+    width: 140px !important;
+    height: 209px !important;
+}
+.imdb-title-list-content{
+    display: table-cell;
+    vertical-align: top;
+    position: relative;
+}
+
+.imdb-title-list-content span.imdb-list-title-big a {
+    font-size: 18px !important;
+}
+.imdb-metascore{
+    padding-right: 3px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 4px;
+    color: #fff !important;
+}
+.imdb-metascore-woo{
+    padding-right: 3px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 3px;
+    color: #fff !important;
+    height: 35px;
+    line-height: 35px;
+    font-size: 18px;
+    width: 50% !important;
+}
+
+.imdb-metascore-woo-text{
+    font-size: 18px;
+    height: 35px !important;
+    line-height: 35px !important;
+}
+.imdb-title-list-rating{
+    background-image: url("../assets/mini-star.png");
+    border: 0;
+    background-position: left center;
+    background-repeat: no-repeat;
+    height: 14px;
+    width: 75px;
+    float: left;
+    position: relative;
+    margin-right: 150px;
+}
+.imdb-title-list-rating strong{
+    margin-left: 18px;
+    position: absolute;
+    top: 5px !important;
+    -ms-transform: translateY(-50%) !important;
+    transform: translateY(-50%) !important;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+.imdb-title-list-rating-woo{
+    background-image: url("../assets/woostar.png") !important;
+    border: 0 !important;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    background-position: left center !important;
+    background-repeat: no-repeat !important;
+    height: 35px !important;
+    width: 50% !important;
+    line-height: 35px !important;
+    float: left !important;
+    position: relative !important;
+    font-size: 18px !important;
+    margin-right: 20px !important;
+}
+
+.imdb-title-list-rating-woo strong{
+    margin-left: 35px;
+    position: absolute;
+    top: 50% !important;
+    -ms-transform: translateY(-50%) !important;
+    transform: translateY(-50%) !important;
+}
+
+.imdb-load-more{
+    margin-top: 20px;
+    position: relative;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+#imdbLoadMore{
+    font-family: Arial, "Times New Roman", "Bitstream Charter", Times, serif;
+    font-size: 15px;
+    width: 100%;
+    height: 40px;
+    position: relative;
+    text-align: center;
+    vertical-align: center !important;
+    font-weight: bold;
+    color:#0c0c0c;
+    text-decoration: none;
+    background: #f5c518;
+    margin-right: auto;
+    margin-left: auto;
+    border:0;
+    cursor:pointer;
+}
+
+.imdb-list-title-grid-container{
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+
+}
+.imdb-list-title-grid-container::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.imdb-list-title-grid{
+    width: 25%;
+    padding: 10px;
+    position: relative;
+    float: left;
+}
+.imdb-list-title-grid > a{
+    position: relative;
+}
+.imdb-list-title-grid > a >img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain !important;
+
+}
+
+.imdb-grid-info {
+    position: absolute;
+    top: 5px;
+    right:0;
+    padding: 20px;
+    width: 400px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(+300px) translateY(-50%);
+    transition: 0.5s;
+    z-index:10
+}
+.imdb-grid-info a {
+    color: #2e6da4 !important;
+}
+
+.imdb-list-title-grid:hover  span.imdb-grid-info {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(+320px) translateY(-45%);
+
+}
+.imdb-grid-info-left {
+    position: absolute;
+    top: 5px;
+    left:0;
+    padding: 20px;
+    min-width: 400px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(-300px) translateY(-50%);
+    transition: 0.5s;
+    z-index:10
+}
+.imdb-grid-info-left a {
+    color: #2e6da4 !important;
+}
+
+.imdb-list-title-grid:hover  span.imdb-grid-info-left {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-320px) translateY(-45%);
+
+}
+
+.imdb-grid-info-content{
+    color:#0c0c0c !important;
+}
+.imdb-grid-info-content p {
+    color:#0c0c0c !important;
+    font-size: 13px;
+}
+.imdb-grid-info-content .grid-info-title{
+    font-size: 16px;
+}
+.imdb-grid-info-content .grid-info-title a{
+    font-weight: bold;
+}
+
+.imdb-popup-here{
+    position: unset!important;
+    float: unset !important;
+    text-align: unset !important;
+    top:unset !important;
+    left: unset !important;
+    z-index: unset !important;
+    right: unset !important;
+    bottom: unset !important;
+    all:unset !important;
+}
+
+
+
+.imdb-popup-overlay {
+    left: 0 !important;
+    right: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    opacity: 1;
+    z-index: 1999999998!important;
+    clear: both !important;
+}
+
+.imdb-popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #1b1e21 !important;
+    border-radius: 5px;
+    width: 800px !important;
+    position: relative;
+    transition: all 5s ease-in-out;
+    color: #fff !important;
+    clear: both !important;
+
+}
+
+
+
+.imdb-p-close {
+    position: absolute !important;
+    top: 10px !important;
+    right: 30px !important;
+    transition: all 200ms !important;
+    font-size: 30px !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+    color: #fff !important;
+}
+.imdb-p-close:hover {
+    color: #06D85F !important;
+}
+
+.imdb-p-close:focus {
+    color: #06D85F !important;
+    background: #1b1e21 !important;
+    border: 0 #0a0a0a!important;
+}
+
+.imdb-p-content {
+    font-family: Verdana,Helvetica,Arial sans-serif !important;
+    color: #fff !important;
+    background: #1b1e21 !important;
+    text-decoration: none!important;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+    line-height: normal !important;
+    -webkit-line-break: normal !important;
+    border-bottom: 0 !important;
+    font-size: 15px !important;
+
+}
+
+.imdb-p-title{
+    font-size: 20px !important;
+    color:#fff !important;
+    font-weight: bolder;
+    padding: 10px;
+    width: 90%;
+}
+.imdb-p-header{
+    margin-top: 20px;
+    background: #0a0a0a;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff !important;
+    font-size: 14px!important;
+    z-index: 1999999998!important;
+}
+.imdb-p-media{
+    margin-top: 20px;
+
+}
+.imdb-p-container{
+    display: block;
+}
+
+.imdb-p-poster{
+    float: left !important;
+    width: 200px !important;
+    height: 295px !important;
+    display: inline-block;
+
+
+}
+.imdb-p-trailer{
+    margin-bottom: 10px;
+    width:560px!important;
+    height: 290px!important;
+    text-align:center !important;
+    border:2px #fff solid;
+    margin-left: 200px;
+}
+.imdb-p-info{
+    color:#fff !important;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.imdb-p-info a{
+    color:#fff !important;
+}
+.imdb-p-footer-gap{
+    height: 50px !important;
+}
+.imdb-p-footer{
+    height: 50px !important;
+    padding: 0;
+    width: 100% !important;
+    position: absolute;
+    left:0;
+    bottom:0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background: #000;
+}
+
+.imdb-p-footer > b{
+    background: #000 !important;
+    font-size: 15px;
+    left:10px!important;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.imdb-p-footer img {
+    right:10px;
+    float: right;
+    margin-right: 10px;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+
+}
+
+.imdb-cast-woo{
+    float: left !important;
+    width: 50% !important;
+    margin-bottom: 20px !important;
+    height: 100px!important;
+    position: relative !important;
+    font-size: 16px !important;
+}
+.imdb-woo-photo{
+    float: left !important;
+    width: 100px !important;
+    background-size: 110px 110px !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    border-radius: 50% !important;
+    margin-right: 10px !important;
+}
+.imdb-woo-photo a img {
+    border-radius: 50% !important;
+    width: 100px !important;
+}
+.imdb-woo-content{
+    position: absolute !important;
+    top:25px !important;
+    left:110px !important;
+}
+.imdb-woo-filmo{
+    padding: 10px;
+}
+
+
+/*********** TABS ***************/
+#imdb_fp_tab_container{
+    position: relative;
+    margin-bottom: 20px;
+}
+#imdb_fp_tab_header{
+    position: relative;
+    width: 100%;
+    display: block;
+    min-height: 80px !important;
+    max-height: 200px !important;
+    clear: both;
+}
+
+#imdb_fp_tab_header #imdb_fp_tab_title{
+    width: 60%;
+    height: 100% !important;
+    float: left;
+
+}
+#imdb_fp_tab_header #imdb_fp_tab_rate{
+    width: 40%;
+    right:10px;
+    position: absolute;
+
+}
+
+#imdb_fp_tab_info{
+ clear: both;
+ width: 100%;
+ display: flex;
+}
+
+/**
+ * Tabs
+ */
+.shimdb-tabs {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap; // make sure it wraps;
+    background-color: inherit;
+}
+.shimdb-tabs label {
+    order: 1; // Put the labels first
+    display: block;
+    padding: 1rem 2rem;
+    margin-right: 0.2rem;
+    cursor: pointer;
+    background-color: #f0fff8;
+    font-weight: bold;
+    transition: background ease 0.2s;
+}
+.shimdb-tabs .shimdb-tab {
+    order: 99; // Put the tabs last
+    flex-grow: 1;
+    width: 100%;
+    display: none;
+    padding: 1rem;
+    background-color: inherit;
+}
+.shimdb-tabs input[type="radio"] {
+    display: none;
+
+}
+.shimdb-tabs input[type="radio"]:checked + label {
+    background: inherit;
+}
+.shimdb-tabs input[type="radio"]:checked + label + .shimdb-tab {
+    display: block;
+}
+
+
+.imdb-cast-tab{
+    float: left !important;
+    width: 50% !important;
+    margin-bottom: 20px !important;
+    height: 150px!important;
+    position: relative !important;
+    font-size: 16px !important;
+}
+
+.imdb-tab-cast-photo{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.imdb-tab-cast-photo a img {
+    display: inline;
+    margin: 0 auto;
+    margin-right: -25%;
+    height: 100%;
+    width: auto;
+
+}
+
+.imdb-tab-cast-content{
+    position: absolute !important;
+    top:25px !important;
+    left:110px !important;
+}
+
+.imdb-video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+}
+.imdb-video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Tabs Name Container */
+.side-tabs-container{
+    position: relative;
+    width: 120px;
+    height: 100vh;
+    float: left;
+    z-index: 20;
+
+}
+/* Tabs Names Label */
+.side-tabs-container label{
+    position: relative;
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 1);
+    border-right: 1px solid rgba(0, 0, 0, 1);
+    display: block;
+    font-size: 13px;
+    cursor: pointer;
+    user-select: none;
+    background-color: transparent;
+}
+
+/* Hover effect on tabs names */
+.side-tabs-container label:hover{
+    background: rgba(0, 0, 0, 1);
+
+}
+
+/* Content area for tabs */
+.side-tab-content{
+    position: relative;
+    width: calc(100% - 120px);
+    min-height: 100vh;
+    padding: 15px;
+    float: left;
+    box-sizing: border-box;
+    z-index: 19;
+    display: none;
+}
+
+.side-tab-content:after{
+    content: "";
+    clear: both;
+
+}
+/* Hide input radio from users */
+.side-tab-inputs{
+    display: none;
+}
+/* Show tab when input checked */
+.side-tab-inputs:checked ~ section.side-tab-content{
+    display: block !important;
+    animation: slide 0.5s forwards;
+}
+
+
+.acc-tab {
+    position: relative;
+    margin-bottom: 1px;
+    width: 100%;
+
+    overflow: hidden;
+    /* :checked */
+    /* Icon styles*/
+}
+.acc-tab .tab-input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+.acc-tab .tab-label {
+    position: relative;
+    background-color: inherit;
+    display: block;
+    padding: 0 0 0 3em;
+    font-weight: bold;
+    line-height: 3;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 1em;
+    margin-bottom: 0;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+.acc-tab .tab-content {
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: max-height 0.35s;
+    -o-transition: max-height 0.35s;
+    transition: max-height 0.35s;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+.acc-tab .tab-content p {
+    margin: 1em;
+}
+.acc-tab .tab-content .tab {
+    padding: 10px;
+    margin: 2px 0px;
+    border-radius: 3px;
+}
+.acc-tab .tab-content .tab label {
+    border-radius: 0;
+}
+.acc-tab .tab-inner {
+    padding: 1px 0 0;
+}
+.acc-tab .tab-inner label {
+    font-weight: 400;
+
+}
+.acc-tab .tab-inner .tab-content ul {
+    margin: 0;
+    padding: 0;
+}
+.acc-tab .tab-inner .tab-content ul li {
+    list-style-type: none;
+}
+.acc-tab .tab-inner .tab-content ul li .checkBox label {
+    text-transform: capitalize;
+    padding-left: 0;
+    margin: 0;
+}
+.acc-tab .tab-inner .tab-content ul li .checkBox label:after {
+    content: "";
+}
+.acc-tab .tab-input:checked ~ .tab-content {
+    max-height: 250em;
+}
+.acc-tab .tab-label::after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 3em;
+    height: 3em;
+    line-height: 3;
+    text-align: center;
+    -webkit-transition: all 0.35s;
+    -o-transition: all 0.35s;
+    transition: all 0.35s;
+}
+.acc-tab .tab-input[type=checkbox] + .tab-label::after {
+    font-family: "FontAwesome";
+    content: "";
+}
+.acc-tab .tab-input[type=checkbox]:checked + .tab-label::after {
+    transform: rotate(180deg);
+}
+
+.checkbox-custom {
+    opacity: 0;
+    position: absolute;
+}
+
+.checkbox-custom,
+.checkbox-custom-label {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.checkbox-custom-label {
+    position: relative;
+}
+
+.checkbox-custom + .checkbox-custom-label:before {
+    content: "";
+    border: 2px solid #ddd;
+    display: inline-block;
+    vertical-align: middle;
+    width: 10px;
+    height: 10px;
+    padding: 2px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.checkbox-custom:checked + .checkbox-custom-label:before {
+    content: "";
+    font-family: "FontAwesome";
+    line-height: 10px;
+}
+
+
+.imdb_fp_tab_poster{
+    float: left;
+    width: 30%;
+}
+
+.imdb_fp_tab_poster_side{
+    float: left;
+    width: 70%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+/* Slide animation for tab contents */
+
+
+
+.shimb-main-menu {
+    display: flex;
+    list-style: none;
+    margin: auto 0;
+    padding: 0.6em 0 0 0;
+}
+
+.shimb-main-menu > li {
+    box-sizing: border-box;
+    height: var(--menu-item-size);
+    width: calc(3.5 * var(--menu-item-size));
+    line-height: var(--menu-item-size);
+    padding: 0 2em;
+    margin: 1px;
+    transition: 0.5s linear all;
+    background: var(--green-color);
+    color: var(--dark-green-color);
+    cursor: pointer;
+    font-size: 16px;
+    user-select: none;
+}
+
+.shimb-main-menu > li:not(.shimb-with-submenu) {
+    clip-path: polygon(10% 0%, 0% 100%, 95% 100%, 100% 50%, 95% 0%);
+    shape-outside: polygon(10% 0%, 0% 100%, 95% 100%, 100% 50%, 95% 0%);
+}
+
+.shimb-main-menu > li:nth-child(2) {
+    transform: translateX(-5%);
+}
+
+.shimb-main-menu > li:nth-child(3) {
+    transform: translateX(-10%)
+}
+
+.shimb-main-menu > li:nth-child(4) {
+    transform: translateX(-15%)
+}
+
+.shimb-main-menu i {
+    margin-right: 5px;
+}
+
+.shimb-main-menu > li:hover:not(.active) {
+    background: linear-gradient(to right, var(--green-color), var(--blue-color));
+    color: var(--white-color);
+}
+
+
+
+.shimb-main-menu > li:active:not(.active),
+.shimb-main-menu > li:active:not(.shimb-with-submenu){
+    background: var(--blue-color);
+    color: var(--white-color);
+}
+
+.shimb-main-menu > li:hover i:not(li.active) {
+    color: #175c58;
+}
+
+.shimb-main-menu .active {
+    color: var(--white-color);
+    background: var(--blue-color);
+    cursor: default;
+    text-shadow: 1px 1px 1px var(--dark-green-color);
+    font-size: 18px;
+}
+
+.shimb-article {
+    background: var(--gray-color);
+    padding: 1em;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 5px 5px 5px #CCC;
+    position: relative;
+    z-index: -1;
+}
+
+.shimb-h1 {
+    font-size: 115%;
+    margin: 1em 2em;
+    padding: 0;
+    position: relative;
+    color: #777;
+}
+
+.shimb-content {
+    padding: 0 0 0 3em;
+    font-size: 16px;
+}
+
+.shimb-submenu {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    list-style: none;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    min-width: calc(3.5 * var(--menu-item-size) - 5%);
+    box-shadow: 5px 5px 5px #CCC;
+}
+
+.shimb-with-submenu {
+    position: relative;
+    display: inline-block;
+    clip-path: polygon(10% 0%, 0% 100%, 0% 500%, 95% 500%, 95% 100%, 100% 50%, 95% 0%);
+    shape-outside: polygon(10% 0%, 0% 100%, 95% 100%, 100% 50%, 95% 0%);
+}
+
+.shimb-with-submenu:hover .shimb-submenu {
+    display: block;
+}
+
+.shimb-submenu > li {
+    background: #dedede;
+    border-bottom: 1px solid var(--gray-color);
+    color: #777;
+    padding: 1.2em 1em;
+    transition: 0.3s all linear;
+    display: block;
+    line-height: 0%;
+}
+
+.shimb-submenu > li:hover {
+    background: var(--gray-color)
+}
+
+.shimb-submenu > li:active {
+    background: var(--white-color);
+}
+
+/*TAB SELECT*/
+.select-subtab {
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    -ms-appearance:none;
+    appearance:none;
+    outline:0;
+    box-shadow:none;
+    border:0!important;
+    background-color: #5c6664;
+    background-image: none;
+    flex: 1;
+    padding: 0 .5em;
+    color:inherit;
+    cursor:pointer;
+    font-size: 1em;
+    font-family: 'Open Sans', sans-serif;
+}
+.select-subtab::-ms-expand {
+    display: none;
+}
+.shimdb-tab-select {
+    position: relative;
+    display: flex;
+    width: 20em;
+    height: 3em;
+    line-height: 3;
+    background-color: #5c6664 !important;
+    overflow: hidden;
+    border-radius: .25em;
+}
+.shimdb-tab-select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background-color: #2b2e2e;
+    color:#fff;
+    cursor:pointer;
+    pointer-events:none;
+    transition:.25s all ease;
+}
+.shimdb-tab-select:hover::after {
+    color: #ccc;
+}
+
+
+
+
+
 
 /*********************** MOBILE SETTINGS ******************************/
 
 
 @media (max-width: 30em) {
 
+    #imdb_fp_tab_info{
+        display: block;
+    }
+    .side-tabs-container{
+        width: 100%;
+        height: auto;
+    }
+
+    .imdb_fp_tab_poster{
+        width: 100% !important;
+        display: block !important;
+        margin-bottom: 5px;
+    }
+    .imdb_fp_tab_poster_side
+    {
+        width: 100% !important;
+        display: block !important;
+    }
+
+    .imdb-cast-tab{
+        width: 100% !important;
+        font-size: 12px !important;
+    }
+    .imdb-tab-cast-content{
+        float: left;
+        top:0;
+    }
+    .imdb-cast-woo{
+        width: 100% !important;
+        font-size: 12px !important;
+    }
+    .imdb-popup-overlay{
+        position: absolute !important;
+    }
+    .imdb-p-title{
+        font-size: 15px !important;
+        width: 80% !important;
+    }
+    .imdb-popup{
+        width: 280px!important;
+    }
+    .imdb-p-header{
+        display:none !important;
+    }
+    .imdb-p-poster{
+        float: none !important;
+        width: 200px !important;
+        height: 295px !important;
+        display: block !important;
+        text-align: center !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        margin-bottom: 10px !important;
+
+
+    }
+    .imdb-p-trailer{
+        margin-bottom: 10px;
+        width:280px!important;
+        height: 200px!important;
+        text-align:center !important;
+        border:2px #fff solid;
+        margin-left: 0;
+    }
+
+    .imdb-popup .close {
+        position: absolute;
+        top: 0;
+        right: 5px;
+        transition: all 200ms;
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #fff;
+    }
+    .imdb-p-title{
+        font-size: 14px;
+    }
+
+
+   .imdb-list-title-grid{
+       width: 100%;
+    }
+
+    div.imdb_left{
+        float: none;
+    }
+
+    .imdb-list-title-grid:hover  span.imdb-grid-info{
+        visibility: hidden;
+    }
+    .imdb-list-title-grid:hover  span.imdb-grid-info-left{
+        visibility: hidden;
+    }
+
+    .imdb-list-title-wrap{
+        display: block;
+    }
+    .imdb-list-title-wrap .imdb-title-list-poster{
+        display: block;
+
+    }
+    .imdb-list-title-wrap .imdb-title-list-poster a img{
+        margin-right: auto !important;
+        margin-left: auto !important;
+        position: relative;
+        margin-bottom: 20px;
+
+    }
+
+    .imdb-list-title-wrap .imdb-title-list-content{
+
+        width: 100%;
+        display: block;
+
+    }
+
+
+
+    .imdb_dark div.imdb_right,
+    .imdb_black div.imdb_right,
+    .imdb_transparent div.imdb_right,
+    .imdb_gray div.imdb_right,
+    .imdb_wood div.imdb_right,
+    .imdb_navy div.imdb_right,
+    .imdb_coffee div.imdb_right,
+    .imdb_white div.imdb_right{
+        display: block !important;
+        margin-top: 5px;
+        width: 100%;
+        overflow: hidden !important;
+    }
+
     .imdb_transparent > div.imdb_right > span#movie_title,
     .imdb_white > div.imdb_right > span#movie_title,
     .imdb_dark > div.imdb_right > span#movie_title{
         font-size: 15px;
-        display:block;
+        display:block !important;
 
     }
     .imdb_default_title> .middle,
@@ -1271,12 +2456,19 @@ div.imdb_right > span#summary{
     .imdb_default_name .header{
         background-color: transparent;
         color: #595858;
+        text-align: center !important;
+        overflow: hidden !important;
 
     }
     .imdb_default_name .header a{
         color:#136cb2 !important;
 
     }
+    .imdb_default_name  .header  .title  a{
+        position: relative !important;
+        text-align: center !important;
+    }
+
     .imdb_default_name .top {
         float: none !important;
         display: block !important;
@@ -1286,9 +2478,11 @@ div.imdb_right > span#summary{
         float: none !important;
         display: inline-block !important;
         width: 100% !important;
-        margin-left: 20px !important;
         position: relative !important;
         z-index: 10 !important;
+    }
+    .imdb_default_name .top .photo a img{
+        width: 100% !important;
     }
 
     .imdb_default_name .top .right{
@@ -1327,10 +2521,11 @@ div.imdb_right > span#summary{
         font-family: Verdana, Arial, Helvetica, sans-serif !important;
         font-size: 13px !important;
         font-weight: bold;
-        float: right !important;
-        margin-left: 10px !important;
         position: relative !important;
         width: 15% !important;
+        margin-left: 0!important;
+        margin-right: 0!important;
+        text-align: center !important;
         color: #fff !important;
         overflow: hidden !important;
         margin-top: auto !important;

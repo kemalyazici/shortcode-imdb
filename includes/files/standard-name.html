@@ -1,0 +1,24 @@
+<div class="imdb_container">
+    <div style="all: unset; overflow:hidden;"><div class="{{div_style}}">
+        <div class="imdb_left">
+            <a href="http://www.imdb.com/name/{{content}}" target="_blank">
+                <div class="poster_parent" style="
+                        background: url({{photo}})no-repeat center center;
+                        background-size: cover; 
+                        -webkit-background-size: cover;
+                        -moz-background-size: cover;
+                        -o-background-size: cover;
+                        background-size: cover;">
+
+                </div>
+            </a>
+        </div>
+        <div class="imdb_right">
+            <span id="movie_title"><a href="http://www.imdb.com/name/{{content}}" target="_blank">  {{name}}</a></span>
+            <span id="genres">{{jobs}}</span>
+            <span id="summary"><b>{{bio_title}}: </b>{{bio}}</span>
+            <div class="imdb_general"><b>{{born_title}}: </b>{{born}}</div>{{death}}
+            <div class="imdb_general">{{known}}</div>
+            <div class="imdb-footer"><span class="imdb_copyright">{{source}}: <a href="https://www.imdb.com" target="_blank">imdb.com</a></span></div>
+        </div>
+    </div></div></div>

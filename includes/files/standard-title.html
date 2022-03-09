@@ -1,0 +1,24 @@
+<div class="imdb_container"><div style="all: unset"><div class="{{div_style}}">
+    <div class="imdb_left">
+        <a href="http://www.imdb.com/title/{{content}}" target="_blank">
+            <div class="poster_parent" style="
+                        background: url({{starPNG}}),
+                        url({{poster}})no-repeat center center;
+                        background-size: cover; 
+                        -webkit-background-size: cover;
+                        -moz-background-size: cover;
+                        -o-background-size: cover;
+                        background-size: cover;">
+                <span id="imdb_rating">{{rating}}</span>
+            </div>
+        </a>
+    </div>
+    <div class="imdb_right">
+        <span id="movie_title"><a href="http://www.imdb.com/title/{{content}}" target="_blank">{{showing_title}}<small>{{year}}</small></a></span>
+        <span id="genres">{{runtime}}{{genres}}{{year2}}{{release}}</span>
+        <div class="imdb_general">{{dr}}{{wr}}{{sr}}</div>
+        <span id="summary"><b>{{summary}}: </b>{{sum}}</span>
+        <div class="imdb_general">{{country}}{{lang}}</div>
+        <div class="imdb-footer"><span class="imdb_copyright">{{source}}: <a href="https://www.imdb.com" target="_blank">imdb.com</a></span><span style="display: none">Disclaimer: This plugin has been coded to automatically quote data from imdb.com. Not available for any other purpose. All showing data have a link to imdb.com. The user is responsible for any other use or change codes.</span></div>
+    </div>
+</div></div></div>

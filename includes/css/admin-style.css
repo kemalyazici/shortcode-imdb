@@ -12,7 +12,7 @@ div.right_item{
     margin-left: 30px;
     margin-top: 50px;
     margin-bottom: 10px;
-    background: #fff;
+    background: #ededed
 }
 
 .imdb_old{
@@ -51,7 +51,24 @@ div.right_item{
     color: #0c5460;
 }
 
+.imdb-message{
+    display: block;
+    background-color: #fff;
+    width: 80%;
+    font-weight: bold;
+    font-size: 19px;
+    padding: 40px;
 
+}
+.imdb_quote{
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.imdb-cover-img{
+    position: absolute;top:20px;right: 20px;
+}
 
 
 
@@ -64,19 +81,21 @@ div.right_item{
     max-width: 100%;
     padding: 40px;
     border: 1px solid rgba(0,0,0,.2);
-    background: #fff;
+    background: #f7f7f7;
     box-shadow: 0 1px 3px rgba(0,0,0,.1);
 }
 
 .imdb-dashboard section {
     display: none;
     padding: 20px 0 0;
-    border-top: 1px solid #abc;
+    border-top: 1px solid #000;
 }
 
-.imdb-dashboard input {
+.imdb-dashboard .none-imdb{
     display: none;
 }
+
+
 
 .imdb-dashboard label {
     display: inline-block;
@@ -84,39 +103,533 @@ div.right_item{
     padding: 15px 25px;
     font-weight: 600;
     text-align: center;
-    color: #abc;
+
+    color: #000;
     border: 1px solid transparent;
 }
 
 .imdb-dashboard label:before {
     font-family: fontawesome;
+    color:#f39501!important;
     font-weight: normal;
     margin-right: 10px;
 }
 
-.imdb-dashboard label[for*='1']:before { content: '\f1ea'; }
-.imdb-dashboard label[for*='2']:before { content: '\f19a'; }
-.imdb-dashboard label[for*='3']:before { content: '\f16c'; }
-.imdb-dashboard label[for*='4']:before { content: '\f171'; }
+.imdb-dashboard label[for*='1']:before { content: '\f171'; }
+.imdb-dashboard label[for*='2']:before { content: '\f1ea'; }
+.imdb-dashboard label[for*='3']:before { content: '\f19a'; }
+.imdb-dashboard label[for*='4']:before { content: '\f16c'; }
+
 
 .imdb-dashboard label:hover {
-    color: #789;
+    color: green;
     cursor: pointer;
 }
 
 .imdb-dashboard input:checked + label {
-    color: #0af;
-    border: 1px solid #abc;
-    border-top: 2px solid #0af;
-    border-bottom: 1px solid #fff;
+    color: green;
+    border: 1px solid #000;
+    border-top: 8px solid green;
+    border-bottom: 1px solid #f7f7f7;
 }
 
+/************BADGES*************/
+.column5-wrap {
+    margin: 0 auto
+}
+
+.column5-wrap .column {
+    float: left
+}
+.column5-wrap .column {
+    width: 204px
+}
+.badges-showcase {
+    margin: 0 auto
+}
+
+.badges-showcase.short {
+    width: 702px
+}
+
+.badges-showcase .badges-showcase-item {
+    padding-top: 192px;
+    position: relative;
+    margin-bottom: 70px;
+}
+
+.badges-showcase .badges-showcase-item .badge {
+    position: absolute;
+    z-index: 1;
+    transition: all .3s ease-in-out;
+}
+
+.badges-showcase .badges-showcase-item .badge.big {
+    top: 0;
+    left: 50%;
+    margin-left: -80px
+}
+
+.badges-showcase .badges-showcase-item .badge.big.pinned {
+    top: -10px
+}
+
+.badges-showcase .badges-showcase-item .badge.small {
+    top: 136px;
+    right: 29px
+}
+
+.badges-showcase .badges-showcase-item .badge.locked {
+    opacity: 0;
+    z-index: 0
+}
+
+.badges-showcase .badges-showcase-item .badge.active {
+    opacity: 1;
+    z-index: 2
+}
+
+.badges-showcase .badges-showcase-item .badge.active + .badge {
+    opacity: 0
+}
+
+.badges-showcase .badges-showcase-item .badge.active:hover {
+    opacity: 0
+}
+
+.badges-showcase .badges-showcase-item .badge.active:hover + .badge {
+    opacity: 1
+}
+
+.badges-showcase .badges-showcase-item .text-header, .badges-showcase .badges-showcase-item .badge-description {
+    text-align: center
+}
+
+.badges-showcase .badges-showcase-item .text-header {
+    font-size: 1.125em;
+    margin-bottom: 16px
+}
+
+.badges-showcase .badges-showcase-item .badge-description {
+    font-size: 0.75em;
+    line-height: 18px
+}
+
+.badges-showcase .badges-showcase-item .badge-progress-title {
+    font-size: 0.8125em;
+    margin: 34px 0 6px
+}
+
+.badges-showcase .badges-showcase-item .badge-progress {
+    margin: 0 auto
+}
+
+.badge.big {
+    width: 160px;
+    height: 167px
+}
+
+.badge.small {
+    width: 36px;
+    height: 37px
+}
+
+.badge-boxes {
+    overflow: hidden
+}
+
+.badge-boxes .sidebar-item {
+    margin-bottom: 26px
+}
+
+.badge-list {
+    width: 228px;
+    margin: 0 auto
+}
+
+.badge-list .badge-list-item {
+    float: left;
+    margin: 0 12px 18px 0
+}
+
+.badge-list .badge-list-item .badge.pinned {
+    position: relative;
+    top: -5px
+}
+
+.badge-list .badge-list-item:nth-child(5n+5) {
+    margin-right: 0
+}
+
+.badge-list.short {
+    width: 180px;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.badge-list.short .badge-list-item:nth-child(5n+5) {
+    margin-right: 12px
+}
+
+.badge-list.short .badge-list-item:nth-child(4n+4) {
+    margin-right: 0
+}
+
+.imdb-add-new-container{
+    height:650px;
+    overflow:auto;
+}
+.imdb-add-new-container::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+.imdb-add-new-container::-webkit-scrollbar
+{
+    width: 12px;
+    background-color: #F5F5F5;
+}
+.imdb-add-new-inbox{
+    display: block;
+    margin-top: 20px;
+}
+.imdb-add-new-inbox input{
+    width: 550px;
+}
+
+#add_imdb_item{
+    width: 100px !important;
+    background:  rgb(41, 41, 41);
+    color: #fff;
+    border: 0;
+}
+#add_imdb_item_in_edit{
+    width: 100px !important;
+    background:  rgb(41, 41, 41);
+    color: #fff;
+    border: 0;
+}
+
+#imdb-add-title{
+    background: rgb(41, 41, 41);
+    color: #fff;
+    width: 300px;
+}
+#imdb-add-new{
+    background: rgb(41, 41, 41);
+    color: #fff;
+}
+
+
+
+#hideMe {
+    -moz-animation: cssAnimation 0s ease-in 2s forwards;
+    /* Firefox */
+    -webkit-animation: cssAnimation 0s ease-in 2s forwards;
+    /* Safari and Chrome */
+    -o-animation: cssAnimation 0s ease-in 2s forwards;
+    /* Opera */
+    animation: cssAnimation 0s ease-in 2s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    color:#000;
+    font-weight: bold;
+    display: block;
+}
+
+@keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        overflow:hidden;
+    }
+}
+@-webkit-keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        visibility:hidden;
+    }
+}
+
+.imdb-add-container{
+    margin-top: 10px;
+    padding: 20px;
+    display: table;
+    background: rgb(41,41,41);
+    color: #f3f1e2 !important;
+    margin-right: auto;
+    margin-left: auto;
+    width: 80%;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 13px 20px 0 rgba(0, 0, 0, 0.3), 0 11px 11px 0 rgba(0, 0, 0, 0.15);
+}
+.imdb-top{
+    margin-bottom: 30px;
+}
+.imdb-add-footer{
+    height: 50px;
+    background: rgb(41, 41, 41);
+    position: relative;
+    padding: 10px;
+}
+.add-new-btn{
+    float:right;
+    border: 0 !important;
+    background: #00a699 !important;
+    color: #fff !important;
+}
+.edit-list-btn{
+    float:right;
+    border: 0 !important;
+    background: #00a699 !important;
+    color: #fff !important;
+}
+.imdb-add-container .imdb-add-close{
+    position: absolute;
+    right:10px;
+    top:10px;
+}
+.imdb-add-row{
+    display: table-row;
+}
+.imdb-add-row .imdb-add-poster{
+    display: table-cell;
+    width: 185px;
+}
+.imdb-add-row .imdb-add-poster img{
+    float: left;
+    margin-right: 10px;
+    border: 3px solid #f1d486;
+}
+.imdb-add-row .imdb-add-content{
+    display: table-cell;
+    vertical-align: top;
+}
+.imdb-add-content .imdb-add-desc textarea{
+    min-width: 100%;
+    height: 80px;
+}
+.imdb-add-content .imdb-add-title{
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.imdb-add-content .imdb-add-genre{
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 935px) {
+    .badges-showcase.short {
+        width: 468px
+    }
+}
+
+@media screen and (max-width: 630px) {
+    .badges-showcase.short {
+        width: 234px
+    }
+}
+
+/*************BADGES END******************/
 .imdb-dashboard #tab1:checked ~ #content1,
 .imdb-dashboard #tab2:checked ~ #content2,
 .imdb-dashboard #tab3:checked ~ #content3,
 .imdb-dashboard #tab4:checked ~ #content4 {
     display: block;
 }
+
+.imdb-button{
+    background: #ffdc00 !important;
+    color: #0c0c0c !important;
+    font-weight: bold;
+    border: 0 !important;
+}
+:root {
+    font-size: 16px;
+    --card-img-height: 200px;
+}
+
+.dashcard-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    transition: all 200ms ease-in-out;
+
+}
+
+.dashcard {
+    align-self: flex-start;
+    position: relative;
+    width: 325px;
+    min-width: 275px;
+    margin: 1.25rem 0.75rem;
+    background: #fff;
+    border: 1px solid #ccc;
+    transition: all 300ms ease-in-out;
+    border-radius: 10px;
+    overflow:hidden;
+}
+.dashcard .dashcard-img {
+    visibility: hidden;
+    width: 100%;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.dashcard .dashcard-img-hovered {
+    --card-img-hovered-overlay: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0)
+    );
+    transition: all 350ms ease-in-out;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    position: absolute;
+    height: var(--card-img-height);
+    top: 0;
+}
+.dashcard .dashcard-info {
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    transition: all 200ms ease-in-out;
+}
+.dashcard .dashcard-info .dashcard-about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    transition: all 200ms ease-in-out;
+}
+.dashcard .dashcard-info .dashcard-about .dashcard-tag {
+    width: 120px;
+    max-width: 200px;
+    padding: 0.2rem 0.5rem;
+    font-size: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: #505f79;
+    color: #fff;
+}
+.dashcard .dashcard-info .dashcard-about .dashcard-tag.tag-tab {
+    background: #6f58ff;
+}
+.dashcard .dashcard-info .dashcard-about .dashcard-tag.tag-woo {
+    background: #02f313;
+}
+.dashcard .dashcard-info .dashcard-about .dashcard-tag.tag-popups {
+    background: #fc01ef;
+}
+.dashcard .dashcard-info .dashcard-about .dashcard-tag.tag-lists {
+    width: 71px;
+    background: #ce2a51;
+}
+.dashcard .dashcard-info .dashcard-about .dashcard-tag.tag-quotes {
+    background: #fffc08;
+    color:#0a0a0a;
+}
+.dashcard .dashcard-info .dashcard-title {
+    z-index: 10;
+    font-size: 1.5rem;
+    padding-bottom: 0.75rem;
+    transition: all 350ms ease-in-out;
+}
+.dashcard .dashcard-info .dashcard-creator {
+    padding-bottom: 0.75rem;
+    transition: all 250ms ease-in-out;
+}
+.dashcard:hover {
+    cursor: pointer;
+    box-shadow: 0px 15px 35px rgba(227, 252, 239, 0.1), 0px 5px 15px rgba(0, 0, 0, 0.07);
+    transform: scale(1.025);
+}
+.dashcard:hover .dashcard-img-hovered {
+    --card-img-hovered-overlay: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0.65)
+    );
+    height: 100%;
+}
+.dashcard-bought .dashcard-img-hovered {
+    --card-img-hovered-overlay: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0.65)
+    );
+    height: 100%;
+}
+
+.dashcard:hover .dashcard-about,
+.dashcard:hover .dashcard-creator {
+    opacity: 0;
+}
+.dashcard:hover .dashcard-info {
+    background-color: transparent;
+}
+.dashcard:hover .dashcard-title {
+    color: #ebecf0;
+    transform: translate(0, 40px);
+}
+.dashcard-bought .dashcard-check{
+    background-image: url(../assets/check2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    position:absolute;
+    top:8px;
+    right: 8px;
+    height:28px;
+    width: 30px;
+    z-index: 100;
+}
+.dashcard-bought .dashcard-about,
+.dashcard-bought .dashcard-creator {
+    opacity: 0;
+}
+.dashcard-bought .dashcard-info {
+    background-color: transparent;
+}
+.dashcard-bought .dashcard-title {
+    color: #ebecf0;
+    transform: translate(0, 40px);
+}
+
+
+.card-1 .dashcard-img,
+.card-1 .dashcard-img-hovered {
+    background-image: var(--card-img-hovered-overlay), url(https://pluginpress.net/storage/images/VKbcUVa5VPBy7lEWZ6LmLmrcdCjUC4Rs27lOSEMq.jpg);
+}
+
+.card-2 .dashcard-img,
+.card-2 .dashcard-img-hovered {
+    background-image: var(--card-img-hovered-overlay), url(https://pluginpress.net/storage/images/URs52Fh85K43YL81VYtD2sp57VBm7EiL1KN7PSoX.jpg);
+}
+
+.card-3 .dashcard-img,
+.card-3 .dashcard-img-hovered {
+    background-image: var(--card-img-hovered-overlay), url(https://pluginpress.net/storage/images/6UcWhow9SoHixJKNdJ5xPK2WpX6tVlrcB8e4re4o.jpg);
+}
+
+.card-4 .dashcard-img,
+.card-4 .dashcard-img-hovered {
+    background-image: var(--card-img-hovered-overlay), url(https://pluginpress.net/storage/images/NzRVKFroXBKITzYPSq9BOOJ7zey5lHslEWX5PK7n.jpg);
+}
+.card-5 .dashcard-img,
+.card-5 .dashcard-img-hovered {
+    background-image: var(--card-img-hovered-overlay), url(https://pluginpress.net/storage/images/QBbGzEOu3YCiDffBFPvDHfCDKMk5DgJTJk1nRgTq.jpg);
+}
+
 
 @media screen and (max-width: 800px) {
     .imdb-dashboard label {
@@ -125,6 +638,9 @@ div.right_item{
     .imdb-dashboard label:before {
         margin: 0;
         font-size: 18px;
+    }
+    .imdb-cover-img{
+        display: none;
     }
 }
 

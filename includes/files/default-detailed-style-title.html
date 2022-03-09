@@ -1,0 +1,28 @@
+<div class="imdb_container">
+    <div class="imdb_default{{transp}}" style="max-width: 670px; margin-left: auto; margin-right: auto;">
+        <div class="title">
+            <span class="left"><a href="http://imdb.com/title/{{content}}/" target="_blank">{{showing_title}}</a>{{year}}</small>
+                <small id="genres">{{genres}}{{runtime}}{{release}}</small>
+            </span>
+            <span class="right">
+            {{rating}}
+            </span>
+            <div class="spacer" style="clear: both;"></div>
+        </div>
+        <div class="middle">
+            <div class="poster">
+                <a href="http://imdb.com/title/{{content}}/" target="_blank"><img src="{{poster}}"/></a>
+
+            </div>
+            {{video_html}}
+            <div class="content">
+                {{dr}}{{wr}}{{sr}}<b>{{summary}}:</b> {{sum}}
+
+            </div>
+            <div class="spacer" style="clear: both;"></div>
+        </div>
+        <div class="spacer" style="clear: both;"></div>
+        {{img}}{{vid}}{{cast_html}}{{country}}{{lang}}{{budget}}
+        <div class="imdb-footer"><span class="imdb_copyright">{{source}}: <a href="https://www.imdb.com" target="_blank" style="color: #f5c518 !important;">imdb.com</a></span></div>
+    </div>
+</div>

@@ -4,11 +4,26 @@ if ( ! class_exists( 'WP_List_Table' ) ) {
 }
 class SHIMDB_IMDB_Cache_List_Table extends WP_List_Table {
 
-    public function get_cache($per_page = 5, $page_number = 1 , $search_term=""){
+    var $args;
+    /** Class constructor */
+    public function __construct($args) {
+
+        $this->args = $args;
+        parent::__construct( [
+            'singular' => __( $args['singular'], 'sp' ), //singular name of the listed records
+            'plural'   => __( $args['plural'], 'sp' ), //plural name of the listed records
+            'ajax'     => false //should this table support ajax?
+
+        ] );
+
+    }
+
+    public function get_cache($per_page = 50, $page_number = 1 , $search_term=""){
         global $wpdb;
 
+        $arg = $this->args;
         if($search_term == "") {
-            $sql = "SELECT * FROM {$wpdb->prefix}shortcode_imdb_cache";
+            $sql = 'SELECT * FROM '.$wpdb->prefix.'shortcode_imdb_cache WHERE type="'.$arg["type"].'" ORDER by id DESC';
 
             if (!empty($_REQUEST['orderby'])) {
                 $sql .= ' ORDER BY ' . esc_sql($_REQUEST['orderby']);
@@ -26,18 +41,16 @@ class SHIMDB_IMDB_Cache_List_Table extends WP_List_Table {
             foreach ($result as $k => $r) {
                 $data[$k]['id'] = $r->id;
                 $data[$k]['imdb_id'] = $r->imdb_id;
-                $data[$k]['title'] = '<a href="admin.php?page=shortcode_imdb_cache&id='.$r->id.'">'.str_replace("\'","'",$r->title).'</a>';
-                $data[$k]['type'] = $r->type;
+                $data[$k]['title'] = '<a href="'.$arg['link'].$r->id.'">'.str_replace("\'","'",$r->title).'</a>';
             }
         }else{
-            $sql = "SELECT * FROM ".$wpdb->prefix."shortcode_imdb_cache WHERE imdb_id='".esc_sql($search_term)."' OR title LIKE '%".esc_sql($search_term)."%'";
+            $sql = 'SELECT * FROM '.$wpdb->prefix.'shortcode_imdb_cache WHERE (imdb_id="'.esc_sql($search_term).'" OR title LIKE "%'.esc_sql($search_term).'%") AND type="'.$arg["type"].'" ORDER by id DESC';
             $result = $wpdb->get_results($sql);
             $data = array();
             foreach ($result as $k => $r) {
                 $data[$k]['id'] = $r->id;
                 $data[$k]['imdb_id'] = $r->imdb_id;
-                $data[$k]['title'] = '<a href="admin.php?page=shortcode_imdb_cache&id='.$r->id.'">'.str_replace("\'","'",$r->title).'</a>';
-                $data[$k]['type'] = $r->type;
+                $data[$k]['title'] = '<a href="'.$arg['link'].$r->id.'">'.str_replace("\'","'",$r->title).'</a>';
             }
         }
 
@@ -45,11 +58,11 @@ class SHIMDB_IMDB_Cache_List_Table extends WP_List_Table {
     }
 
     public function get_columns(){
+        $arg = $this->args;
         $columns = array(
             'cb'      => '<input type="checkbox" />',
             'id'      => __('<b>ID</b>','sp'),
-            'title' => __('<b>Title</b>','sp'),
-            'type'      => __('<b>Type</b>','sp'),
+            'title' => __('<b>'.$arg['singular'].'</b>','sp'),
             'imdb_id'    => __('<b>IMDB ID</b>','sp')
         );
         return $columns;
@@ -57,14 +70,14 @@ class SHIMDB_IMDB_Cache_List_Table extends WP_List_Table {
 
     public function prepare_items() {
         global $wpdb;
-
+        $args = $this->args;
         $search_terms = isset($_POST['s']) ? sanitize_text_field(trim($_POST['s'])) : "";
         $columns = $this->get_columns();
         $hidden = array();
         $sortable = $this->get_sortable_columns();
         $this->_column_headers = array($columns, $hidden, $sortable);
         $current_page = $this->get_pagenum();
-        $sql = "SELECT COUNT(id) FROM {$wpdb->prefix}shortcode_imdb_cache";
+        $sql = "SELECT COUNT(id) FROM {$wpdb->prefix}shortcode_imdb_cache WHERE type='".$args['type']."'";
         $total_items = $wpdb->get_var($sql);
         $this->set_pagination_args(array(
             'total_items' => $total_items,
@@ -76,7 +89,6 @@ class SHIMDB_IMDB_Cache_List_Table extends WP_List_Table {
         switch( $column_name ) {
             case 'id':
             case 'title':
-            case 'type':
             case 'imdb_id':
                 return $item[ $column_name ];
             default:
@@ -89,7 +101,6 @@ class SHIMDB_IMDB_Cache_List_Table extends WP_List_Table {
         return array(
             "id" => array("id",true),
             "title" => array("title",false),
-            "type" => array("type",false),
             "imdb_id" => array("imdb_id",false),
         );
     }
@@ -168,6 +179,16 @@ class SHIMDB_IMDB_Cache_List_Table extends WP_List_Table {
             array( 'id' => $id ),
             array( '%d' )
         );
+	    $wpdb->delete(
+		    "{$wpdb->prefix}shortcode_imdb_cache",
+		    array( 'imdb_id' => $id."-page" ),
+		    array( '%d' )
+	    );
+	    $wpdb->delete(
+		    "{$wpdb->prefix}shortcode_imdb_cache",
+		    array( 'imdb_id' => $id."-tab" ),
+		    array( '%d' )
+	    );
 
     }
 

@@ -4,7 +4,7 @@ function shimdb_imdb_admin_styles(){
 
     wp_enqueue_style(
         'imdb-admin-sans-css',
-        'https://fonts.googleapis.com/css?family=Open+Sans:400,600,700',
+        SHIMDB_URL.'includes/css/google-font.css?v='.SHIMDB_VS,
         array(),
         time()
     );
@@ -19,7 +19,7 @@ function shimdb_imdb_admin_styles(){
 
     wp_enqueue_style(
         'imdb-admin-css',
-        SHIMDB_URL.'includes/css/admin-style.css?v=4.4',
+        SHIMDB_URL.'includes/css/admin-style.css?v='.SHIMDB_VS,
         array(),
         time()
     );
@@ -30,9 +30,16 @@ function shimdb_imdb_admin_styles(){
 function shimdb_imdb_frontend_styles(){
 
     wp_enqueue_style(
-        'mp-frontend-css',
-        SHIMDB_URL.'includes/css/style.css?v=4.4',
+        'imdb-frontend-css',
+        SHIMDB_URL.'includes/css/style.css?v='.SHIMDB_VS,
         time()
     );
+
+
+	wp_enqueue_style('now-font-awesome',
+		'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
+		time()
+	);
+
 }
 
