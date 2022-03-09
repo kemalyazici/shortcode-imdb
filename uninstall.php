@@ -4,7 +4,7 @@ if (!defined('WP_UNINSTALL_PLUGIN')) {
     die;
 }
 
-$option_name = 'wporg_option';
+$option_name = 'shortcode-imdb-api';
 
 delete_option($option_name);
 
@@ -15,3 +15,4 @@ delete_site_option($option_name);
 
 global $wpdb;
 $wpdb->query("DROP TABLE IF EXISTS {$wpdb->prefix}shortcode_imdb_cache");
+$wpdb->delete($wpdb->prefix . 'options', array('option_name' => "shortcode-imdb-api"));
